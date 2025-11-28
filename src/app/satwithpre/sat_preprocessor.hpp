@@ -21,18 +21,21 @@ private:
     const Parameters& _params;
     const JobDescription& _desc;
     bool _run_lingeling {false};
+    bool _run_satsuma {false};
     CoreAllocator::Allocation _core_alloc;
 
     std::unique_ptr<Lingeling> _lingeling;
     std::unique_ptr<Kissat> _kissat;
     std::future<void> _fut_lingeling;
     std::future<void> _fut_kissat;
+    std::future<void> _fut_satsuma;
     std::atomic_int _solver_result {0};
     std::atomic_int _nb_running {0};
     std::vector<int> _solution;
 
 public:
     SatPreprocessor(const Parameters& params, JobDescription& desc, bool runLingeling) :
+        //TODO: satsuma should be added here
         _params(params), _desc(desc), _run_lingeling(runLingeling), _core_alloc(1 + _run_lingeling) {}
     ~SatPreprocessor() {
         join(false);
@@ -80,6 +83,22 @@ public:
                 _nb_running--;
             });
         }
+        if (_run_satsuma){
+            setup.solverType = 's';
+            _nb_running++;
+            satsuma::preprocessor satsuma_preprocessor;
+
+            _fut_satsuma = ProcessWideThreadPool::get().addTask([&]() {
+				// TODO sachen einstellen wenn nötig
+            	cnf2wl formula = loadFormulaToCnf2wl()
+            	LOG(V2_INFO, "PREPRO running Satsuma\n");
+				if(entered_out_file) satsuma_preprocessor.output_file(out_filename); //change
+    			satsuma_preprocessor.preprocess(formula);
+				//TODO wo geht es hin? verstehe ich nicht
+            }
+            _nb_running--;
+        }
+
     }
 
     bool done() {
@@ -110,10 +129,12 @@ public:
     void interrupt() {
         _kissat->interrupt();
         if (_lingeling) _lingeling->interrupt();
+        //TODO satsuma
     }
     void join(bool onlyWaitForModel) {
         if (!onlyWaitForModel && _fut_lingeling.valid()) _fut_lingeling.get(); // wait for solver thread to return
         if (_fut_kissat.valid()) _fut_kissat.get(); // wait for solver thread to return
+        //TODO satsuma
     }
 
     void reconstructSolution(std::vector<int>& solution) {
@@ -130,4 +151,39 @@ private:
         }
         slv->diversify(0);
     }
+
+	cnf2wl loadFormulaToCnf2wl(){
+		cnf2wl result;
+		SerializedFormulaParser parser(Logger::getMainInstance(), _desc.getFormulaPayload(0), _desc.getFormulaPayloadSize(0));
+		int numVars = getNumVarsFromDesc(_desc);
+		result.dynamicReserve(numVars);
+		int lit;
+		std::vector<int> construct_clause;
+		while (parser.getNextLiteral(lit)) {
+			if (lit != 0) {
+				construct_clause.push_back(lit);
+			} else {
+				result.add_clause(construct_clause);
+				construct_clause.clear();
+			}
+		}
+		result.add_clause(construct_clause);
+		return result;
+	}
+
+
+	int getNumVarsFromDesc(const JobDescription& desc, int revision = 0)
+	{
+    	auto data = desc.getRevisionData(revision);
+
+    	size_t offset =
+          	3 * sizeof(int)      // id, revision, client_rank
+        	+ sizeof(size_t)       // f_size
+        	+ sizeof(int)          // root_rank
+        	+ sizeof(float);       // priority
+
+    	int numVars;
+    	memcpy(&numVars, data->data() + offset, sizeof(int));
+    	return numVars;
+	}
 };
