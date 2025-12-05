@@ -83,7 +83,7 @@ public:
                 _nb_running--;
             });
         }
-        if (_run_satsuma){
+        /*if (_run_satsuma){
             setup.solverType = 's';
             _nb_running++;
             satsuma::preprocessor satsuma_preprocessor;
@@ -97,7 +97,7 @@ public:
 				//TODO wo geht es hin? verstehe ich nicht
             }
             _nb_running--;
-        }
+        }*/
 
     }
 
@@ -118,6 +118,8 @@ public:
         return std::move(_solution);
     }
 
+
+	//TODO hier müsste eventuel auch Satsumas verwendet werden
     bool hasPreprocessedFormula() {
         return _kissat->hasPreprocessedFormula();
     }
