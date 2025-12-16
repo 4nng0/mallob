@@ -14,6 +14,8 @@
 #include "util/sys/thread_pool.hpp"
 #include <atomic>
 #include <future>
+#include <preprocessor.h>
+#include <cnf2wl.h>
 
 class SatPreprocessor {
 
@@ -26,6 +28,7 @@ private:
 
     std::unique_ptr<Lingeling> _lingeling;
     std::unique_ptr<Kissat> _kissat;
+    std::unique_ptr<satsuma::preprocessor> _satsuma_preprocessor;
     std::future<void> _fut_lingeling;
     std::future<void> _fut_kissat;
     std::future<void> _fut_satsuma;
@@ -35,8 +38,7 @@ private:
 
 public:
     SatPreprocessor(const Parameters& params, JobDescription& desc, bool runLingeling) :
-        //TODO: satsuma should be added here
-        _params(params), _desc(desc), _run_lingeling(runLingeling), _core_alloc(1 + _run_lingeling) {}
+        _params(params), _desc(desc), _run_lingeling(runLingeling), _core_alloc(1 + _run_lingeling) {_run_satsuma = false ;}
     ~SatPreprocessor() {
         join(false);
         if (_kissat) _kissat->cleanUp();
@@ -83,21 +85,17 @@ public:
                 _nb_running--;
             });
         }
-        /*if (_run_satsuma){
-            setup.solverType = 's';
+        if (_run_satsuma){
             _nb_running++;
-            satsuma::preprocessor satsuma_preprocessor;
 
             _fut_satsuma = ProcessWideThreadPool::get().addTask([&]() {
-				// TODO sachen einstellen wenn nötig
-            	cnf2wl formula = loadFormulaToCnf2wl()
+            	cnf2wl formula = loadFormulaToCnf2wl();
             	LOG(V2_INFO, "PREPRO running Satsuma\n");
-				if(entered_out_file) satsuma_preprocessor.output_file(out_filename); //change
-    			satsuma_preprocessor.preprocess(formula);
-				//TODO wo geht es hin? verstehe ich nicht
-            }
-            _nb_running--;
-        }*/
+                _satsuma_preprocessor.set_save_as_Formula(true);
+    			_satsuma_preprocessor.preprocess(formula);
+                _nb_running--;
+            });
+        }
 
     }
 
@@ -122,15 +120,18 @@ public:
 	//TODO hier müsste eventuel auch Satsumas verwendet werden
     bool hasPreprocessedFormula() {
         return _kissat->hasPreprocessedFormula();
+        //return _satsuma_preprocessor.hasPreprocessedFormula();
     }
     std::vector<int>&& extractPreprocessedFormula() {
         return _kissat->extractPreprocessedFormula();
+        //return _satsuma_preprocessor.extractPreprocessedFormula();
     }
 
     // Interrupt any preprocessing, no more need for a result
     void interrupt() {
         _kissat->interrupt();
         if (_lingeling) _lingeling->interrupt();
+
         //TODO satsuma
     }
     void join(bool onlyWaitForModel) {

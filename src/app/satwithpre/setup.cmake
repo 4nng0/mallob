@@ -7,5 +7,18 @@ set(MALLOB_COREPLUSCOMM_SOURCES ${MALLOB_COREPLUSCOMM_SOURCES} ${SATWITHPRE_MALL
 
 # Include external libraries as necessary
 
+# Satsuma utility library (prebuilt static)
+add_library(satsuma STATIC IMPORTED)
+set_target_properties(satsuma PROPERTIES
+        IMPORTED_LOCATION
+        "${CMAKE_SOURCE_DIR}/lib/satsuma/libsatsuma.a"
+        INTERFACE_INCLUDE_DIRECTORIES
+        "${CMAKE_SOURCE_DIR}/lib/satsuma/include"
+)
+
+target_link_libraries(mallob_sat_subproc
+        satsuma
+)
+
 # Add unit tests: for each $arg there must be a standalone cpp file under "test/test_${arg}.cpp".
 # ...
