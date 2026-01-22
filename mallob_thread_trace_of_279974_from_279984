@@ -1,0 +1,97 @@
+[New LWP 280012]
+[New LWP 279991]
+[New LWP 279988]
+[New LWP 279987]
+[New LWP 279986]
+[New LWP 279985]
+[New LWP 279984]
+[New LWP 279983]
+[New LWP 279982]
+[New LWP 279981]
+[New LWP 279980]
+[New LWP 279979]
+[New LWP 279978]
+[New LWP 279975]
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.fedoraproject.org/>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib64/libthread_db.so.1".
+
+Thread 1 "MainThread" received signal SIGTSTP, Stopped (user).
+0x00007f04a4f50422 in __syscall_cancel_arch () from /usr/lib64/libc.so.6
+#0  0x00007f04a4f50422 in __syscall_cancel_arch () from /usr/lib64/libc.so.6
+#1  0x00007f04a4f4471c in __internal_syscall_cancel () from /usr/lib64/libc.so.6
+#2  0x00007f04a4f44d8c in __futex_abstimed_wait_common () from /usr/lib64/libc.so.6
+#3  0x00007f04a4f49c4c in __pthread_clockjoin_ex () from /usr/lib64/libc.so.6
+#4  0x00007f04a523245b in std::thread::join() () from /usr/lib64/libstdc++.so.6
+#5  0x0000000000411eba in BackgroundWorker::join (this=0x7f0494000cd0) at /home/stud/s_goerth/mallob/src/util/sys/background_worker.hpp:34
+#6  0x000000000040a9aa in Client::~Client (this=0x2436950) at /home/stud/s_goerth/mallob/src/core/client.cpp:802
+#7  0x00000000004a8ed3 in doMainProgram (commWorkers=@0x7fff077fd810: 0x2430ee0, commClients=@0x7fff077fd818: 0x242eeb0, params=..., distTerm=...) at /home/stud/s_goerth/mallob/src/main.cpp:204
+#8  0x00000000004a9d74 in main (argc=5, argv=0x7fff078032d8) at /home/stud/s_goerth/mallob/src/main.cpp:361
+[Inferior 1 (process 279974) detached]

@@ -75,11 +75,6 @@ namespace satsuma {
         int  dejavu_budget_limit    = -1; // <0 means no limits
         int  dejavu_backtrack_limit = 64;
 
-       /**
-        * \brief Returns a reference to the preprocessed formula, if it has been written yet.
-        */
-       std::vector<int>&& extractPreprocessedFormula();
-
         /**
             Compute a symmetry breaking predicate for the given formula.
 
@@ -90,6 +85,11 @@ namespace satsuma {
 
     public:
 
+        /**
+        * \brief Returns a reference to the preprocessed formula, if it has been written yet.
+        */
+       std::vector<int>&& extractPreprocessedFormula();
+
         void set_struct_only(bool use_only_struct);
 
         void set_graph_only(bool use_only_struct);
@@ -99,6 +99,8 @@ namespace satsuma {
         void output_file(std::string& outfile);
 
        void set_save_as_Formula(bool save);
+
+		bool hasPreprocessedFormula();
 
         int get_row_orbit_limit() const;
 

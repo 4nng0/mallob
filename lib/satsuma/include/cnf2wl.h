@@ -16,6 +16,7 @@
 #include <utility>
 #include <charconv>
 #include <bitset>
+#include <memory>
 namespace dejavu {
     namespace ds {
         class markset;

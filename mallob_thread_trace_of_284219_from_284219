@@ -1,0 +1,98 @@
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.fedoraproject.org/>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+Fehler: Paket-Datenbank in /usr/lib/sysimage/rpm kann nicht geöffnet werden
+Python Exception <class '_rpm.error'>: rpmdb open failed
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib64/libthread_db.so.1".
+
+Program received signal SIGTSTP, Stopped (user).
+0x00007f3755775422 in __syscall_cancel_arch () from /usr/lib64/libc.so.6
+#0  0x00007f3755775422 in __syscall_cancel_arch () from /usr/lib64/libc.so.6
+#1  0x00007f375576971c in __internal_syscall_cancel () from /usr/lib64/libc.so.6
+#2  0x00007f3755769d8c in __futex_abstimed_wait_common () from /usr/lib64/libc.so.6
+#3  0x00007f375576ec4c in __pthread_clockjoin_ex () from /usr/lib64/libc.so.6
+#4  0x00007f3755a5745b in std::thread::join() () from /usr/lib64/libstdc++.so.6
+#5  0x000000000055c550 in Process::writeTrace (tid=284219) at /home/stud/s_goerth/mallob/src/util/sys/process.cpp:207
+#6  0x000000000055bb96 in handleSignal (signum=11) at /home/stud/s_goerth/mallob/src/util/sys/process.cpp:43
+#7  <signal handler called>
+#8  0x000000000077a394 in satsuma::preprocessor::set_save_as_Formula(bool) ()
+#9  0x00000000004edf1d in SatPreprocessor::init()::{lambda()#3}::operator()() const (__closure=0x7f374a7fb7c0) at /home/stud/s_goerth/mallob/src/app/satwithpre/sat_preprocessor.hpp:96
+#10 0x000000000050561a in std::__invoke_impl<void, SatPreprocessor::init()::{lambda()#3}&>(std::__invoke_other, SatPreprocessor::init()::{lambda()#3}&) (__f=...) at /usr/include/c++/15/bits/invoke.h:63
+#11 0x00000000005013fb in std::__invoke_r<void, SatPreprocessor::init()::{lambda()#3}&>(SatPreprocessor::init()::{lambda()#3}&) (__fn=...) at /usr/include/c++/15/bits/invoke.h:113
+#12 0x00000000004fbc03 in std::_Function_handler<void (), SatPreprocessor::init()::{lambda()#3}>::_M_invoke(std::_Any_data const&) (__functor=...) at /usr/include/c++/15/bits/std_function.h:292
+#13 0x000000000041fdee in std::function<void()>::operator() (this=0x7f374a7fb7c0) at /usr/include/c++/15/bits/std_function.h:593
+#14 0x0000000000416c70 in ThreadPool::runThread (this=0x14420b0, id=6) at /home/stud/s_goerth/mallob/src/util/sys/thread_pool.hpp:121
+#15 0x000000000041618b in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const (__closure=0x1441c88) at /home/stud/s_goerth/mallob/src/util/sys/thread_pool.hpp:49
+#16 0x000000000047a536 in std::__invoke_impl<void, ThreadPool::ThreadPool(unsigned long)::{lambda()#1}>(std::__invoke_other, ThreadPool::ThreadPool(unsigned long)::{lambda()#1}&&) (__f=...) at /usr/include/c++/15/bits/invoke.h:63
+#17 0x000000000047a432 in std::__invoke<ThreadPool::ThreadPool(unsigned long)::{lambda()#1}>(ThreadPool::ThreadPool(unsigned long)::{lambda()#1}&&) (__fn=...) at /usr/include/c++/15/bits/invoke.h:98
+#18 0x000000000047a0aa in std::thread::_Invoker<std::tuple<ThreadPool::ThreadPool(unsigned long)::{lambda()#1}> >::_M_invoke<0ul>(std::_Index_tuple<0ul>) (this=0x1441c88) at /usr/include/c++/15/bits/std_thread.h:303
+#19 0x0000000000479dfe in std::thread::_Invoker<std::tuple<ThreadPool::ThreadPool(unsigned long)::{lambda()#1}> >::operator()() (this=0x1441c88) at /usr/include/c++/15/bits/std_thread.h:310
+#20 0x0000000000479912 in std::thread::_State_impl<std::thread::_Invoker<std::tuple<ThreadPool::ThreadPool(unsigned long)::{lambda()#1}> > >::_M_run() (this=0x1441c80) at /usr/include/c++/15/bits/std_thread.h:255
+#21 0x00007f3755a573e4 in execute_native_thread_routine () from /usr/lib64/libstdc++.so.6
+#22 0x00007f375576cf14 in start_thread () from /usr/lib64/libc.so.6
+#23 0x00007f37557f02ec in __clone3 () from /usr/lib64/libc.so.6
+[Inferior 1 (process 284219) detached]

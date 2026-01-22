@@ -14,14 +14,14 @@
 #include "util/sys/thread_pool.hpp"
 #include <atomic>
 #include <future>
-#include <preprocessor.h>
-#include <cnf2wl.h>
+#include "preprocessor.h"
+#include "cnf2wl.h"
 
 class SatPreprocessor {
 
 private:
     const Parameters& _params;
-    const JobDescription& _desc;
+    JobDescription& _desc;
     bool _run_lingeling {false};
     bool _run_satsuma {false};
     CoreAllocator::Allocation _core_alloc;
@@ -38,7 +38,7 @@ private:
 
 public:
     SatPreprocessor(const Parameters& params, JobDescription& desc, bool runLingeling) :
-        _params(params), _desc(desc), _run_lingeling(runLingeling), _core_alloc(1 + _run_lingeling) {_run_satsuma = false ;}
+        _params(params), _desc(desc), _run_lingeling(runLingeling), _core_alloc(1 + _run_lingeling) {_run_satsuma = true ;}
     ~SatPreprocessor() {
         join(false);
         if (_kissat) _kissat->cleanUp();
@@ -87,12 +87,14 @@ public:
         }
         if (_run_satsuma){
             _nb_running++;
-
+            _satsuma_preprocessor = std::make_unique<satsuma::preprocessor>();
             _fut_satsuma = ProcessWideThreadPool::get().addTask([&]() {
-            	cnf2wl formula = loadFormulaToCnf2wl();
+            	cnf2wl formula;
+                loadFormulaToCnf2wl(formula);
             	LOG(V2_INFO, "PREPRO running Satsuma\n");
-                _satsuma_preprocessor.set_save_as_Formula(true);
-    			_satsuma_preprocessor.preprocess(formula);
+                _satsuma_preprocessor->set_save_as_Formula(true);
+                //_satsuma_preprocessor->set_log_output(null)
+    			_satsuma_preprocessor->preprocess(formula);
                 _nb_running--;
             });
         }
@@ -119,25 +121,27 @@ public:
 
 	//TODO hier müsste eventuel auch Satsumas verwendet werden
     bool hasPreprocessedFormula() {
-        return _kissat->hasPreprocessedFormula();
-        //return _satsuma_preprocessor.hasPreprocessedFormula();
+        //return _kissat->hasPreprocessedFormula();
+        return _satsuma_preprocessor->hasPreprocessedFormula();
     }
     std::vector<int>&& extractPreprocessedFormula() {
-        return _kissat->extractPreprocessedFormula();
-        //return _satsuma_preprocessor.extractPreprocessedFormula();
+        //return _kissat->extractPreprocessedFormula();
+        return _satsuma_preprocessor->extractPreprocessedFormula();
     }
 
     // Interrupt any preprocessing, no more need for a result
     void interrupt() {
         _kissat->interrupt();
         if (_lingeling) _lingeling->interrupt();
+        //if (_satsuma_preprocessor) _satsuma_preprocessor->interrupt();
 
-        //TODO satsuma
+        //TODO satsuma hat noch kein interrupt
     }
     void join(bool onlyWaitForModel) {
         if (!onlyWaitForModel && _fut_lingeling.valid()) _fut_lingeling.get(); // wait for solver thread to return
         if (_fut_kissat.valid()) _fut_kissat.get(); // wait for solver thread to return
-        //TODO satsuma
+        if (_fut_satsuma.valid()) _fut_satsuma.get(); 
+        
     }
 
     void reconstructSolution(std::vector<int>& solution) {
@@ -155,10 +159,13 @@ private:
         slv->diversify(0);
     }
 
-	cnf2wl loadFormulaToCnf2wl(){
-		cnf2wl result;
+	void loadFormulaToCnf2wl(cnf2wl& result){
 		SerializedFormulaParser parser(Logger::getMainInstance(), _desc.getFormulaPayload(0), _desc.getFormulaPayloadSize(0));
-		int numVars = getNumVarsFromDesc(_desc);
+        if (_params.compressFormula()) parser.setCompressed();
+        //_desc.writeMetadata();
+		int numVars = _desc.getAppConfiguration().fixedSizeEntryToInt("__NV");
+
+        assert(numVars > 0 && numVars < 1000000000);
 		result.dynamicReserve(numVars);
 		int lit;
 		std::vector<int> construct_clause;
@@ -166,27 +173,11 @@ private:
 			if (lit != 0) {
 				construct_clause.push_back(lit);
 			} else {
-				result.add_clause(construct_clause);
+				result.add_clause(construct_clause); 
+
 				construct_clause.clear();
 			}
 		}
-		result.add_clause(construct_clause);
-		return result;
-	}
 
-
-	int getNumVarsFromDesc(const JobDescription& desc, int revision = 0)
-	{
-    	auto data = desc.getRevisionData(revision);
-
-    	size_t offset =
-          	3 * sizeof(int)      // id, revision, client_rank
-        	+ sizeof(size_t)       // f_size
-        	+ sizeof(int)          // root_rank
-        	+ sizeof(float);       // priority
-
-    	int numVars;
-    	memcpy(&numVars, data->data() + offset, sizeof(int));
-    	return numVars;
 	}
 };
