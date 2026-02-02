@@ -43,3 +43,5 @@ endif()
 
 # Add unit tests: for each $arg there must be a standalone cpp file under "test/test_${arg}.cpp".
 # ...
+
+new_test(satsuma_payload "${BASE_INCLUDES}" "mallob_corepluscomm;mallob_sat_subproc")
