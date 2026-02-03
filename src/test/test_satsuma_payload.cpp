@@ -48,10 +48,10 @@ int main(int argc, char *argv[]) {
         time = Timer::elapsedSeconds() - time;
         LOG(V2_INFO, " - done, took %.3fs\n", time);
 
-        auto f = processed_path;
-        LOG(V2_INFO, "Reading test CNF %s ...\n", f.c_str());
+        auto f2 = processed_path;
+        LOG(V2_INFO, "Reading test CNF %s ...\n", f2.c_str());
         float time2 = Timer::elapsedSeconds();
-        SatReader r2(params, f);
+        SatReader r2(params, f2);
         JobDescription d2;
         bool success2 = r2.read(d);
         assert(success2);
