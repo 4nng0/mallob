@@ -1,0 +1,80 @@
+c 0.006 0 Program options: -0o=0 -J=0 -SJ=0 -T=0 -adc=0 -aim=1 -ajpc=0 -ans=0 -apidir=.api -ba=4 -bem=1 -bicg=4 -br=0 -c=1 -cbbs=0 -cblm=1 -cblp=100000 -cdel=2 -cecpm=0 -cf=0 -cfci=10 -cfm=3 -cg=1 -ch=0 -checksums=0 -cjc=0 -client-app-threads=1 -cm=0 -cmp=0 -colors=1 -compact-proof=0 -cpshm=0 -csm=3 -cusv=1 -dc=0 -decay-distr=1 -decay-max=200 -decay-mean=50 -decay-min=1 -decay-stddev=3 -decpm=0 -delaymonkey=0 -div-elim=0 -div-fanout=0 -div-init-shuffle=0 -div-native=1 -div-noise=0 -div-phases=1 -div-reduce=0 -div-seeds=1 -dpa=1 -ds=0 -evpt=500 -evu=0 -extmem-disk-dir=.disk -fapii=0 -fcll=1 -g=0 -gclls=0 -h=0 -huca=0 -iff=0 -ilbd=0 -inotify=1 -interface-fs=0 -interface-ipc=0 -ipm=1 -ivdh=1 -jc=1 -jcl=0 -jcup=0 -jjp=0 -jwl=0 -l=1 -latencymonkey=0 -lbdpi=0 -lbdpo=0 -ljpc=32 -log=scripts/server/example_logsntraces//2/ -mbt=8388608 -mcips=10 -md=0 -mempanic=1 -mjps=0 -mlbdps=2 -mlpt=50000000 -mmpi=0 -mono=/nfs/home/agoerth/mallob/scripts/server/example_in/09d7add3bf3b75c5d1023a92e752989a-Break_unsat_04_03.xml.cnf.xz -mono-app=SAT -mscf=5 -nec=10 -no-import=0 -os=1 -otfc=0 -otfcm=1 -p=0.1 -pb=1 -pbbm=0 -pef=1 -pjp=9999999 -pl=0 -plain-add-specific=0 -pph=0 -pre-cleanup=0 -prisma=0 -proof-debugging=0 -ps=0 -q=1 -qcll=60 -qlbdl=60 -randlbd=0 -reduce-delta=100 -reduce-max=980 -reduce-mean=700 -reduce-min=300 -reduce-stddev=150 -rlbd=3 -rpa=0 -rs=1 -rspaa=0 -s=0.5 -satsolver=c -scll=60 -scramble-lbds=0 -scsd=0 -seed=0 -sjd=0 -slbdl=60 -sleep=100 -spl=-1 -sswl=0 -t=3 -terminate-abruptly=0 -tmp=scripts/server/example_logsntraces//2/tmp/ -trace-dir=scripts/server/example_logsntraces//2/ -uninvert-proof=1 -v=4 -w=-1 -wam=10000 -warmup=0 -watchdog=1 -y=1 -yield=0 
+c 0.006 0 Mallob rls pid=187147 on host login
+c 0.006 0 4 workers, 1 clients
+c 0.007 0 Created client communicator
+c 0.007 0 Created worker communicator
+c 0.007 0 I am worker #0
+c 0.007 0 I am client #0
+c 0.007 0 [WARN] Num bounce alternatives must be at most half the number of workers!
+c 0.007 0 [WARN] Falling back to safe value r=2.
+c 0.007 0 My bounce alternatives: 3 1 
+c 0.008 0 Set up API connector
+c 0.010 0 Machine color 0 with 4 total workers (my rank: 0)
+c 0.010 0 Assuming application "SAT" for mono job
+c 0.010 0 [CA] Root: 0 requests, 1 idle (epoch=0)
+c 0.012 0 [CA] Root: 0 requests, 4 idle (epoch=0)
+c 0.030 0 Introducing job #1 rev. 0 : r.#1:0 rev. 0 <- [0] born=0.030 hops=0 epoch=-1 matchId=-1 => [0]
+c 0.030 0 BLC insert (1,1,0.010)
+c 0.030 0 Activate r.#1:0 rev. 0 <- [0] born=0.030 hops=0 epoch=-1 matchId=-1
+c 0.030 0 ADOPT r.#1:0 rev. 0 <- [0] born=0.030 hops=1 epoch=-1 matchId=-1 mode=1 <= [0]
+c 0.031 0 corealloc req 0 -> 0 granted, 3 free
+c 0.031 0 COMMIT #1 -> #1:0
+c 0.031 0 Scheduling r.#1:0 rev. 0 <- [0] born=0.030 hops=1 epoch=-1 matchId=-1 on [0] (latency: 0.00082s)
+c 0.031 0 Sending job desc. of #1 rev. 0 of size 14515, formula begins at idx 115 => [0]
+c 0.031 0 Sent job desc. of #1 of size 14515 => [0]
+c 0.031 0 Got desc. of size 14515 for job #1 <= [0]
+c 0.031 0 UNCOMMIT #1:0
+c 0.031 0 LOAD 1 (+#1:0)
+c 0.031 0 EXECUTE #1:0 <= [0]
+c 0.031 0 #1:0 : new job node starting
+c 0.031 0 corealloc req 3 -> 3 granted, 0 free
+c 0.034 0 BLC insert (1,4,1.000)
+c 0.034 0 #1:0 : update v=1 epoch=1 lastreqsepoch=-1 evlat=0.00000
+c 0.034 0 SPA: formula with 14400 bytes
+c 0.041 0 #1:0 : update v=4 epoch=2 lastreqsepoch=1 evlat=0.00687
+c 0.041 0 #1:0 growing: r.#1:1 rev. 0 <- [0] born=0.041 hops=0 epoch=2 matchId=-1 => [1]
+c 0.041 0 #1:0 growing: r.#1:2 rev. 0 <- [0] born=0.041 hops=0 epoch=2 matchId=-1 => [2]
+c 0.041 0 Adoption offer for #1:1 <= [1]
+c 0.041 0 RBS #1:1 EXPAND e=2 #inactives=0 => [1]
+c 0.041 0 Adoption offer for #1:2 <= [2]
+c 0.041 0 RBS #1:2 EXPAND e=2 #inactives=0 => [2]
+c 0.041 0 Sending job desc. of #1:0 rev. 0, size 14515, formula begins at idx 115 => [1]
+c 0.041 0 Sent id=16 => [1]
+c 0.041 0 Sending job desc. of #1:0 rev. 0, size 14515, formula begins at idx 115 => [2]
+c 0.041 0 Sent id=17 => [2]
+c 0.078 0 Watchdog sleep interrupted by signal
+c 0.103 0 #1:0 rev. 0 : found result UNSAT => [0]
+c 0.103 0 #1:0 rev. 0: sending finished info => [0]
+c 0.103 0 #1 rev. 0 solved <= [0]
+c 0.103 0 #1:0 : inform client job is done => [0]
+c 0.103 0 Propagate interruption of #1:0 ... => [1]
+c 0.103 0 Propagate interruption of #1:0 ... => [2]
+c 0.103 0 LOAD 0 (-#1:0)
+c 0.103 0 corealloc ret 3 -> 3 free
+c 0.103 0 #1:0 : terminated
+c 0.103 0 BLC insert (1,0,0.000)
+c 0.103 0 #1:0 balancing latency={num:1 min:0.00687 med:0.00687 avg:0.00687 max:0.00687}
+c 0.103 0 Forget #1:0
+c 0.103 0 FORGET #1:0
+c 0.103 0 #1:0 desires fulfilled=1.0000 latency={num:2 min:0.00046 med:0.00048 avg:0.00047 max:0.00048}
+c 0.103 0 Will receive job result for job #1 rev. 0 <= [0]
+c 0.103 0 Send result of #1 rev. 0 to client => [0]
+c 0.103 0 [CA] Root: 0 requests, 1 idle (epoch=3)
+c 0.103 0 Received result of job #1 rev. 0, code: 20 <= [0]
+c 0.103 0 RESPONSE_TIME #1 0.093157 rev. 0
+c 0.103 0 SOLUTION #1 UNSATISFIABLE rev. 0
+s UNSATISFIABLE
+c 0.104 0 Destruct worker
+c 0.104 0 #1:0 : FSJ freeing mem
+c 0.116 0 #1:0 : FSJ mem freed
+c 0.116 0 Watchdog sleep interrupted by signal
+c 0.116 0 #1:0 ready for destruction
+c 0.117 0 all jobs deleted
+c 0.117 0 Watchdog sleep interrupted by signal
+c 0.117 0 STATS balancing_latencies num:1 min:0.006870 max:0.006870 med:0.006870 mean:0.006870
+c 0.118 0 busytime=0.072
+c 0.118 0 STATS treegrowth_latencies num:2 min:0.000462 max:0.000480 med:0.000480 mean:0.000471
+c 0.123 0 Watchdog sleep interrupted by signal
+c 0.124 0 Leaving client destructor
+c 0.124 0 Watchdog sleep interrupted by signal
+c 0.173 0 Exiting happily

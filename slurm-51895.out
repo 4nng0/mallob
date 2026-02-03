@@ -1,0 +1,71 @@
+Build: Fetching SAT solvers from Github
+Build: Cleaning build/ 
+CMake Error at CMakeLists.txt:2 (project):
+  The CMAKE_C_COMPILER:
+
+    /usr/bin/cc
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+-- The C compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  The CMAKE_C_COMPILER:
+
+    /usr/bin/cc
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+make: *** [Makefile:3219: cmake_check_build_system] Error 1
+
+
+Using 12/64 cores
+Model name: Intel(R) Xeon(R) Gold 6314U CPU @ 2.30GHz
+MPI_PROCESSES: 4
+THREADS_PER_PROCESS: 3
+INSTANCES: 5
+MALLOB_OPTIONS
+-t=3
+-mono-app=SAT
+-v=4
+-satsolver=c
+-colors
+-os=1
+-q=1
+
+
+Reading path of instance Nr 1
+Processing instance Nr. 1: (/nfs/home/agoerth/mallob/scripts/server/example_in/089f909e37b3ef0c4d90687f7e22b68f-simon-r18-0.sanitized.cnf.xz)
+MY_MALLOB_OPTIONS
+-t=3
+-mono-app=SAT
+-v=4
+-satsolver=c
+-colors
+-os=1
+-q=1
+-mono=/nfs/home/agoerth/mallob/scripts/server/example_in/089f909e37b3ef0c4d90687f7e22b68f-simon-r18-0.sanitized.cnf.xz
+-log=scripts/server/example_logsntraces//1/
+-trace-dir=scripts/server/example_logsntraces//1/
+-tmp=scripts/server/example_logsntraces//1/tmp/
+
+
+--------------------------------------------------------------------------
+prterun was unable to launch the specified application as it lacked
+permissions to execute an executable:
+
+Executable: build/mallob Node: blum
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------

@@ -1,0 +1,1532 @@
+c 0.005 0 Program options: -0o=0 -J=0 -SJ=0 -T=0 -adc=0 -aim=1 -ajpc=0 -ans=0 -apidir=.api -ba=4 -bem=1 -bicg=4 -br=0 -c=1 -cbbs=0 -cblm=1 -cblp=100000 -cdel=2 -cecpm=0 -cf=0 -cfci=10 -cfm=3 -cg=1 -ch=0 -checksums=0 -cjc=0 -client-app-threads=1 -cm=0 -cmp=0 -colors=1 -compact-proof=0 -cpshm=0 -csm=3 -cusv=1 -dc=0 -decay-distr=1 -decay-max=200 -decay-mean=50 -decay-min=1 -decay-stddev=3 -decpm=0 -delaymonkey=0 -div-elim=0 -div-fanout=0 -div-init-shuffle=0 -div-native=1 -div-noise=0 -div-phases=1 -div-reduce=0 -div-seeds=1 -dpa=1 -ds=0 -evpt=500 -evu=0 -extmem-disk-dir=.disk -fapii=0 -fcll=1 -g=0 -gclls=0 -h=0 -huca=0 -iff=0 -ilbd=0 -inotify=1 -interface-fs=0 -interface-ipc=0 -ipm=1 -ivdh=1 -jc=1 -jcl=0 -jcup=0 -jjp=0 -jwl=0 -l=1 -latencymonkey=0 -lbdpi=0 -lbdpo=0 -ljpc=32 -log=scripts/server/example_logsntraces//4/ -mbt=8388608 -mcips=10 -md=0 -mempanic=1 -mjps=0 -mlbdps=2 -mlpt=50000000 -mmpi=0 -mono=/nfs/home/agoerth/mallob/scripts/server/example_in/0265448c232e3a25aa5bcd29b1b14567-x9-10051.sat.sanitized.cnf.xz -mono-app=SAT -mscf=5 -nec=10 -no-import=0 -os=1 -otfc=0 -otfcm=1 -p=0.1 -pb=1 -pbbm=0 -pef=1 -pjp=9999999 -pl=0 -plain-add-specific=0 -pph=0 -pre-cleanup=0 -prisma=0 -proof-debugging=0 -ps=0 -q=1 -qcll=60 -qlbdl=60 -randlbd=0 -reduce-delta=100 -reduce-max=980 -reduce-mean=700 -reduce-min=300 -reduce-stddev=150 -rlbd=3 -rpa=0 -rs=1 -rspaa=0 -s=0.5 -satsolver=c -scll=60 -scramble-lbds=0 -scsd=0 -seed=0 -sjd=0 -slbdl=60 -sleep=100 -spl=-1 -sswl=0 -t=3 -terminate-abruptly=0 -tmp=scripts/server/example_logsntraces//4/tmp/ -trace-dir=scripts/server/example_logsntraces//4/ -uninvert-proof=1 -v=4 -w=-1 -wam=10000 -warmup=0 -watchdog=1 -y=1 -yield=0 
+c 0.005 0 Mallob rls pid=187339 on host login
+c 0.005 0 4 workers, 1 clients
+c 0.008 0 Created client communicator
+c 0.008 0 Created worker communicator
+c 0.008 0 I am worker #0
+c 0.008 0 I am client #0
+c 0.008 0 [WARN] Num bounce alternatives must be at most half the number of workers!
+c 0.008 0 [WARN] Falling back to safe value r=2.
+c 0.008 0 My bounce alternatives: 3 1 
+c 0.009 0 Set up API connector
+c 0.011 0 Machine color 0 with 4 total workers (my rank: 0)
+c 0.011 0 Assuming application "SAT" for mono job
+c 0.011 0 [CA] Root: 0 requests, 1 idle (epoch=0)
+c 0.012 0 [CA] Root: 0 requests, 3 idle (epoch=0)
+c 0.013 0 [CA] Root: 0 requests, 4 idle (epoch=0)
+c 0.043 0 Introducing job #1 rev. 0 : r.#1:0 rev. 0 <- [0] born=0.043 hops=0 epoch=-1 matchId=-1 => [0]
+c 0.043 0 BLC insert (1,1,0.010)
+c 0.043 0 Activate r.#1:0 rev. 0 <- [0] born=0.043 hops=0 epoch=-1 matchId=-1
+c 0.043 0 ADOPT r.#1:0 rev. 0 <- [0] born=0.043 hops=1 epoch=-1 matchId=-1 mode=1 <= [0]
+c 0.043 0 corealloc req 0 -> 0 granted, 3 free
+c 0.043 0 COMMIT #1 -> #1:0
+c 0.043 0 Scheduling r.#1:0 rev. 0 <- [0] born=0.043 hops=1 epoch=-1 matchId=-1 on [0] (latency: 0.00059s)
+c 0.043 0 Sending job desc. of #1 rev. 0 of size 58891, formula begins at idx 115 => [0]
+c 0.043 0 Sent job desc. of #1 of size 58891 => [0]
+c 0.043 0 Got desc. of size 58891 for job #1 <= [0]
+c 0.043 0 UNCOMMIT #1:0
+c 0.043 0 LOAD 1 (+#1:0)
+c 0.043 0 EXECUTE #1:0 <= [0]
+c 0.043 0 #1:0 : new job node starting
+c 0.043 0 corealloc req 3 -> 3 granted, 0 free
+c 0.045 0 BLC insert (1,4,1.000)
+c 0.045 0 #1:0 : update v=1 epoch=1 lastreqsepoch=-1 evlat=0.00000
+c 0.046 0 SPA: formula with 58776 bytes
+c 0.054 0 #1:0 : update v=4 epoch=2 lastreqsepoch=1 evlat=0.00812
+c 0.054 0 #1:0 growing: r.#1:1 rev. 0 <- [0] born=0.054 hops=0 epoch=2 matchId=-1 => [1]
+c 0.054 0 #1:0 growing: r.#1:2 rev. 0 <- [0] born=0.054 hops=0 epoch=2 matchId=-1 => [2]
+c 0.054 0 Adoption offer for #1:1 <= [1]
+c 0.054 0 RBS #1:1 EXPAND e=2 #inactives=0 => [1]
+c 0.054 0 Adoption offer for #1:2 <= [2]
+c 0.054 0 RBS #1:2 EXPAND e=2 #inactives=0 => [2]
+c 0.054 0 Sending job desc. of #1:0 rev. 0, size 58891, formula begins at idx 115 => [2]
+c 0.055 0 Sent id=16 => [2]
+c 0.055 0 Sending job desc. of #1:0 rev. 0, size 58891, formula begins at idx 115 => [1]
+c 0.055 0 Sent id=17 => [1]
+c 0.080 0 Watchdog sleep interrupted by signal
+c 0.548 0 CS estinc=5899.0 estshr=5899.0 accdes=58990.0 accshr=58990.0 totdes=0 totshr=0
+c 0.548 0 CS last sharing: 0/0/5899 globally passed ~> c=1.000
+c 0.548 0 #1:0 : INIT COMM e=1 nc=2
+c 0.558 0 #1:0 CS produced cls size=1507 lits=1498/1500
+c 0.575 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0039s) ~> len=2883
+c 1.000 0 mem=0.00GB mt_cpu=0.000 mt_sys=0.000
+c 1.000 0 contexts=1 descriptions=1
+c 1.051 0 CS estinc=5899.0 estshr=4386.5 accdes=58990.0 accshr=55965.0 totdes=5899 totshr=2874
+c 1.051 0 CS last sharing: 2874/5899/5899 globally passed ~> c=1.828
+c 1.052 0 #1:0 : INIT COMM e=2 nc=2
+c 1.061 0 #1:0 CS produced cls size=2754 lits=2741/2741
+c 1.082 0 #1:0 : merged 4 contribs rev=0 (inp=10780, t=0.0062s) ~> len=7233
+c 1.201 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.00GB newreqs=3 hops=1
+c 1.201 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 1.545 0 CS estinc=5898.8 estshr=3966.1 accdes=58989.0 accshr=56848.5 totdes=11797 totshr=9354
+c 1.545 0 CS last sharing: 6480/10780/10780 globally passed ~> c=1.987
+c 1.545 0 #1:0 : INIT COMM e=3 nc=2
+c 1.555 0 #1:0 CS produced cls size=2993 lits=2980/2980
+c 1.576 0 #1:0 : merged 4 contribs rev=0 (inp=11721, t=0.0069s) ~> len=10645
+c 2.000 0 mem=0.06GB mt_cpu=0.000 mt_sys=0.000
+c 2.000 0 contexts=1 descriptions=1
+c 2.049 0 CS estinc=5898.7 estshr=4583.8 accdes=58988.1 accshr=61499.6 totdes=17695 totshr=19690
+c 2.049 0 CS last sharing: 10336/11721/11719 globally passed ~> c=0.989
+c 2.049 0 #1:0 : INIT COMM e=4 nc=2
+c 2.059 0 #1:0 CS produced cls size=1492 lits=1479/1482
+c 2.077 0 #1:0 : merged 4 contribs rev=0 (inp=5831, t=0.0039s) ~> len=5607
+c 2.201 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.23GB newreqs=0 hops=0
+c 2.201 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 2.553 0 CS estinc=5898.6 estshr=4871.4 accdes=58987.3 accshr=60449.7 totdes=23593 totshr=24790
+c 2.553 0 CS last sharing: 5100/5831/5830 globally passed ~> c=0.926
+c 2.553 0 #1:0 : INIT COMM e=5 nc=2
+c 2.563 0 #1:0 CS produced cls size=1399 lits=1386/1389
+c 2.582 0 #1:0 : merged 4 contribs rev=0 (inp=5463, t=0.0037s) ~> len=5261
+c 3.000 0 mem=0.06GB mt_cpu=0.030 mt_sys=0.667
+c 3.000 0 contexts=1 descriptions=1
+c 3.047 0 CS estinc=5898.3 estshr=5005.2 accdes=58986.6 accshr=59164.7 totdes=29491 totshr=29550
+c 3.047 0 CS last sharing: 4760/5463/5462 globally passed ~> c=1.100
+c 3.047 0 #1:0 : INIT COMM e=6 nc=2
+c 3.057 0 #1:0 CS produced cls size=1666 lits=1648/1649
+c 3.076 0 #1:0 : merged 4 contribs rev=0 (inp=6486, t=0.0041s) ~> len=6165
+c 3.201 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.25GB newreqs=0 hops=0
+c 3.201 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 3.551 0 CS estinc=5898.6 estshr=4840.0 accdes=58985.9 accshr=58388.2 totdes=35389 totshr=34690
+c 3.551 0 CS last sharing: 5140/6486/6484 globally passed ~> c=1.294
+c 3.551 0 #1:0 : INIT COMM e=7 nc=2
+c 3.561 0 #1:0 CS produced cls size=1953 lits=1935/1940
+c 3.580 0 #1:0 : merged 4 contribs rev=0 (inp=7631, t=0.0044s) ~> len=7631
+c 4.000 0 mem=0.07GB mt_cpu=0.030 mt_sys=0.667
+c 4.000 0 contexts=1 descriptions=1
+c 4.045 0 CS estinc=5898.7 estshr=4965.5 accdes=58985.3 accshr=59135.4 totdes=41287 totshr=41276
+c 4.045 0 CS last sharing: 6586/7631/7630 globally passed ~> c=1.185
+c 4.045 0 #1:0 : INIT COMM e=8 nc=2
+c 4.056 0 #1:0 CS produced cls size=1794 lits=1776/1777
+c 4.073 0 #1:0 : merged 4 contribs rev=0 (inp=6989, t=0.0044s) ~> len=7003
+c 4.202 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.26GB newreqs=0 hops=0
+c 4.202 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 4.549 0 CS estinc=5898.5 estshr=5277.9 accdes=58984.8 accshr=59845.9 totdes=47185 totshr=47900
+c 4.549 0 CS last sharing: 6624/6989/6988 globally passed ~> c=1.001
+c 4.549 0 #1:0 : INIT COMM e=9 nc=2
+c 4.559 0 #1:0 CS produced cls size=1514 lits=1496/1500
+c 4.577 0 #1:0 : merged 4 contribs rev=0 (inp=5902, t=0.0040s) ~> len=5917
+c 5.000 0 mem=0.07GB mt_cpu=0.040 mt_sys=0.500
+c 5.001 0 contexts=1 descriptions=1
+c 5.053 0 CS estinc=5898.7 estshr=5418.0 accdes=58984.3 accshr=59422.3 totdes=53083 totshr=53461
+c 5.054 0 CS last sharing: 5561/5902/5901 globally passed ~> c=1.006
+c 5.054 0 #1:0 : INIT COMM e=10 nc=2
+c 5.063 0 #1:0 CS produced cls size=1522 lits=1504/1509
+c 5.081 0 #1:0 : merged 4 contribs rev=0 (inp=5936, t=0.0039s) ~> len=5951
+c 5.202 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.28GB newreqs=0 hops=0
+c 5.202 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 5.547 0 CS estinc=5898.4 estshr=5556.2 accdes=58983.9 accshr=59211.0 totdes=58981 totshr=59192
+c 5.547 0 CS last sharing: 5731/5936/5935 globally passed ~> c=1.018
+c 5.547 0 #1:0 : INIT COMM e=11 nc=2
+c 5.557 0 #1:0 CS produced cls size=1542 lits=1524/1526
+c 5.575 0 #1:0 : merged 4 contribs rev=0 (inp=6004, t=0.0040s) ~> len=6022
+c 6.001 0 mem=0.07GB mt_cpu=0.040 mt_sys=0.750
+c 6.001 0 contexts=1 descriptions=1
+c 6.050 0 CS estinc=5898.6 estshr=5574.2 accdes=58983.5 accshr=58981.9 totdes=64879 totshr=64884
+c 6.050 0 CS last sharing: 5692/6004/6003 globally passed ~> c=1.050
+c 6.050 0 #1:0 : INIT COMM e=12 nc=2
+c 6.060 0 #1:0 CS produced cls size=1588 lits=1570/1575
+c 6.079 0 #1:0 : merged 4 contribs rev=0 (inp=6195, t=0.0040s) ~> len=6211
+c 6.203 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.29GB newreqs=0 hops=0
+c 6.203 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 6.544 0 CS estinc=5898.3 estshr=5601.9 accdes=58983.1 accshr=58996.7 totdes=70777 totshr=70797
+c 6.544 0 CS last sharing: 5913/6195/6194 globally passed ~> c=1.050
+c 6.544 0 #1:0 : INIT COMM e=13 nc=2
+c 6.555 0 #1:0 CS produced cls size=1591 lits=1573/1575
+c 6.573 0 #1:0 : merged 4 contribs rev=0 (inp=6196, t=0.0043s) ~> len=6212
+c 7.001 0 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 7.001 0 contexts=1 descriptions=1
+c 7.048 0 CS estinc=5898.4 estshr=5621.2 accdes=58982.8 accshr=59022.1 totdes=76675 totshr=76722
+c 7.048 0 CS last sharing: 5925/6196/6195 globally passed ~> c=1.044
+c 7.048 0 #1:0 : INIT COMM e=14 nc=2
+c 7.058 0 #1:0 CS produced cls size=1579 lits=1561/1565
+c 7.076 0 #1:0 : merged 4 contribs rev=0 (inp=6158, t=0.0042s) ~> len=6174
+c 7.203 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.30GB newreqs=0 hops=0
+c 7.203 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 7.552 0 CS estinc=5898.5 estshr=5617.7 accdes=58982.5 accshr=58980.9 totdes=82573 totshr=82583
+c 7.552 0 CS last sharing: 5861/6158/6157 globally passed ~> c=1.049
+c 7.552 0 #1:0 : INIT COMM e=15 nc=2
+c 7.562 0 #1:0 CS produced cls size=1586 lits=1568/1573
+c 7.581 0 #1:0 : merged 4 contribs rev=0 (inp=6188, t=0.0044s) ~> len=6203
+c 8.001 0 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 8.001 0 contexts=1 descriptions=1
+c 8.046 0 CS estinc=5898.7 estshr=5669.6 accdes=58982.3 accshr=59084.8 totdes=88471 totshr=88585
+c 8.046 0 CS last sharing: 6002/6188/6187 globally passed ~> c=1.028
+c 8.046 0 #1:0 : INIT COMM e=16 nc=2
+c 8.056 0 #1:0 CS produced cls size=1556 lits=1538/1541
+c 8.073 0 #1:0 : merged 4 contribs rev=0 (inp=6062, t=0.0034s) ~> len=6078
+c 8.204 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.32GB newreqs=0 hops=0
+c 8.204 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 8.549 0 CS estinc=5898.7 estshr=5684.5 accdes=58982.1 accshr=59033.3 totdes=94369 totshr=94442
+c 8.549 0 CS last sharing: 5857/6062/6061 globally passed ~> c=1.028
+c 8.549 0 #1:0 : INIT COMM e=17 nc=2
+c 8.559 0 #1:0 CS produced cls size=1555 lits=1537/1542
+c 8.577 0 #1:0 : merged 4 contribs rev=0 (inp=6066, t=0.0037s) ~> len=6076
+c 9.001 0 mem=0.08GB mt_cpu=0.040 mt_sys=0.750
+c 9.001 0 contexts=1 descriptions=1
+c 9.053 0 CS estinc=5898.4 estshr=5699.9 accdes=58981.8 accshr=59008.0 totdes=100267 totshr=100320
+c 9.053 0 CS last sharing: 5878/6066/6065 globally passed ~> c=1.030
+c 9.053 0 #1:0 : INIT COMM e=18 nc=2
+c 9.063 0 #1:0 CS produced cls size=1560 lits=1542/1544
+c 9.080 0 #1:0 : merged 4 contribs rev=0 (inp=6075, t=0.0029s) ~> len=6016
+c 9.204 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.32GB newreqs=0 hops=0
+c 9.204 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 9.547 0 CS estinc=5898.5 estshr=5684.2 accdes=58981.7 accshr=58945.2 totdes=106165 totshr=106158
+c 9.547 0 CS last sharing: 5838/6075/6074 globally passed ~> c=1.041
+c 9.547 0 #1:0 : INIT COMM e=19 nc=2
+c 9.557 0 #1:0 CS produced cls size=1576 lits=1558/1561
+c 9.575 0 #1:0 : merged 4 contribs rev=0 (inp=6142, t=0.0040s) ~> len=6155
+c 10.001 0 mem=0.08GB mt_cpu=0.040 mt_sys=0.500
+c 10.001 0 contexts=1 descriptions=1
+c 10.051 0 CS estinc=5898.5 estshr=5735.2 accdes=58981.5 accshr=59075.6 totdes=112063 totshr=112183
+c 10.051 0 CS last sharing: 6025/6142/6141 globally passed ~> c=1.018
+c 10.052 0 #1:0 : INIT COMM e=20 nc=2
+c 10.062 0 #1:0 CS produced cls size=1543 lits=1525/1526
+c 10.078 0 #1:0 : merged 4 contribs rev=0 (inp=6004, t=0.0039s) ~> len=6018
+c 10.204 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.32GB newreqs=0 hops=0
+c 10.204 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 10.545 0 CS estinc=5898.4 estshr=5760.3 accdes=58981.3 accshr=59057.1 totdes=117961 totshr=118072
+c 10.545 0 CS last sharing: 5889/6004/6003 globally passed ~> c=1.012
+c 10.545 0 #1:0 : INIT COMM e=21 nc=2
+c 10.555 0 #1:0 CS produced cls size=1532 lits=1514/1518
+c 10.572 0 #1:0 : merged 4 contribs rev=0 (inp=5971, t=0.0034s) ~> len=5989
+c 11.001 0 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 11.001 0 contexts=1 descriptions=1
+c 11.049 0 CS estinc=5898.6 estshr=5773.7 accdes=58981.2 accshr=59009.4 totdes=123859 totshr=123930
+c 11.049 0 CS last sharing: 5858/5971/5970 globally passed ~> c=1.016
+c 11.049 0 #1:0 : INIT COMM e=22 nc=2
+c 11.059 0 #1:0 CS produced cls size=1539 lits=1521/1523
+c 11.075 0 #1:0 : merged 4 contribs rev=0 (inp=5992, t=0.0039s) ~> len=6010
+c 11.205 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.33GB newreqs=0 hops=0
+c 11.205 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 11.553 0 CS estinc=5898.5 estshr=5787.9 accdes=58981.1 accshr=59002.4 totdes=129757 totshr=129824
+c 11.553 0 CS last sharing: 5894/5992/5991 globally passed ~> c=1.016
+c 11.553 0 #1:0 : INIT COMM e=23 nc=2
+c 11.563 0 #1:0 CS produced cls size=1541 lits=1523/1523
+c 11.579 0 #1:0 : merged 4 contribs rev=0 (inp=5990, t=0.0039s) ~> len=6006
+c 12.001 0 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 12.001 0 contexts=1 descriptions=1
+c 12.047 0 CS estinc=5898.5 estshr=5781.6 accdes=58981.0 accshr=58967.2 totdes=135655 totshr=135689
+c 12.047 0 CS last sharing: 5865/5990/5989 globally passed ~> c=1.021
+c 12.047 0 #1:0 : INIT COMM e=24 nc=2
+c 12.057 0 #1:0 CS produced cls size=1545 lits=1527/1531
+c 12.073 0 #1:0 : merged 4 contribs rev=0 (inp=6023, t=0.0036s) ~> len=6046
+c 12.205 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.34GB newreqs=0 hops=0
+c 12.205 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 12.551 0 CS estinc=5898.3 estshr=5752.7 accdes=58980.9 accshr=58915.5 totdes=141553 totshr=141534
+c 12.551 0 CS last sharing: 5845/6023/6022 globally passed ~> c=1.034
+c 12.551 0 #1:0 : INIT COMM e=25 nc=2
+c 12.561 0 #1:0 CS produced cls size=1564 lits=1546/1550
+c 12.577 0 #1:0 : merged 4 contribs rev=0 (inp=6097, t=0.0035s) ~> len=6118
+c 13.001 0 mem=0.08GB mt_cpu=0.040 mt_sys=0.500
+c 13.001 0 contexts=1 descriptions=1
+c 13.044 0 CS estinc=5898.6 estshr=5738.7 accdes=58980.8 accshr=58940.9 totdes=147451 totshr=147451
+c 13.045 0 CS last sharing: 5917/6097/6096 globally passed ~> c=1.035
+c 13.045 0 #1:0 : INIT COMM e=26 nc=2
+c 13.055 0 #1:0 CS produced cls size=1568 lits=1550/1551
+c 13.071 0 #1:0 : merged 4 contribs rev=0 (inp=6102, t=0.0036s) ~> len=6126
+c 13.205 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.33GB newreqs=0 hops=0
+c 13.205 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 13.549 0 CS estinc=5898.4 estshr=5650.7 accdes=58980.7 accshr=58801.8 totdes=153349 totshr=153206
+c 13.549 0 CS last sharing: 5755/6102/6101 globally passed ~> c=1.067
+c 13.549 0 #1:0 : INIT COMM e=27 nc=2
+c 13.559 0 #1:0 CS produced cls size=1618 lits=1594/1600
+c 13.571 0 #1:0 : merged 4 contribs rev=0 (inp=6295, t=0.0036s) ~> len=6314
+c 14.001 0 mem=0.08GB mt_cpu=0.040 mt_sys=0.500
+c 14.002 0 contexts=1 descriptions=1
+c 14.053 0 CS estinc=5898.2 estshr=5544.4 accdes=58980.6 accshr=58725.6 totdes=159247 totshr=159010
+c 14.053 0 CS last sharing: 5804/6295/6294 globally passed ~> c=1.101
+c 14.053 0 #1:0 : INIT COMM e=28 nc=2
+c 14.063 0 #1:0 CS produced cls size=1674 lits=1650/1651
+c 14.081 0 #1:0 : merged 4 contribs rev=0 (inp=6496, t=0.0040s) ~> len=6514
+c 14.206 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.35GB newreqs=0 hops=0
+c 14.206 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 14.547 0 CS estinc=5898.3 estshr=5658.8 accdes=58980.6 accshr=59211.1 totdes=165145 totshr=165368
+c 14.547 0 CS last sharing: 6358/6496/6495 globally passed ~> c=1.022
+c 14.547 0 #1:0 : INIT COMM e=29 nc=2
+c 14.557 0 #1:0 CS produced cls size=1553 lits=1529/1532
+c 14.575 0 #1:0 : merged 4 contribs rev=0 (inp=6026, t=0.0036s) ~> len=6047
+c 15.001 0 mem=0.09GB mt_cpu=0.040 mt_sys=0.500
+c 15.001 0 contexts=1 descriptions=1
+c 15.051 0 CS estinc=5898.6 estshr=5699.5 accdes=58980.5 accshr=59154.0 totdes=171043 totshr=171232
+c 15.051 0 CS last sharing: 5864/6026/6025 globally passed ~> c=1.008
+c 15.051 0 #1:0 : INIT COMM e=30 nc=2
+c 15.061 0 #1:0 CS produced cls size=1532 lits=1508/1511
+c 15.078 0 #1:0 : merged 4 contribs rev=0 (inp=5945, t=0.0036s) ~> len=5963
+c 15.206 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.35GB newreqs=0 hops=0
+c 15.206 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 15.544 0 CS estinc=5898.5 estshr=5512.2 accdes=58980.5 accshr=58605.6 totdes=176941 totshr=176599
+c 15.544 0 CS last sharing: 5367/5945/5944 globally passed ~> c=1.112
+c 15.544 0 #1:0 : INIT COMM e=31 nc=2
+c 15.554 0 #1:0 CS produced cls size=1687 lits=1663/1668
+c 15.572 0 #1:0 : merged 4 contribs rev=0 (inp=6559, t=0.0038s) ~> len=6583
+c 16.001 0 mem=0.09GB mt_cpu=0.030 mt_sys=0.667
+c 16.001 0 contexts=1 descriptions=1
+c 16.048 0 CS estinc=5898.3 estshr=5537.9 accdes=58980.4 accshr=58932.0 totdes=182839 totshr=182786
+c 16.048 0 CS last sharing: 6187/6559/6558 globally passed ~> c=1.081
+c 16.048 0 #1:0 : INIT COMM e=32 nc=2
+c 16.058 0 #1:0 CS produced cls size=1641 lits=1617/1622
+c 16.076 0 #1:0 : merged 4 contribs rev=0 (inp=6379, t=0.0038s) ~> len=6397
+c 16.207 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.36GB newreqs=0 hops=0
+c 16.207 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 16.552 0 CS estinc=5898.4 estshr=5669.2 accdes=58980.4 accshr=59311.8 totdes=188737 totshr=189059
+c 16.552 0 CS last sharing: 6273/6379/6378 globally passed ~> c=1.002
+c 16.552 0 #1:0 : INIT COMM e=33 nc=2
+c 16.562 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 16.579 0 #1:0 : merged 4 contribs rev=0 (inp=5910, t=0.0028s) ~> len=5928
+c 17.002 0 mem=0.09GB mt_cpu=0.040 mt_sys=0.250
+c 17.002 0 contexts=1 descriptions=1
+c 17.046 0 CS estinc=5898.7 estshr=5736.7 accdes=58980.3 accshr=59195.6 totdes=194635 totshr=194874
+c 17.046 0 CS last sharing: 5815/5910/5909 globally passed ~> c=0.993
+c 17.046 0 #1:0 : INIT COMM e=34 nc=2
+c 17.056 0 #1:0 CS produced cls size=1508 lits=1484/1489
+c 17.073 0 #1:0 : merged 4 contribs rev=0 (inp=5857, t=0.0032s) ~> len=5879
+c 17.207 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.36GB newreqs=0 hops=0
+c 17.207 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 17.550 0 CS estinc=5898.7 estshr=5692.3 accdes=58980.3 accshr=58884.1 totdes=200533 totshr=200482
+c 17.550 0 CS last sharing: 5608/5857/5856 globally passed ~> c=1.041
+c 17.550 0 #1:0 : INIT COMM e=35 nc=2
+c 17.560 0 #1:0 CS produced cls size=1579 lits=1555/1561
+c 17.576 0 #1:0 : merged 4 contribs rev=0 (inp=6141, t=0.0033s) ~> len=6163
+c 18.002 0 mem=0.09GB mt_cpu=0.030 mt_sys=0.333
+c 18.002 0 contexts=1 descriptions=1
+c 18.044 0 CS estinc=5898.6 estshr=5772.3 accdes=58980.3 accshr=59088.7 totdes=206431 totshr=206575
+c 18.044 0 CS last sharing: 6093/6141/6140 globally passed ~> c=1.011
+c 18.044 0 #1:0 : INIT COMM e=36 nc=2
+c 18.054 0 #1:0 CS produced cls size=1539 lits=1515/1516
+c 18.071 0 #1:0 : merged 4 contribs rev=0 (inp=5962, t=0.0037s) ~> len=5981
+c 18.208 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.36GB newreqs=0 hops=0
+c 18.208 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 18.548 0 CS estinc=5898.7 estshr=5803.4 accdes=58980.2 accshr=59076.8 totdes=212329 totshr=212472
+c 18.548 0 CS last sharing: 5897/5962/5961 globally passed ~> c=1.002
+c 18.548 0 #1:0 : INIT COMM e=37 nc=2
+c 18.558 0 #1:0 CS produced cls size=1520 lits=1496/1502
+c 18.575 0 #1:0 : merged 4 contribs rev=0 (inp=5910, t=0.0037s) ~> len=5930
+c 19.002 0 mem=0.09GB mt_cpu=0.050 mt_sys=0.600
+c 19.002 0 contexts=1 descriptions=1
+c 19.052 0 CS estinc=5898.6 estshr=5833.5 accdes=58980.2 accshr=59044.1 totdes=218227 totshr=218347
+c 19.052 0 CS last sharing: 5875/5910/5909 globally passed ~> c=1.001
+c 19.052 0 #1:0 : INIT COMM e=38 nc=2
+c 19.062 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 19.078 0 #1:0 : merged 4 contribs rev=0 (inp=5902, t=0.0037s) ~> len=5924
+c 19.208 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.37GB newreqs=0 hops=0
+c 19.208 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 19.545 0 CS estinc=5898.6 estshr=5831.1 accdes=58980.2 accshr=58971.7 totdes=224125 totshr=224179
+c 19.545 0 CS last sharing: 5832/5902/5901 globally passed ~> c=1.011
+c 19.546 0 #1:0 : INIT COMM e=39 nc=2
+c 19.555 0 #1:0 CS produced cls size=1534 lits=1510/1515
+c 19.573 0 #1:0 : merged 4 contribs rev=0 (inp=5961, t=0.0036s) ~> len=5983
+c 20.002 0 mem=0.09GB mt_cpu=0.040 mt_sys=0.500
+c 20.002 0 contexts=1 descriptions=1
+c 20.050 0 CS estinc=5898.7 estshr=5834.8 accdes=58980.2 accshr=58974.5 totdes=230023 totshr=230079
+c 20.050 0 CS last sharing: 5900/5961/5960 globally passed ~> c=1.012
+c 20.050 0 #1:0 : INIT COMM e=40 nc=2
+c 20.060 0 #1:0 CS produced cls size=1537 lits=1513/1517
+c 20.076 0 #1:0 : merged 4 contribs rev=0 (inp=5967, t=0.0029s) ~> len=5994
+c 20.209 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.37GB newreqs=0 hops=0
+c 20.209 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 20.544 0 CS estinc=5898.5 estshr=5829.5 accdes=58980.2 accshr=58969.1 totdes=235921 totshr=235971
+c 20.544 0 CS last sharing: 5892/5967/5966 globally passed ~> c=1.013
+c 20.544 0 #1:0 : INIT COMM e=41 nc=2
+c 20.554 0 #1:0 CS produced cls size=1537 lits=1513/1519
+c 20.570 0 #1:0 : merged 4 contribs rev=0 (inp=5977, t=0.0033s) ~> len=6002
+c 21.002 0 mem=0.09GB mt_cpu=0.030 mt_sys=0.667
+c 21.002 0 contexts=1 descriptions=1
+c 21.048 0 CS estinc=5898.4 estshr=5726.3 accdes=58980.1 accshr=58770.2 totdes=241819 totshr=241669
+c 21.048 0 CS last sharing: 5698/5977/5976 globally passed ~> c=1.056
+c 21.048 0 #1:0 : INIT COMM e=42 nc=2
+c 21.058 0 #1:0 CS produced cls size=1605 lits=1581/1584
+c 21.074 0 #1:0 : merged 4 contribs rev=0 (inp=6229, t=0.0035s) ~> len=6260
+c 21.209 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.38GB newreqs=0 hops=0
+c 21.209 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 21.552 0 CS estinc=5898.4 estshr=5581.7 accdes=58980.1 accshr=58635.1 totdes=247717 totshr=247411
+c 21.552 0 CS last sharing: 5742/6229/6228 globally passed ~> c=1.106
+c 21.552 0 #1:0 : INIT COMM e=43 nc=2
+c 21.562 0 #1:0 CS produced cls size=1683 lits=1659/1659
+c 21.578 0 #1:0 : merged 4 contribs rev=0 (inp=6524, t=0.0034s) ~> len=6551
+c 22.002 0 mem=0.10GB mt_cpu=0.030 mt_sys=0.333
+c 22.002 0 contexts=1 descriptions=1
+c 22.046 0 CS estinc=5898.5 estshr=5725.7 accdes=58980.1 accshr=59263.6 totdes=253615 totshr=253903
+c 22.046 0 CS last sharing: 6492/6524/6523 globally passed ~> c=1.006
+c 22.046 0 #1:0 : INIT COMM e=44 nc=2
+c 22.056 0 #1:0 CS produced cls size=1529 lits=1505/1508
+c 22.071 0 #1:0 : merged 4 contribs rev=0 (inp=5932, t=0.0029s) ~> len=5962
+c 22.210 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.39GB newreqs=0 hops=0
+c 22.210 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 22.550 0 CS estinc=5898.3 estshr=5781.1 accdes=58980.1 accshr=59207.3 totdes=259513 totshr=259773
+c 22.550 0 CS last sharing: 5870/5932/5931 globally passed ~> c=0.986
+c 22.550 0 #1:0 : INIT COMM e=45 nc=2
+c 22.560 0 #1:0 CS produced cls size=1497 lits=1473/1478
+c 22.574 0 #1:0 : merged 4 contribs rev=0 (inp=5816, t=0.0030s) ~> len=5844
+c 23.002 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 23.002 0 contexts=1 descriptions=1
+c 23.053 0 CS estinc=5898.6 estshr=5827.9 accdes=58980.1 accshr=59078.5 totdes=265411 totshr=265565
+c 23.053 0 CS last sharing: 5792/5816/5815 globally passed ~> c=0.993
+c 23.053 0 #1:0 : INIT COMM e=46 nc=2
+c 23.063 0 #1:0 CS produced cls size=1510 lits=1486/1490
+c 23.078 0 #1:0 : merged 4 contribs rev=0 (inp=5859, t=0.0030s) ~> len=5888
+c 23.210 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.39GB newreqs=0 hops=0
+c 23.210 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 23.546 0 CS estinc=5898.3 estshr=5830.7 accdes=58979.1 accshr=58965.7 totdes=271308 totshr=271360
+c 23.546 0 CS last sharing: 5795/5859/5859 globally passed ~> c=1.010
+c 23.546 0 #1:0 : INIT COMM e=47 nc=2
+c 23.556 0 #1:0 CS produced cls size=1538 lits=1514/1514
+c 23.572 0 #1:0 : merged 4 contribs rev=0 (inp=5956, t=0.0029s) ~> len=5983
+c 24.002 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 24.002 0 contexts=1 descriptions=1
+c 24.050 0 CS estinc=5898.3 estshr=5836.8 accdes=58979.2 accshr=58969.1 totdes=277206 totshr=277260
+c 24.050 0 CS last sharing: 5900/5956/5954 globally passed ~> c=1.012
+c 24.050 0 #1:0 : INIT COMM e=48 nc=2
+c 24.060 0 #1:0 CS produced cls size=1539 lits=1515/1517
+c 24.076 0 #1:0 : merged 4 contribs rev=0 (inp=5968, t=0.0031s) ~> len=5997
+c 24.210 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.39GB newreqs=0 hops=0
+c 24.210 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 24.544 0 CS estinc=5898.4 estshr=5818.7 accdes=58979.2 accshr=58941.2 totdes=283104 totshr=283129
+c 24.544 0 CS last sharing: 5869/5968/5967 globally passed ~> c=1.019
+c 24.544 0 #1:0 : INIT COMM e=49 nc=2
+c 24.554 0 #1:0 CS produced cls size=1546 lits=1522/1527
+c 24.570 0 #1:0 : merged 4 contribs rev=0 (inp=6008, t=0.0031s) ~> len=6032
+c 25.002 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 25.002 0 contexts=1 descriptions=1
+c 25.048 0 CS estinc=5898.5 estshr=5828.3 accdes=58979.3 accshr=58993.1 totdes=289002 totshr=289075
+c 25.048 0 CS last sharing: 5946/6008/6007 globally passed ~> c=1.011
+c 25.048 0 #1:0 : INIT COMM e=50 nc=2
+c 25.058 0 #1:0 CS produced cls size=1539 lits=1515/1517
+c 25.074 0 #1:0 : merged 4 contribs rev=0 (inp=5966, t=0.0029s) ~> len=5990
+c 25.210 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 25.210 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 25.552 0 CS estinc=5898.4 estshr=5840.6 accdes=58979.4 accshr=59013.8 totdes=294900 totshr=294995
+c 25.552 0 CS last sharing: 5920/5966/5965 globally passed ~> c=1.006
+c 25.552 0 #1:0 : INIT COMM e=51 nc=2
+c 25.562 0 #1:0 CS produced cls size=1530 lits=1506/1508
+c 25.578 0 #1:0 : merged 4 contribs rev=0 (inp=5931, t=0.0031s) ~> len=5956
+c 26.002 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 26.002 0 contexts=1 descriptions=1
+c 26.045 0 CS estinc=5898.5 estshr=5845.2 accdes=58979.4 accshr=58994.4 totdes=300798 totshr=300877
+c 26.045 0 CS last sharing: 5882/5931/5930 globally passed ~> c=1.006
+c 26.045 0 #1:0 : INIT COMM e=52 nc=2
+c 26.055 0 #1:0 CS produced cls size=1531 lits=1507/1509
+c 26.070 0 #1:0 : merged 4 contribs rev=0 (inp=5936, t=0.0031s) ~> len=5962
+c 26.211 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 26.211 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 26.549 0 CS estinc=5898.5 estshr=5861.9 accdes=58979.5 accshr=59010.9 totdes=306696 totshr=306793
+c 26.549 0 CS last sharing: 5916/5936/5935 globally passed ~> c=1.002
+c 26.549 0 #1:0 : INIT COMM e=53 nc=2
+c 26.559 0 #1:0 CS produced cls size=1525 lits=1501/1502
+c 26.576 0 #1:0 : merged 4 contribs rev=0 (inp=5910, t=0.0031s) ~> len=5939
+c 27.002 0 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 27.002 0 contexts=1 descriptions=1
+c 27.053 0 CS estinc=5898.4 estshr=5851.7 accdes=58979.5 accshr=58962.9 totdes=312594 totshr=312646
+c 27.053 0 CS last sharing: 5853/5910/5909 globally passed ~> c=1.009
+c 27.053 0 #1:0 : INIT COMM e=54 nc=2
+c 27.063 0 #1:0 CS produced cls size=1536 lits=1512/1513
+c 27.080 0 #1:0 : merged 4 contribs rev=0 (inp=5952, t=0.0033s) ~> len=5976
+c 27.211 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.41GB newreqs=0 hops=0
+c 27.211 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 27.547 0 CS estinc=5898.5 estshr=5853.8 accdes=58979.6 accshr=58975.6 totdes=318492 totshr=318555
+c 27.547 0 CS last sharing: 5909/5952/5951 globally passed ~> c=1.008
+c 27.547 0 #1:0 : INIT COMM e=55 nc=2
+c 27.557 0 #1:0 CS produced cls size=1535 lits=1511/1512
+c 27.572 0 #1:0 : merged 4 contribs rev=0 (inp=5948, t=0.0032s) ~> len=5968
+c 28.002 0 mem=0.10GB mt_cpu=0.050 mt_sys=0.600
+c 28.002 0 contexts=1 descriptions=1
+c 28.051 0 CS estinc=5898.3 estshr=5871.0 accdes=58979.6 accshr=59016.0 totdes=324390 totshr=324493
+c 28.051 0 CS last sharing: 5938/5948/5947 globally passed ~> c=1.000
+c 28.051 0 #1:0 : INIT COMM e=56 nc=2
+c 28.061 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 28.079 0 #1:0 : merged 4 contribs rev=0 (inp=5901, t=0.0036s) ~> len=5924
+c 28.212 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 28.212 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 28.545 0 CS estinc=5898.3 estshr=5879.6 accdes=58979.7 accshr=59005.4 totdes=330288 totshr=330384
+c 28.545 0 CS last sharing: 5891/5901/5900 globally passed ~> c=0.999
+c 28.545 0 #1:0 : INIT COMM e=57 nc=2
+c 28.555 0 #1:0 CS produced cls size=1521 lits=1497/1498
+c 28.571 0 #1:0 : merged 4 contribs rev=0 (inp=5893, t=0.0032s) ~> len=5914
+c 29.002 0 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 29.002 0 contexts=1 descriptions=1
+c 29.049 0 CS estinc=5898.2 estshr=5887.4 accdes=58979.7 accshr=58994.9 totdes=336186 totshr=336274
+c 29.049 0 CS last sharing: 5890/5893/5892 globally passed ~> c=0.999
+c 29.049 0 #1:0 : INIT COMM e=58 nc=2
+c 29.059 0 #1:0 CS produced cls size=1520 lits=1496/1498
+c 29.074 0 #1:0 : merged 4 contribs rev=0 (inp=5894, t=0.0033s) ~> len=5916
+c 29.212 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.41GB newreqs=0 hops=0
+c 29.212 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 29.553 0 CS estinc=5898.4 estshr=5883.4 accdes=58979.7 accshr=58970.4 totdes=342084 totshr=342149
+c 29.553 0 CS last sharing: 5875/5894/5893 globally passed ~> c=1.003
+c 29.553 0 #1:0 : INIT COMM e=59 nc=2
+c 29.563 0 #1:0 CS produced cls size=1517 lits=1499/1504
+c 29.579 0 #1:0 : merged 4 contribs rev=0 (inp=5917, t=0.0030s) ~> len=5940
+c 30.002 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 30.002 0 contexts=1 descriptions=1
+c 30.047 0 CS estinc=5898.4 estshr=5887.5 accdes=58979.8 accshr=58983.3 totdes=347982 totshr=348059
+c 30.047 0 CS last sharing: 5910/5917/5916 globally passed ~> c=1.002
+c 30.047 0 #1:0 : INIT COMM e=60 nc=2
+c 30.057 0 #1:0 CS produced cls size=1520 lits=1496/1502
+c 30.073 0 #1:0 : merged 4 contribs rev=0 (inp=5908, t=0.0032s) ~> len=5926
+c 30.213 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 30.213 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 30.551 0 CS estinc=5898.4 estshr=5874.5 accdes=58979.8 accshr=58956.0 totdes=353880 totshr=353930
+c 30.551 0 CS last sharing: 5871/5908/5907 globally passed ~> c=1.007
+c 30.551 0 #1:0 : INIT COMM e=61 nc=2
+c 30.561 0 #1:0 CS produced cls size=1532 lits=1508/1510
+c 30.578 0 #1:0 : merged 4 contribs rev=0 (inp=5939, t=0.0036s) ~> len=5957
+c 31.002 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 31.003 0 contexts=1 descriptions=1
+c 31.045 0 CS estinc=5898.6 estshr=5858.8 accdes=58979.8 accshr=58943.4 totdes=359778 totshr=359813
+c 31.045 0 CS last sharing: 5883/5939/5938 globally passed ~> c=1.012
+c 31.045 0 #1:0 : INIT COMM e=62 nc=2
+c 31.055 0 #1:0 CS produced cls size=1540 lits=1516/1517
+c 31.071 0 #1:0 : merged 4 contribs rev=0 (inp=5968, t=0.0033s) ~> len=5989
+c 31.214 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 31.214 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 31.548 0 CS estinc=5898.6 estshr=5875.7 accdes=58979.8 accshr=59011.1 totdes=365676 totshr=365775
+c 31.548 0 CS last sharing: 5962/5968/5967 globally passed ~> c=1.001
+c 31.548 0 #1:0 : INIT COMM e=63 nc=2
+c 31.558 0 #1:0 CS produced cls size=1521 lits=1497/1501
+c 31.575 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0033s) ~> len=5929
+c 32.002 0 mem=0.10GB mt_cpu=0.050 mt_sys=0.400
+c 32.003 0 contexts=1 descriptions=1
+c 32.052 0 CS estinc=5898.7 estshr=5886.8 accdes=58979.8 accshr=59015.0 totdes=371574 totshr=371680
+c 32.052 0 CS last sharing: 5905/5906/5905 globally passed ~> c=0.997
+c 32.052 0 #1:0 : INIT COMM e=64 nc=2
+c 32.062 0 #1:0 CS produced cls size=1517 lits=1493/1495
+c 32.079 0 #1:0 : merged 4 contribs rev=0 (inp=5881, t=0.0036s) ~> len=5905
+c 32.214 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.40GB newreqs=0 hops=0
+c 32.214 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 32.546 0 CS estinc=5898.4 estshr=5888.0 accdes=58979.8 accshr=58985.5 totdes=377472 totshr=377552
+c 32.546 0 CS last sharing: 5872/5881/5880 globally passed ~> c=1.000
+c 32.546 0 #1:0 : INIT COMM e=65 nc=2
+c 32.556 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 32.573 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0033s) ~> len=5923
+c 33.003 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 33.003 0 contexts=1 descriptions=1
+c 33.049 0 CS estinc=5898.5 estshr=5893.2 accdes=58979.9 accshr=58985.9 totdes=383370 totshr=383451
+c 33.049 0 CS last sharing: 5899/5899/5898 globally passed ~> c=1.000
+c 33.049 0 #1:0 : INIT COMM e=66 nc=2
+c 33.059 0 #1:0 CS produced cls size=1523 lits=1499/1499
+c 33.072 0 #1:0 : merged 4 contribs rev=0 (inp=5898, t=0.0032s) ~> len=5919
+c 33.214 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.41GB newreqs=0 hops=0
+c 33.214 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 33.553 0 CS estinc=5898.5 estshr=5887.9 accdes=58979.9 accshr=58969.3 totdes=389268 totshr=389333
+c 33.553 0 CS last sharing: 5882/5898/5897 globally passed ~> c=1.003
+c 33.554 0 #1:0 : INIT COMM e=67 nc=2
+c 33.564 0 #1:0 CS produced cls size=1524 lits=1500/1504
+c 33.582 0 #1:0 : merged 4 contribs rev=0 (inp=5915, t=0.0032s) ~> len=5933
+c 34.003 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 34.003 0 contexts=1 descriptions=1
+c 34.047 0 CS estinc=5898.3 estshr=5881.1 accdes=58979.9 accshr=58963.4 totdes=395166 totshr=395224
+c 34.047 0 CS last sharing: 5891/5915/5914 globally passed ~> c=1.005
+c 34.047 0 #1:0 : INIT COMM e=68 nc=2
+c 34.057 0 #1:0 CS produced cls size=1530 lits=1506/1507
+c 34.075 0 #1:0 : merged 4 contribs rev=0 (inp=5929, t=0.0032s) ~> len=5952
+c 34.215 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.41GB newreqs=0 hops=0
+c 34.215 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 34.551 0 CS estinc=5898.4 estshr=5883.3 accdes=58979.9 accshr=58983.0 totdes=401064 totshr=401140
+c 34.551 0 CS last sharing: 5916/5929/5928 globally passed ~> c=1.003
+c 34.551 0 #1:0 : INIT COMM e=69 nc=2
+c 34.561 0 #1:0 CS produced cls size=1525 lits=1501/1503
+c 34.580 0 #1:0 : merged 4 contribs rev=0 (inp=5914, t=0.0031s) ~> len=5933
+c 35.003 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.250
+c 35.003 0 contexts=1 descriptions=1
+c 35.046 0 CS estinc=5898.4 estshr=5881.8 accdes=58979.9 accshr=58980.7 totdes=406962 totshr=407036
+c 35.046 0 CS last sharing: 5896/5914/5913 globally passed ~> c=1.003
+c 35.046 0 #1:0 : INIT COMM e=70 nc=2
+c 35.056 0 #1:0 CS produced cls size=1527 lits=1503/1503
+c 35.074 0 #1:0 : merged 4 contribs rev=0 (inp=5914, t=0.0033s) ~> len=5937
+c 35.215 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 35.215 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 35.549 0 CS estinc=5898.3 estshr=5875.6 accdes=58979.9 accshr=58967.7 totdes=412860 totshr=412921
+c 35.549 0 CS last sharing: 5885/5914/5913 globally passed ~> c=1.005
+c 35.549 0 #1:0 : INIT COMM e=71 nc=2
+c 35.560 0 #1:0 CS produced cls size=1527 lits=1503/1507
+c 35.577 0 #1:0 : merged 4 contribs rev=0 (inp=5930, t=0.0032s) ~> len=5950
+c 36.003 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 36.003 0 contexts=1 descriptions=1
+c 36.053 0 CS estinc=5898.5 estshr=5882.2 accdes=58979.9 accshr=58990.9 totdes=418758 totshr=418841
+c 36.053 0 CS last sharing: 5920/5930/5929 globally passed ~> c=1.002
+c 36.053 0 #1:0 : INIT COMM e=72 nc=2
+c 36.063 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 36.076 0 #1:0 : merged 4 contribs rev=0 (inp=5909, t=0.0032s) ~> len=5931
+c 36.216 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 36.216 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 36.547 0 CS estinc=5898.5 estshr=5874.4 accdes=58979.9 accshr=58968.8 totdes=424656 totshr=424718
+c 36.547 0 CS last sharing: 5877/5909/5908 globally passed ~> c=1.005
+c 36.547 0 #1:0 : INIT COMM e=73 nc=2
+c 36.557 0 #1:0 CS produced cls size=1529 lits=1505/1507
+c 36.575 0 #1:0 : merged 4 contribs rev=0 (inp=5929, t=0.0032s) ~> len=5951
+c 37.003 0 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 37.003 0 contexts=1 descriptions=1
+c 37.051 0 CS estinc=5898.5 estshr=5882.0 accdes=58979.9 accshr=58991.9 totdes=430554 totshr=430638
+c 37.051 0 CS last sharing: 5920/5929/5928 globally passed ~> c=1.002
+c 37.051 0 #1:0 : INIT COMM e=74 nc=2
+c 37.061 0 #1:0 CS produced cls size=1523 lits=1499/1502
+c 37.079 0 #1:0 : merged 4 contribs rev=0 (inp=5908, t=0.0032s) ~> len=5926
+c 37.216 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 37.216 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 37.544 0 CS estinc=5898.4 estshr=5881.6 accdes=58979.9 accshr=58983.7 totdes=436452 totshr=436529
+c 37.544 0 CS last sharing: 5891/5908/5907 globally passed ~> c=1.002
+c 37.544 0 #1:0 : INIT COMM e=75 nc=2
+c 37.554 0 #1:0 CS produced cls size=1527 lits=1503/1503
+c 37.573 0 #1:0 : merged 4 contribs rev=0 (inp=5911, t=0.0032s) ~> len=5932
+c 38.003 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 38.003 0 contexts=1 descriptions=1
+c 38.048 0 CS estinc=5898.5 estshr=5882.7 accdes=58979.9 accshr=58981.4 totdes=442350 totshr=442425
+c 38.048 0 CS last sharing: 5896/5911/5910 globally passed ~> c=1.002
+c 38.048 0 #1:0 : INIT COMM e=76 nc=2
+c 38.058 0 #1:0 CS produced cls size=1524 lits=1500/1503
+c 38.076 0 #1:0 : merged 4 contribs rev=0 (inp=5913, t=0.0032s) ~> len=5936
+c 38.216 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 38.216 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 38.552 0 CS estinc=5898.7 estshr=5881.8 accdes=58979.9 accshr=58978.2 totdes=448248 totshr=448320
+c 38.552 0 CS last sharing: 5895/5913/5912 globally passed ~> c=1.003
+c 38.552 0 #1:0 : INIT COMM e=77 nc=2
+c 38.562 0 #1:0 CS produced cls size=1527 lits=1503/1504
+c 38.581 0 #1:0 : merged 4 contribs rev=0 (inp=5916, t=0.0032s) ~> len=5937
+c 39.003 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 39.003 0 contexts=1 descriptions=1
+c 39.046 0 CS estinc=5898.5 estshr=5885.5 accdes=58979.9 accshr=58987.4 totdes=454146 totshr=454227
+c 39.046 0 CS last sharing: 5907/5916/5915 globally passed ~> c=1.001
+c 39.046 0 #1:0 : INIT COMM e=78 nc=2
+c 39.056 0 #1:0 CS produced cls size=1520 lits=1496/1502
+c 39.075 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0034s) ~> len=5929
+c 39.217 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 39.217 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 39.550 0 CS estinc=5898.3 estshr=5885.8 accdes=58980.0 accshr=58982.6 totdes=460044 totshr=460121
+c 39.550 0 CS last sharing: 5894/5906/5905 globally passed ~> c=1.002
+c 39.550 0 #1:0 : INIT COMM e=79 nc=2
+c 39.560 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 39.578 0 #1:0 : merged 4 contribs rev=0 (inp=5908, t=0.0032s) ~> len=5928
+c 40.003 0 mem=0.11GB mt_cpu=0.050 mt_sys=0.400
+c 40.003 0 contexts=1 descriptions=1
+c 40.044 0 CS estinc=5898.4 estshr=5890.2 accdes=58980.0 accshr=58988.4 totdes=465942 totshr=466025
+c 40.044 0 CS last sharing: 5904/5908/5907 globally passed ~> c=1.000
+c 40.044 0 #1:0 : INIT COMM e=80 nc=2
+c 40.054 0 #1:0 CS produced cls size=1518 lits=1494/1500
+c 40.072 0 #1:0 : merged 4 contribs rev=0 (inp=5900, t=0.0032s) ~> len=5923
+c 40.217 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 40.217 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 40.547 0 CS estinc=5898.3 estshr=5884.7 accdes=58980.0 accshr=58970.5 totdes=471840 totshr=471906
+c 40.547 0 CS last sharing: 5881/5900/5899 globally passed ~> c=1.003
+c 40.547 0 #1:0 : INIT COMM e=81 nc=2
+c 40.557 0 #1:0 CS produced cls size=1523 lits=1499/1504
+c 40.576 0 #1:0 : merged 4 contribs rev=0 (inp=5917, t=0.0033s) ~> len=5936
+c 41.003 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 41.003 0 contexts=1 descriptions=1
+c 41.051 0 CS estinc=5898.3 estshr=5886.5 accdes=58980.0 accshr=58980.5 totdes=477738 totshr=477813
+c 41.051 0 CS last sharing: 5907/5917/5916 globally passed ~> c=1.002
+c 41.051 0 #1:0 : INIT COMM e=82 nc=2
+c 41.061 0 #1:0 CS produced cls size=1524 lits=1500/1503
+c 41.080 0 #1:0 : merged 4 contribs rev=0 (inp=5911, t=0.0032s) ~> len=5935
+c 41.217 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.42GB newreqs=0 hops=0
+c 41.217 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 41.545 0 CS estinc=5898.2 estshr=5892.3 accdes=58980.0 accshr=58993.4 totdes=483636 totshr=483724
+c 41.545 0 CS last sharing: 5911/5911/5910 globally passed ~> c=0.999
+c 41.545 0 #1:0 : INIT COMM e=83 nc=2
+c 41.555 0 #1:0 CS produced cls size=1518 lits=1494/1499
+c 41.575 0 #1:0 : merged 4 contribs rev=0 (inp=5895, t=0.0032s) ~> len=5919
+c 42.003 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 42.003 0 contexts=1 descriptions=1
+c 42.048 0 CS estinc=5898.4 estshr=5892.9 accdes=58980.0 accshr=58984.1 totdes=489534 totshr=489614
+c 42.048 0 CS last sharing: 5890/5895/5894 globally passed ~> c=1.000
+c 42.048 0 #1:0 : INIT COMM e=84 nc=2
+c 42.059 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 42.074 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0031s) ~> len=5918
+c 42.218 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.43GB newreqs=0 hops=0
+c 42.218 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 42.552 0 CS estinc=5898.5 estshr=5886.3 accdes=58980.0 accshr=58965.7 totdes=495432 totshr=495494
+c 42.552 0 CS last sharing: 5880/5899/5898 globally passed ~> c=1.004
+c 42.552 0 #1:0 : INIT COMM e=85 nc=2
+c 42.562 0 #1:0 CS produced cls size=1522 lits=1504/1505
+c 42.582 0 #1:0 : merged 4 contribs rev=0 (inp=5920, t=0.0034s) ~> len=5942
+c 43.003 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 43.003 0 contexts=1 descriptions=1
+c 43.046 0 CS estinc=5898.6 estshr=5887.5 accdes=58980.0 accshr=58979.1 totdes=501330 totshr=501404
+c 43.046 0 CS last sharing: 5910/5920/5919 globally passed ~> c=1.002
+c 43.046 0 #1:0 : INIT COMM e=86 nc=2
+c 43.056 0 #1:0 CS produced cls size=1527 lits=1503/1503
+c 43.076 0 #1:0 : merged 4 contribs rev=0 (inp=5912, t=0.0034s) ~> len=5936
+c 43.218 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 43.218 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 43.550 0 CS estinc=5898.4 estshr=5881.4 accdes=58980.0 accshr=58970.2 totdes=507228 totshr=507293
+c 43.550 0 CS last sharing: 5889/5912/5911 globally passed ~> c=1.004
+c 43.550 0 #1:0 : INIT COMM e=87 nc=2
+c 43.560 0 #1:0 CS produced cls size=1526 lits=1502/1506
+c 43.579 0 #1:0 : merged 4 contribs rev=0 (inp=5923, t=0.0034s) ~> len=5944
+c 44.003 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 44.003 0 contexts=1 descriptions=1
+c 44.044 0 CS estinc=5898.6 estshr=5876.6 accdes=58980.0 accshr=58969.2 totdes=513126 totshr=513189
+c 44.044 0 CS last sharing: 5896/5923/5922 globally passed ~> c=1.005
+c 44.044 0 #1:0 : INIT COMM e=88 nc=2
+c 44.054 0 #1:0 CS produced cls size=1531 lits=1507/1507
+c 44.073 0 #1:0 : merged 4 contribs rev=0 (inp=5930, t=0.0034s) ~> len=5950
+c 44.218 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 44.218 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 44.548 0 CS estinc=5898.7 estshr=5883.3 accdes=58980.0 accshr=58993.3 totdes=519024 totshr=519110
+c 44.548 0 CS last sharing: 5921/5930/5929 globally passed ~> c=1.001
+c 44.548 0 #1:0 : INIT COMM e=89 nc=2
+c 44.558 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 44.577 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0036s) ~> len=5924
+c 45.003 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 45.003 0 contexts=1 descriptions=1
+c 45.052 0 CS estinc=5898.4 estshr=5881.2 accdes=58980.0 accshr=58980.9 totdes=524922 totshr=524997
+c 45.052 0 CS last sharing: 5887/5906/5905 globally passed ~> c=1.002
+c 45.052 0 #1:0 : INIT COMM e=90 nc=2
+c 45.062 0 #1:0 CS produced cls size=1522 lits=1498/1503
+c 45.081 0 #1:0 : merged 4 contribs rev=0 (inp=5913, t=0.0034s) ~> len=5937
+c 45.219 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 45.219 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 45.545 0 CS estinc=5898.4 estshr=5887.3 accdes=58980.0 accshr=58990.8 totdes=530820 totshr=530905
+c 45.545 0 CS last sharing: 5908/5913/5912 globally passed ~> c=1.001
+c 45.545 0 #1:0 : INIT COMM e=91 nc=2
+c 45.555 0 #1:0 CS produced cls size=1522 lits=1498/1500
+c 45.576 0 #1:0 : merged 4 contribs rev=0 (inp=5902, t=0.0031s) ~> len=5922
+c 46.003 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 46.003 0 contexts=1 descriptions=1
+c 46.049 0 CS estinc=5898.6 estshr=5880.1 accdes=58980.0 accshr=58967.8 totdes=536718 totshr=536781
+c 46.049 0 CS last sharing: 5876/5902/5901 globally passed ~> c=1.004
+c 46.049 0 #1:0 : INIT COMM e=92 nc=2
+c 46.059 0 #1:0 CS produced cls size=1527 lits=1503/1506
+c 46.080 0 #1:0 : merged 4 contribs rev=0 (inp=5924, t=0.0032s) ~> len=5947
+c 46.219 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 46.219 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 46.553 0 CS estinc=5898.7 estshr=5883.4 accdes=58980.0 accshr=58983.0 totdes=542616 totshr=542693
+c 46.553 0 CS last sharing: 5912/5924/5923 globally passed ~> c=1.003
+c 46.553 0 #1:0 : INIT COMM e=93 nc=2
+c 46.563 0 #1:0 CS produced cls size=1524 lits=1500/1503
+c 46.583 0 #1:0 : merged 4 contribs rev=0 (inp=5913, t=0.0034s) ~> len=5935
+c 47.003 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 47.004 0 contexts=1 descriptions=1
+c 47.047 0 CS estinc=5898.4 estshr=5879.8 accdes=58980.0 accshr=58975.7 totdes=548514 totshr=548584
+c 47.047 0 CS last sharing: 5891/5913/5912 globally passed ~> c=1.004
+c 47.047 0 #1:0 : INIT COMM e=94 nc=2
+c 47.057 0 #1:0 CS produced cls size=1519 lits=1501/1505
+c 47.078 0 #1:0 : merged 4 contribs rev=0 (inp=5920, t=0.0034s) ~> len=5944
+c 47.220 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 47.220 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 47.551 0 CS estinc=5898.5 estshr=5883.7 accdes=58980.0 accshr=58987.1 totdes=554412 totshr=554493
+c 47.551 0 CS last sharing: 5909/5920/5919 globally passed ~> c=1.002
+c 47.551 0 #1:0 : INIT COMM e=95 nc=2
+c 47.561 0 #1:0 CS produced cls size=1519 lits=1501/1502
+c 47.592 0 #1:0 : merged 4 contribs rev=0 (inp=5909, t=0.0035s) ~> len=5928
+c 48.004 0 mem=0.11GB mt_cpu=0.030 mt_sys=0.333
+c 48.004 0 contexts=1 descriptions=1
+c 48.045 0 CS estinc=5898.6 estshr=5888.7 accdes=58980.0 accshr=58992.4 totdes=560310 totshr=560397
+c 48.045 0 CS last sharing: 5904/5909/5908 globally passed ~> c=1.000
+c 48.045 0 #1:0 : INIT COMM e=96 nc=2
+c 48.055 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 48.085 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0035s) ~> len=5919
+c 48.220 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 48.220 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 48.549 0 CS estinc=5898.8 estshr=5880.8 accdes=58980.0 accshr=58966.2 totdes=566208 totshr=566270
+c 48.549 0 CS last sharing: 5873/5899/5898 globally passed ~> c=1.004
+c 48.549 0 #1:0 : INIT COMM e=97 nc=2
+c 48.559 0 #1:0 CS produced cls size=1522 lits=1504/1506
+c 48.590 0 #1:0 : merged 4 contribs rev=0 (inp=5924, t=0.0034s) ~> len=5948
+c 49.004 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.750
+c 49.004 0 contexts=1 descriptions=1
+c 49.053 0 CS estinc=5898.6 estshr=5887.2 accdes=58980.0 accshr=58988.5 totdes=572106 totshr=572189
+c 49.053 0 CS last sharing: 5919/5924/5923 globally passed ~> c=1.001
+c 49.053 0 #1:0 : INIT COMM e=98 nc=2
+c 49.063 0 #1:0 CS produced cls size=1523 lits=1499/1501
+c 49.074 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0035s) ~> len=5928
+c 49.221 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 49.221 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 49.547 0 CS estinc=5898.6 estshr=5883.9 accdes=58980.0 accshr=58977.7 totdes=578004 totshr=578077
+c 49.547 0 CS last sharing: 5888/5906/5905 globally passed ~> c=1.003
+c 49.547 0 #1:0 : INIT COMM e=99 nc=2
+c 49.557 0 #1:0 CS produced cls size=1526 lits=1502/1503
+c 49.567 0 #1:0 : merged 4 contribs rev=0 (inp=5914, t=0.0034s) ~> len=5933
+c 50.004 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 50.004 0 contexts=1 descriptions=1
+c 50.051 0 CS estinc=5898.7 estshr=5880.9 accdes=58980.0 accshr=58972.9 totdes=583902 totshr=583970
+c 50.051 0 CS last sharing: 5893/5914/5913 globally passed ~> c=1.004
+c 50.051 0 #1:0 : INIT COMM e=100 nc=2
+c 50.061 0 #1:0 CS produced cls size=1525 lits=1501/1505
+c 50.080 0 #1:0 : merged 4 contribs rev=0 (inp=5921, t=0.0034s) ~> len=5944
+c 50.221 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 50.221 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 50.545 0 CS estinc=5898.4 estshr=5876.5 accdes=58980.0 accshr=58970.6 totdes=589800 totshr=589865
+c 50.545 0 CS last sharing: 5895/5921/5920 globally passed ~> c=1.005
+c 50.545 0 #1:0 : INIT COMM e=101 nc=2
+c 50.555 0 #1:0 CS produced cls size=1522 lits=1504/1507
+c 50.585 0 #1:0 : merged 4 contribs rev=0 (inp=5928, t=0.0034s) ~> len=5946
+c 51.004 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 51.004 0 contexts=1 descriptions=1
+c 51.049 0 CS estinc=5898.4 estshr=5873.5 accdes=58980.0 accshr=58973.6 totdes=595698 totshr=595765
+c 51.049 0 CS last sharing: 5900/5928/5927 globally passed ~> c=1.005
+c 51.049 0 #1:0 : INIT COMM e=102 nc=2
+c 51.059 0 #1:0 CS produced cls size=1520 lits=1502/1507
+c 51.089 0 #1:0 : merged 4 contribs rev=0 (inp=5930, t=0.0034s) ~> len=5951
+c 51.221 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.44GB newreqs=0 hops=0
+c 51.221 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 51.553 0 CS estinc=5898.6 estshr=5873.3 accdes=58980.0 accshr=58980.2 totdes=601596 totshr=601669
+c 51.553 0 CS last sharing: 5904/5930/5929 globally passed ~> c=1.004
+c 51.553 0 #1:0 : INIT COMM e=103 nc=2
+c 51.563 0 #1:0 CS produced cls size=1529 lits=1505/1506
+c 51.583 0 #1:0 : merged 4 contribs rev=0 (inp=5925, t=0.0034s) ~> len=5944
+c 52.004 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 52.004 0 contexts=1 descriptions=1
+c 52.046 0 CS estinc=5898.6 estshr=5878.0 accdes=58980.0 accshr=58991.2 totdes=607494 totshr=607578
+c 52.046 0 CS last sharing: 5909/5925/5924 globally passed ~> c=1.002
+c 52.046 0 #1:0 : INIT COMM e=104 nc=2
+c 52.056 0 #1:0 CS produced cls size=1521 lits=1497/1503
+c 52.077 0 #1:0 : merged 4 contribs rev=0 (inp=5911, t=0.0034s) ~> len=5930
+c 52.222 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 52.222 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 52.550 0 CS estinc=5898.4 estshr=5884.1 accdes=58980.0 accshr=58995.1 totdes=613392 totshr=613481
+c 52.550 0 CS last sharing: 5903/5911/5910 globally passed ~> c=1.000
+c 52.550 0 #1:0 : INIT COMM e=105 nc=2
+c 52.560 0 #1:0 CS produced cls size=1518 lits=1500/1500
+c 52.580 0 #1:0 : merged 4 contribs rev=0 (inp=5900, t=0.0032s) ~> len=5924
+c 53.004 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 53.004 0 contexts=1 descriptions=1
+c 53.044 0 CS estinc=5898.2 estshr=5887.1 accdes=58980.0 accshr=58987.6 totdes=619290 totshr=619373
+c 53.044 0 CS last sharing: 5892/5900/5899 globally passed ~> c=1.001
+c 53.044 0 #1:0 : INIT COMM e=106 nc=2
+c 53.054 0 #1:0 CS produced cls size=1519 lits=1495/1500
+c 53.074 0 #1:0 : merged 4 contribs rev=0 (inp=5902, t=0.0035s) ~> len=5925
+c 53.222 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 53.222 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 53.548 0 CS estinc=5898.5 estshr=5881.9 accdes=58980.0 accshr=58968.8 totdes=625188 totshr=625253
+c 53.548 0 CS last sharing: 5880/5902/5901 globally passed ~> c=1.004
+c 53.548 0 #1:0 : INIT COMM e=107 nc=2
+c 53.558 0 #1:0 CS produced cls size=1524 lits=1500/1505
+c 53.589 0 #1:0 : merged 4 contribs rev=0 (inp=5921, t=0.0034s) ~> len=5944
+c 54.004 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 54.004 0 contexts=1 descriptions=1
+c 54.052 0 CS estinc=5898.3 estshr=5883.5 accdes=58980.0 accshr=58979.9 totdes=631086 totshr=631161
+c 54.052 0 CS last sharing: 5908/5921/5920 globally passed ~> c=1.003
+c 54.052 0 #1:0 : INIT COMM e=108 nc=2
+c 54.062 0 #1:0 CS produced cls size=1527 lits=1503/1504
+c 54.093 0 #1:0 : merged 4 contribs rev=0 (inp=5915, t=0.0034s) ~> len=5937
+c 54.223 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 54.223 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 54.546 0 CS estinc=5898.4 estshr=5881.1 accdes=58980.0 accshr=58976.9 totdes=636984 totshr=637056
+c 54.546 0 CS last sharing: 5895/5915/5914 globally passed ~> c=1.003
+c 54.546 0 #1:0 : INIT COMM e=109 nc=2
+c 54.556 0 #1:0 CS produced cls size=1528 lits=1504/1504
+c 54.586 0 #1:0 : merged 4 contribs rev=0 (inp=5918, t=0.0031s) ~> len=5936
+c 55.004 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 55.004 0 contexts=1 descriptions=1
+c 55.050 0 CS estinc=5898.4 estshr=5881.7 accdes=58980.0 accshr=58981.2 totdes=642882 totshr=642958
+c 55.050 0 CS last sharing: 5902/5918/5917 globally passed ~> c=1.003
+c 55.050 0 #1:0 : INIT COMM e=110 nc=2
+c 55.060 0 #1:0 CS produced cls size=1524 lits=1500/1504
+c 55.090 0 #1:0 : merged 4 contribs rev=0 (inp=5915, t=0.0032s) ~> len=5935
+c 55.223 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 55.223 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 55.544 0 CS estinc=5898.5 estshr=5882.2 accdes=58980.0 accshr=58982.1 totdes=648780 totshr=648857
+c 55.544 0 CS last sharing: 5899/5915/5914 globally passed ~> c=1.002
+c 55.544 0 #1:0 : INIT COMM e=111 nc=2
+c 55.554 0 #1:0 CS produced cls size=1527 lits=1503/1503
+c 55.575 0 #1:0 : merged 4 contribs rev=0 (inp=5913, t=0.0034s) ~> len=5931
+c 56.004 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 56.005 0 contexts=1 descriptions=1
+c 56.048 0 CS estinc=5898.5 estshr=5884.3 accdes=58980.0 accshr=58984.9 totdes=654678 totshr=654758
+c 56.048 0 CS last sharing: 5901/5913/5912 globally passed ~> c=1.002
+c 56.048 0 #1:0 : INIT COMM e=112 nc=2
+c 56.058 0 #1:0 CS produced cls size=1519 lits=1501/1502
+c 56.080 0 #1:0 : merged 4 contribs rev=0 (inp=5909, t=0.0035s) ~> len=5931
+c 56.223 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 56.223 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 56.552 0 CS estinc=5898.6 estshr=5883.5 accdes=58980.0 accshr=58979.4 totdes=660576 totshr=660651
+c 56.552 0 CS last sharing: 5893/5909/5908 globally passed ~> c=1.002
+c 56.552 0 #1:0 : INIT COMM e=113 nc=2
+c 56.562 0 #1:0 CS produced cls size=1525 lits=1501/1503
+c 56.584 0 #1:0 : merged 4 contribs rev=0 (inp=5913, t=0.0034s) ~> len=5936
+c 57.004 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 57.005 0 contexts=1 descriptions=1
+c 57.045 0 CS estinc=5898.5 estshr=5890.5 accdes=58980.0 accshr=58993.5 totdes=666474 totshr=666563
+c 57.045 0 CS last sharing: 5912/5913/5912 globally passed ~> c=1.000
+c 57.045 0 #1:0 : INIT COMM e=114 nc=2
+c 57.056 0 #1:0 CS produced cls size=1519 lits=1495/1499
+c 57.078 0 #1:0 : merged 4 contribs rev=0 (inp=5897, t=0.0035s) ~> len=5915
+c 57.223 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 57.223 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 57.550 0 CS estinc=5898.5 estshr=5883.0 accdes=58980.0 accshr=58968.1 totdes=672372 totshr=672437
+c 57.550 0 CS last sharing: 5874/5897/5896 globally passed ~> c=1.004
+c 57.550 0 #1:0 : INIT COMM e=115 nc=2
+c 57.560 0 #1:0 CS produced cls size=1529 lits=1505/1505
+c 57.582 0 #1:0 : merged 4 contribs rev=0 (inp=5920, t=0.0036s) ~> len=5938
+c 58.005 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 58.005 0 contexts=1 descriptions=1
+c 58.044 0 CS estinc=5898.4 estshr=5877.2 accdes=58980.0 accshr=58964.3 totdes=678270 totshr=678330
+c 58.044 0 CS last sharing: 5893/5920/5919 globally passed ~> c=1.006
+c 58.044 0 #1:0 : INIT COMM e=116 nc=2
+c 58.054 0 #1:0 CS produced cls size=1528 lits=1504/1508
+c 58.075 0 #1:0 : merged 4 contribs rev=0 (inp=5932, t=0.0034s) ~> len=5951
+c 58.224 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 58.224 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 58.548 0 CS estinc=5898.2 estshr=5885.1 accdes=58980.0 accshr=58994.9 totdes=684168 totshr=684257
+c 58.548 0 CS last sharing: 5927/5932/5931 globally passed ~> c=1.001
+c 58.548 0 #1:0 : INIT COMM e=117 nc=2
+c 58.558 0 #1:0 CS produced cls size=1522 lits=1498/1501
+c 58.580 0 #1:0 : merged 4 contribs rev=0 (inp=5904, t=0.0035s) ~> len=5923
+c 59.005 0 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 59.005 0 contexts=1 descriptions=1
+c 59.052 0 CS estinc=5898.4 estshr=5880.9 accdes=58980.0 accshr=58977.4 totdes=690066 totshr=690139
+c 59.052 0 CS last sharing: 5882/5904/5903 globally passed ~> c=1.003
+c 59.052 0 #1:0 : INIT COMM e=118 nc=2
+c 59.062 0 #1:0 CS produced cls size=1522 lits=1498/1504
+c 59.084 0 #1:0 : merged 4 contribs rev=0 (inp=5916, t=0.0034s) ~> len=5935
+c 59.224 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 59.224 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 59.545 0 CS estinc=5898.6 estshr=5879.4 accdes=58980.0 accshr=58974.6 totdes=695964 totshr=696034
+c 59.545 0 CS last sharing: 5895/5916/5915 globally passed ~> c=1.004
+c 59.546 0 #1:0 : INIT COMM e=119 nc=2
+c 59.555 0 #1:0 CS produced cls size=1526 lits=1502/1505
+c 59.577 0 #1:0 : merged 4 contribs rev=0 (inp=5922, t=0.0031s) ~> len=5945
+c 60.005 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 60.005 0 contexts=1 descriptions=1
+c 60.049 0 CS estinc=5898.7 estshr=5860.2 accdes=58980.0 accshr=58941.2 totdes=701862 totshr=701898
+c 60.049 0 CS last sharing: 5864/5922/5921 globally passed ~> c=1.011
+c 60.049 0 #1:0 : INIT COMM e=120 nc=2
+c 60.059 0 #1:0 CS produced cls size=1539 lits=1515/1517
+c 60.081 0 #1:0 : merged 4 contribs rev=0 (inp=5965, t=0.0035s) ~> len=5985
+c 60.225 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.45GB newreqs=0 hops=0
+c 60.225 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 60.553 0 CS estinc=5898.4 estshr=5877.2 accdes=58980.0 accshr=59008.1 totdes=707760 totshr=707859
+c 60.553 0 CS last sharing: 5961/5965/5964 globally passed ~> c=1.001
+c 60.553 0 #1:0 : INIT COMM e=121 nc=2
+c 60.563 0 #1:0 CS produced cls size=1525 lits=1501/1502
+c 60.585 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0031s) ~> len=5924
+c 61.005 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 61.005 0 contexts=1 descriptions=1
+c 61.047 0 CS estinc=5898.3 estshr=5882.2 accdes=58980.0 accshr=59002.2 totdes=713658 totshr=713754
+c 61.047 0 CS last sharing: 5895/5906/5905 globally passed ~> c=0.999
+c 61.047 0 #1:0 : INIT COMM e=122 nc=2
+c 61.057 0 #1:0 CS produced cls size=1517 lits=1493/1499
+c 61.079 0 #1:0 : merged 4 contribs rev=0 (inp=5895, t=0.0035s) ~> len=5916
+c 61.225 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 61.225 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 61.551 0 CS estinc=5898.3 estshr=5888.8 accdes=58980.0 accshr=58994.0 totdes=719556 totshr=719646
+c 61.551 0 CS last sharing: 5892/5895/5894 globally passed ~> c=0.999
+c 61.551 0 #1:0 : INIT COMM e=123 nc=2
+c 61.561 0 #1:0 CS produced cls size=1516 lits=1492/1498
+c 61.578 0 #1:0 : merged 4 contribs rev=0 (inp=5894, t=0.0032s) ~> len=5914
+c 62.005 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.667
+c 62.005 0 contexts=1 descriptions=1
+c 62.045 0 CS estinc=5898.3 estshr=5877.5 accdes=58980.0 accshr=58956.6 totdes=725454 totshr=725508
+c 62.045 0 CS last sharing: 5862/5894/5893 globally passed ~> c=1.006
+c 62.045 0 #1:0 : INIT COMM e=124 nc=2
+c 62.055 0 #1:0 CS produced cls size=1528 lits=1504/1508
+c 62.077 0 #1:0 : merged 4 contribs rev=0 (inp=5933, t=0.0034s) ~> len=5957
+c 62.226 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 62.226 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 62.549 0 CS estinc=5898.4 estshr=5882.5 accdes=58980.0 accshr=58983.0 totdes=731352 totshr=731430
+c 62.549 0 CS last sharing: 5922/5933/5932 globally passed ~> c=1.003
+c 62.549 0 #1:0 : INIT COMM e=125 nc=2
+c 62.559 0 #1:0 CS produced cls size=1528 lits=1504/1504
+c 62.580 0 #1:0 : merged 4 contribs rev=0 (inp=5916, t=0.0034s) ~> len=5935
+c 63.005 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 63.005 0 contexts=1 descriptions=1
+c 63.053 0 CS estinc=5898.6 estshr=5883.2 accdes=58980.0 accshr=58985.7 totdes=737250 totshr=737331
+c 63.053 0 CS last sharing: 5901/5916/5915 globally passed ~> c=1.002
+c 63.053 0 #1:0 : INIT COMM e=126 nc=2
+c 63.063 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 63.085 0 #1:0 : merged 4 contribs rev=0 (inp=5910, t=0.0038s) ~> len=5929
+c 63.226 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 63.226 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 63.547 0 CS estinc=5898.7 estshr=5886.0 accdes=58980.0 accshr=58987.1 totdes=743148 totshr=743231
+c 63.547 0 CS last sharing: 5900/5910/5909 globally passed ~> c=1.001
+c 63.547 0 #1:0 : INIT COMM e=127 nc=2
+c 63.557 0 #1:0 CS produced cls size=1521 lits=1497/1501
+c 63.579 0 #1:0 : merged 4 contribs rev=0 (inp=5905, t=0.0036s) ~> len=5923
+c 64.005 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 64.005 0 contexts=1 descriptions=1
+c 64.051 0 CS estinc=5898.5 estshr=5870.1 accdes=58980.0 accshr=58949.4 totdes=749046 totshr=749092
+c 64.051 0 CS last sharing: 5861/5905/5904 globally passed ~> c=1.008
+c 64.051 0 #1:0 : INIT COMM e=128 nc=2
+c 64.061 0 #1:0 CS produced cls size=1534 lits=1510/1512
+c 64.083 0 #1:0 : merged 4 contribs rev=0 (inp=5947, t=0.0033s) ~> len=5965
+c 64.227 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 64.227 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 64.545 0 CS estinc=5898.4 estshr=5869.3 accdes=58980.0 accshr=58971.4 totdes=754944 totshr=755009
+c 64.545 0 CS last sharing: 5917/5947/5946 globally passed ~> c=1.007
+c 64.545 0 #1:0 : INIT COMM e=129 nc=2
+c 64.555 0 #1:0 CS produced cls size=1531 lits=1507/1510
+c 64.577 0 #1:0 : merged 4 contribs rev=0 (inp=5938, t=0.0034s) ~> len=5961
+c 65.005 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.750
+c 65.005 0 contexts=1 descriptions=1
+c 65.048 0 CS estinc=5898.2 estshr=5874.8 accdes=58980.0 accshr=58994.3 totdes=760842 totshr=760929
+c 65.048 0 CS last sharing: 5920/5938/5937 globally passed ~> c=1.003
+c 65.048 0 #1:0 : INIT COMM e=130 nc=2
+c 65.058 0 #1:0 CS produced cls size=1527 lits=1503/1503
+c 65.081 0 #1:0 : merged 4 contribs rev=0 (inp=5914, t=0.0034s) ~> len=5933
+c 65.227 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 65.227 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 65.552 0 CS estinc=5898.5 estshr=5884.2 accdes=58980.0 accshr=59003.9 totdes=766740 totshr=766838
+c 65.552 0 CS last sharing: 5909/5914/5913 globally passed ~> c=0.999
+c 65.552 0 #1:0 : INIT COMM e=131 nc=2
+c 65.562 0 #1:0 CS produced cls size=1520 lits=1496/1498
+c 65.579 0 #1:0 : merged 4 contribs rev=0 (inp=5894, t=0.0034s) ~> len=5913
+c 66.005 0 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 66.005 0 contexts=1 descriptions=1
+c 66.045 0 CS estinc=5898.6 estshr=5882.0 accdes=58980.0 accshr=58978.5 totdes=772638 totshr=772713
+c 66.045 0 CS last sharing: 5875/5894/5893 globally passed ~> c=1.002
+c 66.045 0 #1:0 : INIT COMM e=132 nc=2
+c 66.055 0 #1:0 CS produced cls size=1521 lits=1497/1503
+c 66.072 0 #1:0 : merged 4 contribs rev=0 (inp=5912, t=0.0031s) ~> len=5932
+c 66.228 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.47GB newreqs=0 hops=0
+c 66.228 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 66.549 0 CS estinc=5898.5 estshr=5883.2 accdes=58980.0 accshr=58978.6 totdes=778536 totshr=778611
+c 66.549 0 CS last sharing: 5898/5912/5911 globally passed ~> c=1.003
+c 66.549 0 #1:0 : INIT COMM e=133 nc=2
+c 66.559 0 #1:0 CS produced cls size=1526 lits=1502/1504
+c 66.583 0 #1:0 : merged 4 contribs rev=0 (inp=5915, t=0.0031s) ~> len=5936
+c 67.005 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 67.006 0 contexts=1 descriptions=1
+c 67.053 0 CS estinc=5898.7 estshr=5889.6 accdes=58980.0 accshr=58992.8 totdes=784434 totshr=784523
+c 67.053 0 CS last sharing: 5912/5915/5914 globally passed ~> c=1.000
+c 67.053 0 #1:0 : INIT COMM e=134 nc=2
+c 67.063 0 #1:0 CS produced cls size=1520 lits=1496/1500
+c 67.087 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0034s) ~> len=5923
+c 67.228 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.47GB newreqs=0 hops=0
+c 67.228 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 67.546 0 CS estinc=5898.7 estshr=5891.1 accdes=58980.0 accshr=58986.5 totdes=790332 totshr=790416
+c 67.546 0 CS last sharing: 5893/5899/5898 globally passed ~> c=1.000
+c 67.546 0 #1:0 : INIT COMM e=135 nc=2
+c 67.556 0 #1:0 CS produced cls size=1522 lits=1498/1500
+c 67.581 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0031s) ~> len=5923
+c 68.006 0 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 68.006 0 contexts=1 descriptions=1
+c 68.050 0 CS estinc=5898.4 estshr=5891.6 accdes=58980.0 accshr=58980.8 totdes=796230 totshr=796309
+c 68.050 0 CS last sharing: 5893/5899/5898 globally passed ~> c=1.001
+c 68.050 0 #1:0 : INIT COMM e=136 nc=2
+c 68.060 0 #1:0 CS produced cls size=1525 lits=1501/1501
+c 68.085 0 #1:0 : merged 4 contribs rev=0 (inp=5903, t=0.0034s) ~> len=5927
+c 68.228 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.47GB newreqs=0 hops=0
+c 68.228 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 68.544 0 CS estinc=5898.2 estshr=5883.9 accdes=58980.0 accshr=58963.8 totdes=802128 totshr=802190
+c 68.544 0 CS last sharing: 5881/5903/5902 globally passed ~> c=1.004
+c 68.544 0 #1:0 : INIT COMM e=137 nc=2
+c 68.554 0 #1:0 CS produced cls size=1530 lits=1506/1506
+c 68.579 0 #1:0 : merged 4 contribs rev=0 (inp=5924, t=0.0032s) ~> len=5948
+c 69.006 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.667
+c 69.006 0 contexts=1 descriptions=1
+c 69.047 0 CS estinc=5898.4 estshr=5888.2 accdes=58980.0 accshr=58985.4 totdes=808026 totshr=808108
+c 69.047 0 CS last sharing: 5918/5924/5923 globally passed ~> c=1.002
+c 69.047 0 #1:0 : INIT COMM e=138 nc=2
+c 69.057 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 69.074 0 #1:0 : merged 4 contribs rev=0 (inp=5907, t=0.0031s) ~> len=5925
+c 69.228 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 69.228 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 69.551 0 CS estinc=5898.2 estshr=5884.1 accdes=58980.0 accshr=58975.8 totdes=813924 totshr=813997
+c 69.551 0 CS last sharing: 5889/5907/5906 globally passed ~> c=1.003
+c 69.551 0 #1:0 : INIT COMM e=139 nc=2
+c 69.561 0 #1:0 CS produced cls size=1510 lits=1504/1504
+c 69.589 0 #1:0 : merged 4 contribs rev=0 (inp=5915, t=0.0033s) ~> len=5935
+c 70.006 0 mem=0.11GB mt_cpu=0.050 mt_sys=0.600
+c 70.010 0 contexts=1 descriptions=1
+c 70.044 0 CS estinc=5898.4 estshr=5884.4 accdes=58980.0 accshr=58979.3 totdes=819822 totshr=819898
+c 70.044 0 CS last sharing: 5901/5915/5914 globally passed ~> c=1.003
+c 70.044 0 #1:0 : INIT COMM e=140 nc=2
+c 70.054 0 #1:0 CS produced cls size=1521 lits=1503/1503
+c 70.071 0 #1:0 : merged 4 contribs rev=0 (inp=5914, t=0.0032s) ~> len=5936
+c 70.229 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 70.229 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 70.548 0 CS estinc=5898.7 estshr=5874.2 accdes=58980.0 accshr=58960.3 totdes=825720 totshr=825777
+c 70.548 0 CS last sharing: 5879/5914/5913 globally passed ~> c=1.007
+c 70.548 0 #1:0 : INIT COMM e=141 nc=2
+c 70.558 0 #1:0 CS produced cls size=1525 lits=1507/1509
+c 70.577 0 #1:0 : merged 4 contribs rev=0 (inp=5937, t=0.0027s) ~> len=5955
+c 71.006 0 mem=0.12GB mt_cpu=0.030 mt_sys=0.667
+c 71.006 0 contexts=1 descriptions=1
+c 71.052 0 CS estinc=5898.6 estshr=5883.4 accdes=58980.0 accshr=58995.3 totdes=831618 totshr=831708
+c 71.052 0 CS last sharing: 5931/5937/5936 globally passed ~> c=1.001
+c 71.052 0 #1:0 : INIT COMM e=142 nc=2
+c 71.062 0 #1:0 CS produced cls size=1525 lits=1501/1501
+c 71.081 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0033s) ~> len=5930
+c 71.230 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 71.230 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 71.546 0 CS estinc=5898.5 estshr=5871.4 accdes=58980.0 accshr=58962.8 totdes=837516 totshr=837575
+c 71.546 0 CS last sharing: 5867/5906/5905 globally passed ~> c=1.006
+c 71.546 0 #1:0 : INIT COMM e=143 nc=2
+c 71.556 0 #1:0 CS produced cls size=1527 lits=1503/1509
+c 71.585 0 #1:0 : merged 4 contribs rev=0 (inp=5936, t=0.0042s) ~> len=5956
+c 72.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 72.006 0 contexts=1 descriptions=1
+c 72.049 0 CS estinc=5898.7 estshr=5721.2 accdes=58980.0 accshr=58672.5 totdes=843414 totshr=843181
+c 72.049 0 CS last sharing: 5606/5936/5935 globally passed ~> c=1.069
+c 72.049 0 #1:0 : INIT COMM e=144 nc=2
+c 72.059 0 #1:0 CS produced cls size=1624 lits=1600/1603
+c 72.079 0 #1:0 : merged 4 contribs rev=0 (inp=6306, t=0.0035s) ~> len=6325
+c 72.230 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.46GB newreqs=0 hops=0
+c 72.230 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 72.553 0 CS estinc=5898.6 estshr=5805.2 accdes=58980.0 accshr=59101.2 totdes=849312 totshr=849477
+c 72.553 0 CS last sharing: 6296/6306/6305 globally passed ~> c=1.010
+c 72.553 0 #1:0 : INIT COMM e=145 nc=2
+c 72.563 0 #1:0 CS produced cls size=1533 lits=1509/1514
+c 72.583 0 #1:0 : merged 4 contribs rev=0 (inp=5957, t=0.0042s) ~> len=5980
+c 73.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 73.006 0 contexts=1 descriptions=1
+c 73.047 0 CS estinc=5898.4 estshr=5845.7 accdes=58980.0 accshr=59136.1 totdes=855210 totshr=855422
+c 73.047 0 CS last sharing: 5945/5957/5956 globally passed ~> c=0.988
+c 73.047 0 #1:0 : INIT COMM e=146 nc=2
+c 73.057 0 #1:0 CS produced cls size=1504 lits=1480/1481
+c 73.077 0 #1:0 : merged 4 contribs rev=0 (inp=5827, t=0.0032s) ~> len=5847
+c 73.230 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.47GB newreqs=0 hops=0
+c 73.230 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 73.551 0 CS estinc=5898.6 estshr=5867.7 accdes=58980.0 accshr=59040.5 totdes=861108 totshr=861240
+c 73.551 0 CS last sharing: 5818/5827/5826 globally passed ~> c=0.994
+c 73.551 0 #1:0 : INIT COMM e=147 nc=2
+c 73.561 0 #1:0 CS produced cls size=1513 lits=1489/1490
+c 73.580 0 #1:0 : merged 4 contribs rev=0 (inp=5860, t=0.0028s) ~> len=5883
+c 74.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 74.006 0 contexts=1 descriptions=1
+c 74.045 0 CS estinc=5898.4 estshr=5882.4 accdes=58980.0 accshr=58995.4 totdes=867006 totshr=867099
+c 74.045 0 CS last sharing: 5859/5860/5859 globally passed ~> c=0.999
+c 74.045 0 #1:0 : INIT COMM e=148 nc=2
+c 74.055 0 #1:0 CS produced cls size=1521 lits=1497/1498
+c 74.074 0 #1:0 : merged 4 contribs rev=0 (inp=5891, t=0.0035s) ~> len=5909
+c 74.231 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 74.231 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 74.549 0 CS estinc=5898.3 estshr=5887.3 accdes=58980.0 accshr=58980.9 totdes=872904 totshr=872984
+c 74.549 0 CS last sharing: 5885/5891/5890 globally passed ~> c=1.001
+c 74.549 0 #1:0 : INIT COMM e=149 nc=2
+c 74.559 0 #1:0 CS produced cls size=1520 lits=1496/1501
+c 74.578 0 #1:0 : merged 4 contribs rev=0 (inp=5905, t=0.0036s) ~> len=5923
+c 75.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 75.007 0 contexts=1 descriptions=1
+c 75.052 0 CS estinc=5898.4 estshr=5883.4 accdes=58980.0 accshr=58968.8 totdes=878802 totshr=878870
+c 75.052 0 CS last sharing: 5886/5905/5904 globally passed ~> c=1.004
+c 75.052 0 #1:0 : INIT COMM e=150 nc=2
+c 75.062 0 #1:0 CS produced cls size=1527 lits=1503/1505
+c 75.079 0 #1:0 : merged 4 contribs rev=0 (inp=5921, t=0.0033s) ~> len=5941
+c 75.231 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 75.231 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 75.546 0 CS estinc=5898.5 estshr=5883.1 accdes=58980.0 accshr=58976.9 totdes=884700 totshr=884775
+c 75.546 0 CS last sharing: 5905/5921/5920 globally passed ~> c=1.003
+c 75.546 0 #1:0 : INIT COMM e=151 nc=2
+c 75.556 0 #1:0 CS produced cls size=1527 lits=1503/1504
+c 75.576 0 #1:0 : merged 4 contribs rev=0 (inp=5918, t=0.0032s) ~> len=5940
+c 76.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 76.006 0 contexts=1 descriptions=1
+c 76.050 0 CS estinc=5898.6 estshr=5889.9 accdes=58980.0 accshr=58995.2 totdes=890598 totshr=890691
+c 76.050 0 CS last sharing: 5916/5918/5917 globally passed ~> c=1.000
+c 76.050 0 #1:0 : INIT COMM e=152 nc=2
+c 76.060 0 #1:0 CS produced cls size=1523 lits=1499/1499
+c 76.080 0 #1:0 : merged 4 contribs rev=0 (inp=5897, t=0.0033s) ~> len=5921
+c 76.232 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 76.232 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 76.544 0 CS estinc=5898.5 estshr=5886.1 accdes=58980.0 accshr=58976.7 totdes=896496 totshr=896572
+c 76.544 0 CS last sharing: 5881/5897/5896 globally passed ~> c=1.002
+c 76.544 0 #1:0 : INIT COMM e=153 nc=2
+c 76.554 0 #1:0 CS produced cls size=1521 lits=1497/1503
+c 76.574 0 #1:0 : merged 4 contribs rev=0 (inp=5911, t=0.0035s) ~> len=5930
+c 77.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 77.007 0 contexts=1 descriptions=1
+c 77.049 0 CS estinc=5898.6 estshr=5884.0 accdes=58980.0 accshr=58973.0 totdes=902394 totshr=902466
+c 77.049 0 CS last sharing: 5894/5911/5910 globally passed ~> c=1.003
+c 77.049 0 #1:0 : INIT COMM e=154 nc=2
+c 77.059 0 #1:0 CS produced cls size=1528 lits=1504/1505
+c 77.078 0 #1:0 : merged 4 contribs rev=0 (inp=5918, t=0.0032s) ~> len=5936
+c 77.232 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.47GB newreqs=0 hops=0
+c 77.232 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 77.553 0 CS estinc=5898.4 estshr=5888.1 accdes=58980.0 accshr=58987.7 totdes=908292 totshr=908378
+c 77.553 0 CS last sharing: 5912/5918/5917 globally passed ~> c=1.001
+c 77.553 0 #1:0 : INIT COMM e=155 nc=2
+c 77.563 0 #1:0 CS produced cls size=1525 lits=1501/1501
+c 77.582 0 #1:0 : merged 4 contribs rev=0 (inp=5905, t=0.0031s) ~> len=5929
+c 78.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 78.007 0 contexts=1 descriptions=1
+c 78.046 0 CS estinc=5898.7 estshr=5846.1 accdes=58980.0 accshr=58899.0 totdes=914190 totshr=914188
+c 78.046 0 CS last sharing: 5810/5905/5904 globally passed ~> c=1.018
+c 78.046 0 #1:0 : INIT COMM e=156 nc=2
+c 78.056 0 #1:0 CS produced cls size=1549 lits=1525/1527
+c 78.078 0 #1:0 : merged 4 contribs rev=0 (inp=6008, t=0.0036s) ~> len=6027
+c 78.233 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 78.233 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 78.550 0 CS estinc=5898.8 estshr=5870.1 accdes=58980.0 accshr=59012.1 totdes=920088 totshr=920191
+c 78.550 0 CS last sharing: 6003/6008/6007 globally passed ~> c=1.003
+c 78.550 0 #1:0 : INIT COMM e=157 nc=2
+c 78.560 0 #1:0 CS produced cls size=1525 lits=1501/1504
+c 78.581 0 #1:0 : merged 4 contribs rev=0 (inp=5918, t=0.0032s) ~> len=5936
+c 79.006 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 79.007 0 contexts=1 descriptions=1
+c 79.044 0 CS estinc=5898.8 estshr=5881.5 accdes=58980.0 accshr=59022.9 totdes=925986 totshr=926103
+c 79.044 0 CS last sharing: 5912/5918/5917 globally passed ~> c=0.997
+c 79.044 0 #1:0 : INIT COMM e=158 nc=2
+c 79.054 0 #1:0 CS produced cls size=1513 lits=1489/1495
+c 79.075 0 #1:0 : merged 4 contribs rev=0 (inp=5882, t=0.0032s) ~> len=5902
+c 79.233 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.48GB newreqs=0 hops=0
+c 79.233 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 79.548 0 CS estinc=5898.7 estshr=5885.0 accdes=58980.0 accshr=58992.6 totdes=931884 totshr=931975
+c 79.548 0 CS last sharing: 5872/5882/5881 globally passed ~> c=1.000
+c 79.548 0 #1:0 : INIT COMM e=159 nc=2
+c 79.558 0 #1:0 CS produced cls size=1519 lits=1495/1499
+c 79.579 0 #1:0 : merged 4 contribs rev=0 (inp=5896, t=0.0032s) ~> len=5920
+c 80.006 0 mem=0.13GB mt_cpu=0.030 mt_sys=0.333
+c 80.007 0 contexts=1 descriptions=1
+c 80.051 0 CS estinc=5898.6 estshr=5886.7 accdes=58980.0 accshr=58979.3 totdes=937782 totshr=937861
+c 80.051 0 CS last sharing: 5886/5896/5895 globally passed ~> c=1.002
+c 80.051 0 #1:0 : INIT COMM e=160 nc=2
+c 80.061 0 #1:0 CS produced cls size=1524 lits=1500/1502
+c 80.083 0 #1:0 : merged 4 contribs rev=0 (inp=5908, t=0.0030s) ~> len=5930
+c 80.233 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.49GB newreqs=0 hops=0
+c 80.233 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 80.545 0 CS estinc=5898.5 estshr=5890.6 accdes=58980.0 accshr=58985.4 totdes=943680 totshr=943765
+c 80.545 0 CS last sharing: 5904/5908/5907 globally passed ~> c=1.001
+c 80.545 0 #1:0 : INIT COMM e=161 nc=2
+c 80.555 0 #1:0 CS produced cls size=1519 lits=1495/1500
+c 80.573 0 #1:0 : merged 4 contribs rev=0 (inp=5902, t=0.0033s) ~> len=5926
+c 81.007 0 mem=0.13GB mt_cpu=0.050 mt_sys=0.600
+c 81.007 0 contexts=1 descriptions=1
+c 81.048 0 CS estinc=5898.3 estshr=5889.8 accdes=58980.0 accshr=58979.8 totdes=949578 totshr=949658
+c 81.049 0 CS last sharing: 5893/5902/5901 globally passed ~> c=1.001
+c 81.049 0 #1:0 : INIT COMM e=162 nc=2
+c 81.059 0 #1:0 CS produced cls size=1519 lits=1501/1501
+c 81.080 0 #1:0 : merged 4 contribs rev=0 (inp=5906, t=0.0032s) ~> len=5924
+c 81.234 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.49GB newreqs=0 hops=0
+c 81.234 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 81.552 0 CS estinc=5898.3 estshr=5890.1 accdes=58980.0 accshr=58979.9 totdes=955476 totshr=955556
+c 81.552 0 CS last sharing: 5898/5906/5905 globally passed ~> c=1.001
+c 81.552 0 #1:0 : INIT COMM e=163 nc=2
+c 81.562 0 #1:0 CS produced cls size=1526 lits=1502/1502
+c 81.584 0 #1:0 : merged 4 contribs rev=0 (inp=5907, t=0.0032s) ~> len=5931
+c 82.007 0 mem=0.13GB mt_cpu=0.030 mt_sys=0.333
+c 82.007 0 contexts=1 descriptions=1
+c 82.046 0 CS estinc=5898.5 estshr=5894.4 accdes=58980.0 accshr=58988.9 totdes=961374 totshr=961463
+c 82.046 0 CS last sharing: 5907/5907/5906 globally passed ~> c=1.000
+c 82.046 0 #1:0 : INIT COMM e=164 nc=2
+c 82.056 0 #1:0 CS produced cls size=1518 lits=1494/1499
+c 82.078 0 #1:0 : merged 4 contribs rev=0 (inp=5896, t=0.0035s) ~> len=5919
+c 82.234 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.49GB newreqs=0 hops=0
+c 82.234 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 82.550 0 CS estinc=5898.4 estshr=5895.8 accdes=58980.0 accshr=58985.0 totdes=967272 totshr=967358
+c 82.550 0 CS last sharing: 5895/5896/5895 globally passed ~> c=1.000
+c 82.550 0 #1:0 : INIT COMM e=165 nc=2
+c 82.560 0 #1:0 CS produced cls size=1521 lits=1497/1499
+c 82.582 0 #1:0 : merged 4 contribs rev=0 (inp=5896, t=0.0032s) ~> len=5915
+c 83.007 0 mem=0.13GB mt_cpu=0.050 mt_sys=0.400
+c 83.007 0 contexts=1 descriptions=1
+c 83.044 0 CS estinc=5898.4 estshr=5894.6 accdes=58980.0 accshr=58977.5 totdes=973170 totshr=973249
+c 83.044 0 CS last sharing: 5891/5896/5895 globally passed ~> c=1.001
+c 83.044 0 #1:0 : INIT COMM e=166 nc=2
+c 83.054 0 #1:0 CS produced cls size=1523 lits=1499/1501
+c 83.075 0 #1:0 : merged 4 contribs rev=0 (inp=5903, t=0.0028s) ~> len=5927
+c 83.235 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.49GB newreqs=0 hops=0
+c 83.235 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 83.547 0 CS estinc=5898.4 estshr=5896.5 accdes=58980.0 accshr=58982.7 totdes=979068 totshr=979152
+c 83.547 0 CS last sharing: 5903/5903/5902 globally passed ~> c=1.000
+c 83.548 0 #1:0 : INIT COMM e=167 nc=2
+c 83.558 0 #1:0 CS produced cls size=1521 lits=1497/1500
+c 83.579 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0031s) ~> len=5921
+c 84.007 0 mem=0.13GB mt_cpu=0.030 mt_sys=0.333
+c 84.007 0 contexts=1 descriptions=1
+c 84.051 0 CS estinc=5898.6 estshr=5896.7 accdes=58980.0 accshr=58981.5 totdes=984966 totshr=985049
+c 84.051 0 CS last sharing: 5897/5899/5898 globally passed ~> c=1.000
+c 84.051 0 #1:0 : INIT COMM e=168 nc=2
+c 84.061 0 #1:0 CS produced cls size=1521 lits=1497/1500
+c 84.083 0 #1:0 : merged 4 contribs rev=0 (inp=5899, t=0.0031s) ~> len=5851
+c 84.235 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.50GB newreqs=0 hops=0
+c 84.235 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 84.545 0 CS estinc=5898.6 estshr=5763.6 accdes=58980.0 accshr=58714.3 totdes=990864 totshr=990680
+c 84.545 0 CS last sharing: 5631/5899/5898 globally passed ~> c=1.056
+c 84.545 0 #1:0 : INIT COMM e=169 nc=2
+c 84.555 0 #1:0 CS produced cls size=1604 lits=1580/1583
+c 84.577 0 #1:0 : merged 4 contribs rev=0 (inp=6227, t=0.0034s) ~> len=6249
+c 85.007 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 85.007 0 contexts=1 descriptions=1
+c 85.049 0 CS estinc=5898.7 estshr=5821.8 accdes=58980.0 accshr=59049.9 totdes=996762 totshr=996887
+c 85.049 0 CS last sharing: 6207/6227/6226 globally passed ~> c=1.012
+c 85.049 0 #1:0 : INIT COMM e=170 nc=2
+c 85.059 0 #1:0 CS produced cls size=1537 lits=1513/1518
+c 85.081 0 #1:0 : merged 4 contribs rev=0 (inp=5970, t=0.0035s) ~> len=5994
+c 85.235 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.50GB newreqs=0 hops=0
+c 85.235 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 85.544 0 CS estinc=5898.7 estshr=5851.3 accdes=58980.0 accshr=59096.9 totdes=1002660 totshr=1002839
+c 85.544 0 CS last sharing: 5952/5970/5969 globally passed ~> c=0.993
+c 85.544 0 #1:0 : INIT COMM e=171 nc=2
+c 85.554 0 #1:0 CS produced cls size=1508 lits=1484/1489
+c 85.575 0 #1:0 : merged 4 contribs rev=0 (inp=5857, t=0.0033s) ~> len=5729
+c 86.007 0 mem=0.13GB mt_cpu=0.030 mt_sys=0.333
+c 86.007 0 contexts=1 descriptions=1
+c 86.047 0 CS estinc=5898.8 estshr=5710.4 accdes=58980.0 accshr=58717.2 totdes=1008558 totshr=1008369
+c 86.047 0 CS last sharing: 5530/5857/5856 globally passed ~> c=1.062
+c 86.047 0 #1:0 : INIT COMM e=172 nc=2
+c 86.057 0 #1:0 CS produced cls size=1614 lits=1590/1592
+c 86.074 0 #1:0 : merged 4 contribs rev=0 (inp=6263, t=0.0037s) ~> len=6284
+c 86.236 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.51GB newreqs=0 hops=0
+c 86.236 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 86.551 0 CS estinc=5898.7 estshr=5793.7 accdes=58980.0 accshr=59085.5 totdes=1014456 totshr=1014609
+c 86.551 0 CS last sharing: 6240/6263/6262 globally passed ~> c=1.012
+c 86.551 0 #1:0 : INIT COMM e=173 nc=2
+c 86.561 0 #1:0 CS produced cls size=1541 lits=1517/1518
+c 86.583 0 #1:0 : merged 4 contribs rev=0 (inp=5971, t=0.0036s) ~> len=5990
+c 87.007 0 mem=0.13GB mt_cpu=0.050 mt_sys=0.600
+c 87.007 0 contexts=1 descriptions=1
+c 87.045 0 CS estinc=5898.6 estshr=5836.2 accdes=58980.0 accshr=59127.9 totdes=1020354 totshr=1020560
+c 87.045 0 CS last sharing: 5951/5971/5970 globally passed ~> c=0.991
+c 87.045 0 #1:0 : INIT COMM e=174 nc=2
+c 87.055 0 #1:0 CS produced cls size=1507 lits=1483/1486
+c 87.076 0 #1:0 : merged 4 contribs rev=0 (inp=5844, t=0.0035s) ~> len=5864
+c 87.236 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.50GB newreqs=0 hops=0
+c 87.236 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 87.548 0 CS estinc=5898.6 estshr=5793.3 accdes=58980.0 accshr=58912.1 totdes=1026252 totshr=1026257
+c 87.548 0 CS last sharing: 5697/5844/5843 globally passed ~> c=1.022
+c 87.548 0 #1:0 : INIT COMM e=175 nc=2
+c 87.558 0 #1:0 CS produced cls size=1556 lits=1532/1533
+c 87.580 0 #1:0 : merged 4 contribs rev=0 (inp=6029, t=0.0029s) ~> len=5473
+c 88.007 0 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 88.007 0 contexts=1 descriptions=1
+c 88.052 0 CS estinc=5898.7 estshr=5250.7 accdes=58980.0 accshr=57832.9 totdes=1032150 totshr=1031069
+c 88.052 0 CS last sharing: 4812/6029/6028 globally passed ~> c=1.278
+c 88.052 0 #1:0 : INIT COMM e=176 nc=2
+c 88.062 0 #1:0 CS produced cls size=1935 lits=1911/1916
+c 88.085 0 #1:0 : merged 4 contribs rev=0 (inp=7538, t=0.0038s) ~> len=7564
+c 88.237 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.51GB newreqs=0 hops=0
+c 88.237 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 88.546 0 CS estinc=5898.7 estshr=5480.4 accdes=58980.0 accshr=59346.6 totdes=1038048 totshr=1038366
+c 88.546 0 CS last sharing: 7297/7538/7537 globally passed ~> c=1.063
+c 88.546 0 #1:0 : INIT COMM e=177 nc=2
+c 88.556 0 #1:0 CS produced cls size=1617 lits=1593/1594
+c 88.579 0 #1:0 : merged 4 contribs rev=0 (inp=6271, t=0.0034s) ~> len=6302
+c 89.007 0 mem=0.13GB mt_cpu=0.030 mt_sys=0.667
+c 89.007 0 contexts=1 descriptions=1
+c 89.049 0 CS estinc=5898.7 estshr=5678.2 accdes=58980.0 accshr=59659.0 totdes=1043946 totshr=1044613
+c 89.049 0 CS last sharing: 6247/6271/6270 globally passed ~> c=0.948
+c 89.049 0 #1:0 : INIT COMM e=178 nc=2
+c 89.060 0 #1:0 CS produced cls size=1446 lits=1415/1422
+c 89.078 0 #1:0 : merged 4 contribs rev=0 (inp=5592, t=0.0028s) ~> len=5620
+c 89.237 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.52GB newreqs=0 hops=0
+c 89.237 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 89.552 0 CS estinc=5898.6 estshr=5330.1 accdes=58980.0 accshr=58416.1 totdes=1049844 totshr=1049336
+c 89.553 0 CS last sharing: 4723/5592/5591 globally passed ~> c=1.160
+c 89.553 0 #1:0 : INIT COMM e=179 nc=2
+c 89.563 0 #1:0 CS produced cls size=1769 lits=1738/1739
+c 89.592 0 #1:0 : merged 4 contribs rev=0 (inp=6840, t=0.0032s) ~> len=6864
+c 90.007 0 mem=0.14GB mt_cpu=0.050 mt_sys=0.400
+c 90.007 0 contexts=1 descriptions=1
+c 90.046 0 CS estinc=5898.7 estshr=5598.9 accdes=58980.0 accshr=59378.5 totdes=1055742 totshr=1056140
+c 90.046 0 CS last sharing: 6804/6840/6839 globally passed ~> c=1.018
+c 90.046 0 #1:0 : INIT COMM e=180 nc=2
+c 90.056 0 #1:0 CS produced cls size=1552 lits=1521/1526
+c 90.076 0 #1:0 : merged 4 contribs rev=0 (inp=6004, t=0.0029s) ~> len=6035
+c 90.237 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.52GB newreqs=0 hops=0
+c 90.237 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 90.550 0 CS estinc=5898.8 estshr=5515.1 accdes=58980.0 accshr=58968.6 totdes=1061640 totshr=1061668
+c 90.550 0 CS last sharing: 5528/6004/6003 globally passed ~> c=1.061
+c 90.550 0 #1:0 : INIT COMM e=181 nc=2
+c 90.560 0 #1:0 CS produced cls size=1622 lits=1591/1591
+c 90.576 0 #1:0 : merged 4 contribs rev=0 (inp=6258, t=0.0030s) ~> len=6285
+c 91.007 0 mem=0.14GB mt_cpu=0.030 mt_sys=0.333
+c 91.008 0 contexts=1 descriptions=1
+c 91.052 0 CS estinc=5898.9 estshr=5699.4 accdes=58980.0 accshr=59313.7 totdes=1067538 totshr=1067910
+c 91.052 0 CS last sharing: 6242/6258/6257 globally passed ~> c=0.993
+c 91.053 0 #1:0 : INIT COMM e=182 nc=2
+c 91.063 0 #1:0 CS produced cls size=1507 lits=1483/1489
+c 91.075 0 #1:0 : merged 4 contribs rev=0 (inp=5859, t=0.0029s) ~> len=5884
+c 91.237 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.52GB newreqs=0 hops=0
+c 91.238 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 91.546 0 CS estinc=5898.6 estshr=5335.8 accdes=58980.0 accshr=58321.4 totdes=1073436 totshr=1072849
+c 91.546 0 CS last sharing: 4939/5859/5858 globally passed ~> c=1.182
+c 91.546 0 #1:0 : INIT COMM e=183 nc=2
+c 91.556 0 #1:0 CS produced cls size=1799 lits=1768/1772
+c 91.579 0 #1:0 : merged 4 contribs rev=0 (inp=6971, t=0.0036s) ~> len=7001
+c 92.007 0 mem=0.14GB mt_cpu=0.040 mt_sys=0.500
+c 92.008 0 contexts=1 descriptions=1
+c 92.049 0 CS estinc=5898.7 estshr=5608.4 accdes=58980.0 accshr=59439.2 totdes=1079334 totshr=1079799
+c 92.049 0 CS last sharing: 6950/6971/6970 globally passed ~> c=1.012
+c 92.049 0 #1:0 : INIT COMM e=184 nc=2
+c 92.059 0 #1:0 CS produced cls size=1545 lits=1514/1518
+c 92.083 0 #1:0 : merged 4 contribs rev=0 (inp=5971, t=0.0032s) ~> len=6001
+c 92.238 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.51GB newreqs=0 hops=0
+c 92.238 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 92.553 0 CS estinc=5898.7 estshr=5698.7 accdes=58980.0 accshr=59355.3 totdes=1085232 totshr=1085659
+c 92.553 0 CS last sharing: 5860/5971/5970 globally passed ~> c=0.978
+c 92.553 0 #1:0 : INIT COMM e=185 nc=2
+c 92.563 0 #1:0 CS produced cls size=1497 lits=1466/1466
+c 92.575 0 #1:0 : merged 4 contribs rev=0 (inp=5768, t=0.0030s) ~> len=5796
+c 93.008 0 mem=0.14GB mt_cpu=0.030 mt_sys=0.667
+c 93.008 0 contexts=1 descriptions=1
+c 93.047 0 CS estinc=5898.7 estshr=5768.6 accdes=58980.0 accshr=59128.8 totdes=1091130 totshr=1091368
+c 93.047 0 CS last sharing: 5709/5768/5767 globally passed ~> c=0.993
+c 93.047 0 #1:0 : INIT COMM e=186 nc=2
+c 93.057 0 #1:0 CS produced cls size=1513 lits=1482/1489
+c 93.071 0 #1:0 : merged 4 contribs rev=0 (inp=5857, t=0.0029s) ~> len=5882
+c 93.238 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.51GB newreqs=0 hops=0
+c 93.238 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 93.550 0 CS estinc=5898.6 estshr=5824.9 accdes=58980.0 accshr=59055.9 totdes=1097028 totshr=1097208
+c 93.550 0 CS last sharing: 5840/5857/5856 globally passed ~> c=0.998
+c 93.551 0 #1:0 : INIT COMM e=187 nc=2
+c 93.560 0 #1:0 CS produced cls size=1528 lits=1497/1497
+c 93.575 0 #1:0 : merged 4 contribs rev=0 (inp=5888, t=0.0030s) ~> len=5919
+c 94.008 0 mem=0.14GB mt_cpu=0.050 mt_sys=0.600
+c 94.008 0 contexts=1 descriptions=1
+c 94.044 0 CS estinc=5898.4 estshr=5830.0 accdes=58980.0 accshr=58975.3 totdes=1102926 totshr=1103033
+c 94.044 0 CS last sharing: 5825/5888/5887 globally passed ~> c=1.010
+c 94.044 0 #1:0 : INIT COMM e=188 nc=2
+c 94.054 0 #1:0 CS produced cls size=1545 lits=1514/1514
+c 94.067 0 #1:0 : merged 4 contribs rev=0 (inp=5956, t=0.0030s) ~> len=5987
+c 94.239 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.49GB newreqs=0 hops=0
+c 94.239 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 94.547 0 CS estinc=5898.6 estshr=5783.7 accdes=58980.0 accshr=58870.8 totdes=1108824 totshr=1108826
+c 94.547 0 CS last sharing: 5793/5956/5955 globally passed ~> c=1.033
+c 94.547 0 #1:0 : INIT COMM e=189 nc=2
+c 94.558 0 #1:0 CS produced cls size=1578 lits=1547/1549
+c 94.574 0 #1:0 : merged 4 contribs rev=0 (inp=6093, t=0.0032s) ~> len=5952
+c 95.008 0 mem=0.14GB mt_cpu=0.030 mt_sys=0.667
+c 95.008 0 contexts=1 descriptions=1
+c 95.052 0 CS estinc=5898.7 estshr=5594.4 accdes=58980.0 accshr=58566.7 totdes=1114722 totshr=1114409
+c 95.052 0 CS last sharing: 5583/6093/6092 globally passed ~> c=1.109
+c 95.052 0 #1:0 : INIT COMM e=190 nc=2
+c 95.062 0 #1:0 CS produced cls size=1699 lits=1660/1663
+c 95.079 0 #1:0 : merged 4 contribs rev=0 (inp=6543, t=0.0030s) ~> len=6574
+c 95.239 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.50GB newreqs=0 hops=0
+c 95.239 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 95.545 0 CS estinc=5898.8 estshr=5646.1 accdes=58980.0 accshr=59030.0 totdes=1120620 totshr=1120729
+c 95.545 0 CS last sharing: 6320/6543/6542 globally passed ~> c=1.051
+c 95.545 0 #1:0 : INIT COMM e=191 nc=2
+c 95.555 0 #1:0 CS produced cls size=1606 lits=1567/1575
+c 95.566 0 #1:0 : merged 4 contribs rev=0 (inp=6197, t=0.0030s) ~> len=6236
+c 96.008 0 mem=0.14GB mt_cpu=0.050 mt_sys=0.600
+c 96.008 0 contexts=1 descriptions=1
+c 96.048 0 CS estinc=5898.8 estshr=5596.3 accdes=58980.0 accshr=58954.0 totdes=1126518 totshr=1126556
+c 96.048 0 CS last sharing: 5827/6197/6196 globally passed ~> c=1.057
+c 96.049 0 #1:0 : INIT COMM e=192 nc=2
+c 96.058 0 #1:0 CS produced cls size=1620 lits=1581/1585
+c 96.077 0 #1:0 : merged 4 contribs rev=0 (inp=6235, t=0.0030s) ~> len=6272
+c 96.240 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.51GB newreqs=0 hops=0
+c 96.240 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 96.552 0 CS estinc=5898.6 estshr=5742.7 accdes=58980.0 accshr=59283.6 totdes=1132416 totshr=1132781
+c 96.552 0 CS last sharing: 6225/6235/6234 globally passed ~> c=0.991
+c 96.552 0 #1:0 : INIT COMM e=193 nc=2
+c 96.562 0 #1:0 CS produced cls size=1521 lits=1482/1486
+c 96.582 0 #1:0 : merged 4 contribs rev=0 (inp=5844, t=0.0032s) ~> len=5868
+c 97.008 0 mem=0.14GB mt_cpu=0.040 mt_sys=0.500
+c 97.008 0 contexts=1 descriptions=1
+c 97.046 0 CS estinc=5898.3 estshr=5585.2 accdes=58980.0 accshr=58733.3 totdes=1138314 totshr=1138159
+c 97.046 0 CS last sharing: 5378/5844/5843 globally passed ~> c=1.078
+c 97.046 0 #1:0 : INIT COMM e=194 nc=2
+c 97.056 0 #1:0 CS produced cls size=1656 lits=1617/1617
+c 97.076 0 #1:0 : merged 4 contribs rev=0 (inp=6361, t=0.0032s) ~> len=6385
+c 97.240 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 97.240 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 97.550 0 CS estinc=5898.6 estshr=5698.9 accdes=58980.0 accshr=59127.9 totdes=1144212 totshr=1144427
+c 97.550 0 CS last sharing: 6268/6361/6360 globally passed ~> c=1.023
+c 97.550 0 #1:0 : INIT COMM e=195 nc=2
+c 97.560 0 #1:0 CS produced cls size=1559 lits=1528/1534
+c 97.580 0 #1:0 : merged 4 contribs rev=0 (inp=6034, t=0.0030s) ~> len=6061
+c 98.008 0 mem=0.15GB mt_cpu=0.030 mt_sys=0.333
+c 98.008 0 contexts=1 descriptions=1
+c 98.044 0 CS estinc=5898.6 estshr=5680.5 accdes=58980.0 accshr=59007.1 totdes=1150110 totshr=1150219
+c 98.044 0 CS last sharing: 5792/6034/6033 globally passed ~> c=1.031
+c 98.044 0 #1:0 : INIT COMM e=196 nc=2
+c 98.054 0 #1:0 CS produced cls size=1576 lits=1545/1547
+c 98.074 0 #1:0 : merged 4 contribs rev=0 (inp=6084, t=0.0031s) ~> len=6114
+c 98.240 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 98.240 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 98.548 0 CS estinc=5898.5 estshr=5614.4 accdes=58980.0 accshr=58829.4 totdes=1156008 totshr=1155942
+c 98.548 0 CS last sharing: 5723/6084/6083 globally passed ~> c=1.068
+c 98.548 0 #1:0 : INIT COMM e=197 nc=2
+c 98.558 0 #1:0 CS produced cls size=1636 lits=1597/1602
+c 98.578 0 #1:0 : merged 4 contribs rev=0 (inp=6301, t=0.0030s) ~> len=6334
+c 99.008 0 mem=0.14GB mt_cpu=0.040 mt_sys=0.750
+c 99.008 0 contexts=1 descriptions=1
+c 99.051 0 CS estinc=5898.5 estshr=5702.2 accdes=58980.0 accshr=59131.5 totdes=1161906 totshr=1162127
+c 99.051 0 CS last sharing: 6185/6301/6300 globally passed ~> c=1.020
+c 99.051 0 #1:0 : INIT COMM e=198 nc=2
+c 99.061 0 #1:0 CS produced cls size=1544 lits=1526/1529
+c 99.083 0 #1:0 : merged 4 contribs rev=0 (inp=6016, t=0.0038s) ~> len=5821
+c 99.241 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 99.241 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 99.544 0 CS estinc=5898.5 estshr=5397.8 accdes=58980.0 accshr=58413.3 totdes=1167804 totshr=1167322
+c 99.544 0 CS last sharing: 5195/6016/6015 globally passed ~> c=1.162
+c 99.544 0 #1:0 : INIT COMM e=199 nc=2
+c 99.554 0 #1:0 CS produced cls size=1775 lits=1736/1743
+c 99.576 0 #1:0 : merged 4 contribs rev=0 (inp=6855, t=0.0031s) ~> len=6828
+c 100.008 0 mem=0.14GB mt_cpu=0.040 mt_sys=0.500
+c 100.008 0 contexts=1 descriptions=1
+c 100.048 0 CS estinc=5898.5 estshr=5579.3 accdes=58980.0 accshr=59267.0 totdes=1173702 totshr=1174017
+c 100.048 0 CS last sharing: 6695/6855/6854 globally passed ~> c=1.037
+c 100.048 0 #1:0 : INIT COMM e=200 nc=2
+c 100.058 0 #1:0 CS produced cls size=1586 lits=1547/1555
+c 100.080 0 #1:0 : merged 4 contribs rev=0 (inp=6117, t=0.0030s) ~> len=6149
+c 100.241 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 100.241 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 100.551 0 CS estinc=5898.5 estshr=5723.5 accdes=58980.0 accshr=59425.3 totdes=1179600 totshr=1180102
+c 100.551 0 CS last sharing: 6085/6117/6116 globally passed ~> c=0.970
+c 100.552 0 #1:0 : INIT COMM e=201 nc=2
+c 100.562 0 #1:0 CS produced cls size=1489 lits=1450/1454
+c 100.584 0 #1:0 : merged 4 contribs rev=0 (inp=5719, t=0.0029s) ~> len=5620
+c 101.008 0 mem=0.14GB mt_cpu=0.040 mt_sys=0.500
+c 101.008 0 contexts=1 descriptions=1
+c 101.045 0 CS estinc=5898.3 estshr=5488.5 accdes=58980.0 accshr=58576.8 totdes=1185498 totshr=1185196
+c 101.045 0 CS last sharing: 5094/5719/5718 globally passed ~> c=1.112
+c 101.045 0 #1:0 : INIT COMM e=202 nc=2
+c 101.055 0 #1:0 CS produced cls size=1687 lits=1669/1668
+c 101.074 0 #1:0 : merged 4 contribs rev=0 (inp=6562, t=0.0032s) ~> len=6212
+c 101.242 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 101.242 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 101.549 0 CS estinc=5898.6 estshr=4741.7 accdes=58980.0 accshr=57163.1 totdes=1191396 totshr=1189640
+c 101.549 0 CS last sharing: 4444/6562/6561 globally passed ~> c=1.524
+c 101.549 0 #1:0 : INIT COMM e=203 nc=2
+c 101.559 0 #1:0 CS produced cls size=2306 lits=2282/2286
+c 101.575 0 #1:0 : merged 4 contribs rev=0 (inp=8991, t=0.0042s) ~> len=8669
+c 102.008 0 mem=0.15GB mt_cpu=0.030 mt_sys=0.667
+c 102.008 0 contexts=1 descriptions=1
+c 102.052 0 CS estinc=5898.7 estshr=4955.5 accdes=58980.0 accshr=59325.8 totdes=1197294 totshr=1197519
+c 102.052 0 CS last sharing: 7879/8991/8989 globally passed ~> c=1.201
+c 102.052 0 #1:0 : INIT COMM e=204 nc=2
+c 102.062 0 #1:0 CS produced cls size=1829 lits=1798/1801
+c 102.086 0 #1:0 : merged 4 contribs rev=0 (inp=7086, t=0.0034s) ~> len=7110
+c 102.242 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.53GB newreqs=0 hops=0
+c 102.242 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 102.546 0 CS estinc=5898.7 estshr=5403.8 accdes=58980.0 accshr=60423.2 totdes=1203192 totshr=1204549
+c 102.546 0 CS last sharing: 7030/7086/7085 globally passed ~> c=0.900
+c 102.546 0 #1:0 : INIT COMM e=205 nc=2
+c 102.556 0 #1:0 CS produced cls size=1373 lits=1349/1349
+c 102.570 0 #1:0 : merged 4 contribs rev=0 (inp=5308, t=0.0029s) ~> len=5206
+c 103.008 0 mem=0.15GB mt_cpu=0.050 mt_sys=0.400
+c 103.008 0 contexts=1 descriptions=1
+c 103.050 0 CS estinc=5898.7 estshr=4733.9 accdes=58980.0 accshr=58037.9 totdes=1209090 totshr=1208206
+c 103.050 0 CS last sharing: 3657/5308/5307 globally passed ~> c=1.336
+c 103.050 0 #1:0 : INIT COMM e=206 nc=2
+c 103.060 0 #1:0 CS produced cls size=2024 lits=2000/2004
+c 103.085 0 #1:0 : merged 4 contribs rev=0 (inp=7881, t=0.0040s) ~> len=7905
+c 103.242 0 sysstate busyratio=1.000 cmtdratio=0.000 jobs=1 globmem=0.54GB newreqs=0 hops=0
+c 103.242 0 sysstate entered=1 parsed=1 scheduled=1 processed=0 successful=0
+c 103.544 0 CS estinc=5898.7 estshr=5033.0 accdes=58980.0 accshr=59358.1 totdes=1214988 totshr=1215330
+c 103.544 0 CS last sharing: 7124/7881/7879 globally passed ~> c=1.145
+c 103.544 0 #1:0 : INIT COMM e=207 nc=2
+c 103.554 0 #1:0 CS produced cls size=1748 lits=1717/1717
+c 103.569 0 #1:0 : merged 4 contribs rev=0 (inp=6752, t=0.0033s) ~> len=6781
+c 104.008 0 mem=0.15GB mt_cpu=0.030 mt_sys=0.333
+c 104.008 0 contexts=1 descriptions=1
+c 104.048 0 CS estinc=5898.6 estshr=4829.3 accdes=58980.0 accshr=58717.3 totdes=1220886 totshr=1220625
+c 104.048 0 CS last sharing: 5295/6752/6751 globally passed ~> c=1.250
+c 104.048 0 #1:0 : INIT COMM e=208 nc=2
+c 104.058 0 #1:0 CS produced cls size=1902 lits=1871/1874
+c 104.083 0 #1:0 : merged 4 contribs rev=0 (inp=7371, t=0.0040s) ~> len=7231
+c 104.169 0 #1 rev. 0 solved <= [1]
+c 104.169 0 #1:0 : inform client job is done => [0]
+c 104.169 0 Propagate interruption of #1:0 ... => [1]
+c 104.169 0 Propagate interruption of #1:0 ... => [2]
+c 104.169 0 LOAD 0 (-#1:0)
+c 104.169 0 corealloc ret 3 -> 3 free
+c 104.169 0 #1:0 : terminated
+c 104.169 0 BLC insert (1,0,0.000)
+c 104.169 0 #1:0 balancing latency={num:1 min:0.00812 med:0.00812 avg:0.00812 max:0.00812}
+c 104.169 0 Forget #1:0
+c 104.169 0 FORGET #1:0
+c 104.169 0 #1:0 desires fulfilled=1.0000 latency={num:2 min:0.00051 med:0.00054 avg:0.00052 max:0.00054}
+c 104.169 0 Will receive job result for job #1 rev. 0 <= [0]
+c 104.169 0 Received result of job #1 rev. 0, code: 20 <= [1]
+c 104.169 0 RESPONSE_TIME #1 104.158249 rev. 0
+c 104.169 0 SOLUTION #1 UNSATISFIABLE rev. 0
+s UNSATISFIABLE
+c 104.170 0 Destruct worker
+c 104.170 0 #1:0 : FSJ freeing mem
+c 104.191 0 #1:0 : FSJ mem freed
+c 104.191 0 Watchdog sleep interrupted by signal
+c 104.191 0 #1:0 ready for destruction
+c 104.191 0 #1:0 CS total expected=1220886 exchanged=1220625 ratio=1.000
+c 104.192 0 all jobs deleted
+c 104.192 0 Watchdog sleep interrupted by signal
+c 104.192 0 STATS balancing_latencies num:1 min:0.008117 max:0.008117 med:0.008117 mean:0.008117
+c 104.193 0 busytime=104.126
+c 104.193 0 STATS treegrowth_latencies num:2 min:0.000506 max:0.000537 med:0.000537 mean:0.000521
+c 104.198 0 Watchdog sleep interrupted by signal
+c 104.199 0 Leaving client destructor
+c 104.199 0 Watchdog sleep interrupted by signal
+c 104.246 0 Exiting happily

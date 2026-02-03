@@ -1,0 +1,880 @@
+c 0.004 1 Mallob rls pid=187340 on host login
+c 0.008 1 I am worker #1
+c 0.008 1 [WARN] Num bounce alternatives must be at most half the number of workers!
+c 0.008 1 [WARN] Falling back to safe value r=2.
+c 0.008 1 My bounce alternatives: 0 2 
+c 0.011 1 Machine color 0 with 4 total workers (my rank: 1)
+c 0.054 1 ADOPT r.#1:1 rev. 0 <- [0] born=0.054 hops=0 epoch=2 matchId=-1 mode=1 <= [0]
+c 0.054 1 corealloc req 0 -> 0 granted, 3 free
+c 0.054 1 COMMIT #1 -> #1:1
+c 0.054 1 [CA] Root: 0 requests, 0 idle (epoch=2)
+c 0.054 1 #1:1 growing: r.#1:3 rev. 0 <- [1] born=0.054 hops=0 epoch=2 matchId=-1 => [3]
+c 0.055 1 Got desc. of size 58891 for job #1 <= [0]
+c 0.055 1 UNCOMMIT #1:1
+c 0.055 1 LOAD 1 (+#1:1)
+c 0.055 1 EXECUTE #1:1 <= [0]
+c 0.055 1 #1:1 : new job node starting
+c 0.055 1 corealloc req 3 -> 3 granted, 0 free
+c 0.058 1 #1:1 : update v=4 epoch=2 lastreqsepoch=2 evlat=0.00000
+c 0.058 1 Adoption offer for #1:3 <= [3]
+c 0.058 1 RBS #1:3 EXPAND e=2 #inactives=0 => [3]
+c 0.058 1 SPA: formula with 58776 bytes
+c 0.058 1 [CA] Root: 0 requests, 0 idle (epoch=2)
+c 0.058 1 Sending job desc. of #1:1 rev. 0, size 58891, formula begins at idx 115 => [3]
+c 0.058 1 Sent id=8 => [3]
+c 0.059 1 [CA] Root: 0 requests, 0 idle (epoch=2)
+c 0.101 1 Watchdog sleep interrupted by signal
+c 0.548 1 #1:1 : INIT COMM e=1 nc=1
+c 0.560 1 #1:1 CS produced cls size=1506 lits=1497/1500
+c 0.567 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0028s) ~> len=2104
+c 1.000 1 mem=0.00GB mt_cpu=0.000 mt_sys=0.000
+c 1.000 1 contexts=1 descriptions=1
+c 1.052 1 #1:1 : INIT COMM e=2 nc=1
+c 1.065 1 #1:1 CS produced cls size=2750 lits=2737/2741
+c 1.071 1 #1:1 : merged 2 contribs rev=0 (inp=5462, t=0.0038s) ~> len=4525
+c 1.545 1 #1:1 : INIT COMM e=3 nc=1
+c 1.558 1 #1:1 CS produced cls size=2989 lits=2976/2980
+c 1.565 1 #1:1 : merged 2 contribs rev=0 (inp=5939, t=0.0041s) ~> len=5733
+c 2.000 1 mem=0.06GB mt_cpu=0.000 mt_sys=0.000
+c 2.000 1 contexts=1 descriptions=1
+c 2.049 1 #1:1 : INIT COMM e=4 nc=1
+c 2.062 1 #1:1 CS produced cls size=1493 lits=1480/1482
+c 2.067 1 #1:1 : merged 2 contribs rev=0 (inp=2954, t=0.0024s) ~> len=2887
+c 2.553 1 #1:1 : INIT COMM e=5 nc=1
+c 2.557 1 #1:1 CS produced cls size=1400 lits=1387/1389
+c 2.571 1 #1:1 : merged 2 contribs rev=0 (inp=2768, t=0.0022s) ~> len=2768
+c 3.000 1 mem=0.06GB mt_cpu=0.030 mt_sys=0.667
+c 3.000 1 contexts=1 descriptions=1
+c 3.048 1 #1:1 : INIT COMM e=6 nc=1
+c 3.061 1 #1:1 CS produced cls size=1659 lits=1646/1649
+c 3.065 1 #1:1 : merged 2 contribs rev=0 (inp=3286, t=0.0027s) ~> len=3285
+c 3.551 1 #1:1 : INIT COMM e=7 nc=1
+c 3.555 1 #1:1 CS produced cls size=1950 lits=1937/1940
+c 3.569 1 #1:1 : merged 2 contribs rev=0 (inp=3866, t=0.0027s) ~> len=3881
+c 4.000 1 mem=0.07GB mt_cpu=0.040 mt_sys=0.500
+c 4.000 1 contexts=1 descriptions=1
+c 4.046 1 #1:1 : INIT COMM e=8 nc=1
+c 4.058 1 #1:1 CS produced cls size=1792 lits=1774/1777
+c 4.062 1 #1:1 : merged 2 contribs rev=0 (inp=3541, t=0.0023s) ~> len=3546
+c 4.550 1 #1:1 : INIT COMM e=9 nc=1
+c 4.562 1 #1:1 CS produced cls size=1516 lits=1498/1500
+c 4.566 1 #1:1 : merged 2 contribs rev=0 (inp=2990, t=0.0024s) ~> len=3005
+c 5.000 1 mem=0.07GB mt_cpu=0.030 mt_sys=0.667
+c 5.000 1 contexts=1 descriptions=1
+c 5.054 1 #1:1 : INIT COMM e=10 nc=1
+c 5.066 1 #1:1 CS produced cls size=1524 lits=1506/1509
+c 5.071 1 #1:1 : merged 2 contribs rev=0 (inp=3008, t=0.0024s) ~> len=3021
+c 5.547 1 #1:1 : INIT COMM e=11 nc=1
+c 5.560 1 #1:1 CS produced cls size=1543 lits=1525/1526
+c 5.564 1 #1:1 : merged 2 contribs rev=0 (inp=3042, t=0.0025s) ~> len=3057
+c 6.001 1 mem=0.07GB mt_cpu=0.030 mt_sys=0.333
+c 6.001 1 contexts=1 descriptions=1
+c 6.050 1 #1:1 : INIT COMM e=12 nc=1
+c 6.054 1 #1:1 CS produced cls size=1593 lits=1575/1575
+c 6.068 1 #1:1 : merged 2 contribs rev=0 (inp=3139, t=0.0023s) ~> len=3154
+c 6.545 1 #1:1 : INIT COMM e=13 nc=1
+c 6.558 1 #1:1 CS produced cls size=1590 lits=1572/1575
+c 6.562 1 #1:1 : merged 2 contribs rev=0 (inp=3139, t=0.0024s) ~> len=3157
+c 7.001 1 mem=0.07GB mt_cpu=0.030 mt_sys=0.667
+c 7.001 1 contexts=1 descriptions=1
+c 7.048 1 #1:1 : INIT COMM e=14 nc=1
+c 7.061 1 #1:1 CS produced cls size=1580 lits=1562/1565
+c 7.066 1 #1:1 : merged 2 contribs rev=0 (inp=3120, t=0.0030s) ~> len=3135
+c 7.552 1 #1:1 : INIT COMM e=15 nc=1
+c 7.565 1 #1:1 CS produced cls size=1591 lits=1573/1573
+c 7.569 1 #1:1 : merged 2 contribs rev=0 (inp=3135, t=0.0022s) ~> len=3150
+c 8.001 1 mem=0.08GB mt_cpu=0.040 mt_sys=0.500
+c 8.001 1 contexts=1 descriptions=1
+c 8.046 1 #1:1 : INIT COMM e=16 nc=1
+c 8.059 1 #1:1 CS produced cls size=1554 lits=1536/1541
+c 8.063 1 #1:1 : merged 2 contribs rev=0 (inp=3071, t=0.0025s) ~> len=3088
+c 8.549 1 #1:1 : INIT COMM e=17 nc=1
+c 8.563 1 #1:1 CS produced cls size=1557 lits=1539/1542
+c 8.567 1 #1:1 : merged 2 contribs rev=0 (inp=3074, t=0.0022s) ~> len=3066
+c 9.001 1 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 9.001 1 contexts=1 descriptions=1
+c 9.053 1 #1:1 : INIT COMM e=18 nc=1
+c 9.067 1 #1:1 CS produced cls size=1559 lits=1541/1544
+c 9.071 1 #1:1 : merged 2 contribs rev=0 (inp=3078, t=0.0022s) ~> len=3061
+c 9.547 1 #1:1 : INIT COMM e=19 nc=1
+c 9.560 1 #1:1 CS produced cls size=1576 lits=1558/1561
+c 9.566 1 #1:1 : merged 2 contribs rev=0 (inp=3112, t=0.0027s) ~> len=3126
+c 10.001 1 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 10.001 1 contexts=1 descriptions=1
+c 10.052 1 #1:1 : INIT COMM e=20 nc=1
+c 10.064 1 #1:1 CS produced cls size=1542 lits=1524/1526
+c 10.069 1 #1:1 : merged 2 contribs rev=0 (inp=3042, t=0.0021s) ~> len=3056
+c 10.545 1 #1:1 : INIT COMM e=21 nc=1
+c 10.558 1 #1:1 CS produced cls size=1535 lits=1517/1518
+c 10.563 1 #1:1 : merged 2 contribs rev=0 (inp=3025, t=0.0024s) ~> len=3039
+c 11.001 1 mem=0.08GB mt_cpu=0.040 mt_sys=0.500
+c 11.001 1 contexts=1 descriptions=1
+c 11.049 1 #1:1 : INIT COMM e=22 nc=1
+c 11.061 1 #1:1 CS produced cls size=1536 lits=1518/1523
+c 11.067 1 #1:1 : merged 2 contribs rev=0 (inp=3036, t=0.0024s) ~> len=3053
+c 11.553 1 #1:1 : INIT COMM e=23 nc=1
+c 11.565 1 #1:1 CS produced cls size=1541 lits=1523/1523
+c 11.571 1 #1:1 : merged 2 contribs rev=0 (inp=3035, t=0.0025s) ~> len=3052
+c 12.001 1 mem=0.08GB mt_cpu=0.030 mt_sys=0.667
+c 12.001 1 contexts=1 descriptions=1
+c 12.047 1 #1:1 : INIT COMM e=24 nc=1
+c 12.059 1 #1:1 CS produced cls size=1547 lits=1529/1531
+c 12.064 1 #1:1 : merged 2 contribs rev=0 (inp=3052, t=0.0023s) ~> len=3070
+c 12.551 1 #1:1 : INIT COMM e=25 nc=1
+c 12.563 1 #1:1 CS produced cls size=1563 lits=1545/1550
+c 12.569 1 #1:1 : merged 2 contribs rev=0 (inp=3089, t=0.0023s) ~> len=3112
+c 13.001 1 mem=0.09GB mt_cpu=0.030 mt_sys=0.333
+c 13.001 1 contexts=1 descriptions=1
+c 13.045 1 #1:1 : INIT COMM e=26 nc=1
+c 13.057 1 #1:1 CS produced cls size=1565 lits=1547/1551
+c 13.063 1 #1:1 : merged 2 contribs rev=0 (inp=3092, t=0.0023s) ~> len=3110
+c 13.549 1 #1:1 : INIT COMM e=27 nc=1
+c 13.552 1 #1:1 CS produced cls size=1614 lits=1596/1600
+c 13.567 1 #1:1 : merged 2 contribs rev=0 (inp=3190, t=0.0022s) ~> len=3214
+c 14.001 1 mem=0.09GB mt_cpu=0.040 mt_sys=0.500
+c 14.001 1 contexts=1 descriptions=1
+c 14.053 1 #1:1 : INIT COMM e=28 nc=1
+c 14.066 1 #1:1 CS produced cls size=1667 lits=1649/1651
+c 14.071 1 #1:1 : merged 2 contribs rev=0 (inp=3291, t=0.0022s) ~> len=3310
+c 14.547 1 #1:1 : INIT COMM e=29 nc=1
+c 14.560 1 #1:1 CS produced cls size=1550 lits=1532/1532
+c 14.565 1 #1:1 : merged 2 contribs rev=0 (inp=3053, t=0.0021s) ~> len=3074
+c 15.001 1 mem=0.09GB mt_cpu=0.030 mt_sys=0.667
+c 15.001 1 contexts=1 descriptions=1
+c 15.051 1 #1:1 : INIT COMM e=30 nc=1
+c 15.064 1 #1:1 CS produced cls size=1528 lits=1510/1511
+c 15.070 1 #1:1 : merged 2 contribs rev=0 (inp=3012, t=0.0021s) ~> len=3036
+c 15.544 1 #1:1 : INIT COMM e=31 nc=1
+c 15.557 1 #1:1 CS produced cls size=1681 lits=1663/1668
+c 15.565 1 #1:1 : merged 2 contribs rev=0 (inp=3323, t=0.0024s) ~> len=3347
+c 16.002 1 mem=0.09GB mt_cpu=0.040 mt_sys=0.500
+c 16.002 1 contexts=1 descriptions=1
+c 16.048 1 #1:1 : INIT COMM e=32 nc=1
+c 16.061 1 #1:1 CS produced cls size=1637 lits=1619/1622
+c 16.068 1 #1:1 : merged 2 contribs rev=0 (inp=3232, t=0.0024s) ~> len=3255
+c 16.552 1 #1:1 : INIT COMM e=33 nc=1
+c 16.565 1 #1:1 CS produced cls size=1518 lits=1500/1502
+c 16.571 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0020s) ~> len=3018
+c 17.002 1 mem=0.09GB mt_cpu=0.030 mt_sys=0.667
+c 17.002 1 contexts=1 descriptions=1
+c 17.046 1 #1:1 : INIT COMM e=34 nc=1
+c 17.058 1 #1:1 CS produced cls size=1506 lits=1488/1489
+c 17.065 1 #1:1 : merged 2 contribs rev=0 (inp=2967, t=0.0021s) ~> len=2989
+c 17.550 1 #1:1 : INIT COMM e=35 nc=1
+c 17.562 1 #1:1 CS produced cls size=1581 lits=1557/1561
+c 17.569 1 #1:1 : merged 2 contribs rev=0 (inp=3111, t=0.0021s) ~> len=3130
+c 18.002 1 mem=0.09GB mt_cpu=0.040 mt_sys=0.750
+c 18.002 1 contexts=1 descriptions=1
+c 18.044 1 #1:1 : INIT COMM e=36 nc=1
+c 18.056 1 #1:1 CS produced cls size=1539 lits=1515/1516
+c 18.064 1 #1:1 : merged 2 contribs rev=0 (inp=3020, t=0.0023s) ~> len=3044
+c 18.548 1 #1:1 : INIT COMM e=37 nc=1
+c 18.560 1 #1:1 CS produced cls size=1525 lits=1501/1502
+c 18.568 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0023s) ~> len=3012
+c 19.002 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 19.002 1 contexts=1 descriptions=1
+c 19.052 1 #1:1 : INIT COMM e=38 nc=1
+c 19.064 1 #1:1 CS produced cls size=1521 lits=1497/1500
+c 19.072 1 #1:1 : merged 2 contribs rev=0 (inp=2990, t=0.0023s) ~> len=3010
+c 19.546 1 #1:1 : INIT COMM e=39 nc=1
+c 19.558 1 #1:1 CS produced cls size=1539 lits=1515/1515
+c 19.565 1 #1:1 : merged 2 contribs rev=0 (inp=3020, t=0.0023s) ~> len=3039
+c 20.002 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 20.002 1 contexts=1 descriptions=1
+c 20.050 1 #1:1 : INIT COMM e=40 nc=1
+c 20.062 1 #1:1 CS produced cls size=1537 lits=1513/1517
+c 20.069 1 #1:1 : merged 2 contribs rev=0 (inp=3023, t=0.0023s) ~> len=3042
+c 20.544 1 #1:1 : INIT COMM e=41 nc=1
+c 20.555 1 #1:1 CS produced cls size=1543 lits=1519/1519
+c 20.558 1 #1:1 : merged 2 contribs rev=0 (inp=3028, t=0.0025s) ~> len=3050
+c 21.002 1 mem=0.10GB mt_cpu=0.050 mt_sys=0.400
+c 21.002 1 contexts=1 descriptions=1
+c 21.049 1 #1:1 : INIT COMM e=42 nc=1
+c 21.059 1 #1:1 CS produced cls size=1604 lits=1580/1584
+c 21.066 1 #1:1 : merged 2 contribs rev=0 (inp=3156, t=0.0020s) ~> len=3177
+c 21.552 1 #1:1 : INIT COMM e=43 nc=1
+c 21.563 1 #1:1 CS produced cls size=1680 lits=1656/1659
+c 21.570 1 #1:1 : merged 2 contribs rev=0 (inp=3305, t=0.0020s) ~> len=3332
+c 22.002 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 22.002 1 contexts=1 descriptions=1
+c 22.046 1 #1:1 : INIT COMM e=44 nc=1
+c 22.057 1 #1:1 CS produced cls size=1527 lits=1503/1508
+c 22.064 1 #1:1 : merged 2 contribs rev=0 (inp=3005, t=0.0019s) ~> len=3034
+c 22.550 1 #1:1 : INIT COMM e=45 nc=1
+c 22.561 1 #1:1 CS produced cls size=1499 lits=1475/1478
+c 22.567 1 #1:1 : merged 2 contribs rev=0 (inp=2946, t=0.0017s) ~> len=2970
+c 23.002 1 mem=0.10GB mt_cpu=0.020 mt_sys=0.500
+c 23.002 1 contexts=1 descriptions=1
+c 23.053 1 #1:1 : INIT COMM e=46 nc=1
+c 23.064 1 #1:1 CS produced cls size=1508 lits=1484/1490
+c 23.071 1 #1:1 : merged 2 contribs rev=0 (inp=2967, t=0.0019s) ~> len=2998
+c 23.547 1 #1:1 : INIT COMM e=47 nc=1
+c 23.558 1 #1:1 CS produced cls size=1535 lits=1511/1514
+c 23.565 1 #1:1 : merged 2 contribs rev=0 (inp=3018, t=0.0020s) ~> len=3043
+c 24.002 1 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 24.002 1 contexts=1 descriptions=1
+c 24.051 1 #1:1 : INIT COMM e=48 nc=1
+c 24.062 1 #1:1 CS produced cls size=1535 lits=1511/1517
+c 24.069 1 #1:1 : merged 2 contribs rev=0 (inp=3024, t=0.0021s) ~> len=3055
+c 24.544 1 #1:1 : INIT COMM e=49 nc=1
+c 24.556 1 #1:1 CS produced cls size=1547 lits=1523/1527
+c 24.562 1 #1:1 : merged 2 contribs rev=0 (inp=3044, t=0.0019s) ~> len=3075
+c 25.002 1 mem=0.10GB mt_cpu=0.040 mt_sys=0.750
+c 25.004 1 contexts=1 descriptions=1
+c 25.048 1 #1:1 : INIT COMM e=50 nc=1
+c 25.060 1 #1:1 CS produced cls size=1540 lits=1516/1517
+c 25.066 1 #1:1 : merged 2 contribs rev=0 (inp=3023, t=0.0020s) ~> len=3051
+c 25.552 1 #1:1 : INIT COMM e=51 nc=1
+c 25.563 1 #1:1 CS produced cls size=1531 lits=1507/1508
+c 25.570 1 #1:1 : merged 2 contribs rev=0 (inp=3005, t=0.0020s) ~> len=3030
+c 26.002 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 26.002 1 contexts=1 descriptions=1
+c 26.045 1 #1:1 : INIT COMM e=52 nc=1
+c 26.057 1 #1:1 CS produced cls size=1529 lits=1505/1509
+c 26.064 1 #1:1 : merged 2 contribs rev=0 (inp=3007, t=0.0019s) ~> len=3031
+c 26.549 1 #1:1 : INIT COMM e=53 nc=1
+c 26.561 1 #1:1 CS produced cls size=1524 lits=1500/1502
+c 26.568 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0021s) ~> len=3024
+c 27.002 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 27.002 1 contexts=1 descriptions=1
+c 27.053 1 #1:1 : INIT COMM e=54 nc=1
+c 27.065 1 #1:1 CS produced cls size=1533 lits=1509/1513
+c 27.072 1 #1:1 : merged 2 contribs rev=0 (inp=3016, t=0.0025s) ~> len=3037
+c 27.547 1 #1:1 : INIT COMM e=55 nc=1
+c 27.558 1 #1:1 CS produced cls size=1534 lits=1510/1512
+c 27.565 1 #1:1 : merged 2 contribs rev=0 (inp=3014, t=0.0021s) ~> len=3035
+c 28.002 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 28.002 1 contexts=1 descriptions=1
+c 28.051 1 #1:1 : INIT COMM e=56 nc=1
+c 28.062 1 #1:1 CS produced cls size=1518 lits=1494/1500
+c 28.069 1 #1:1 : merged 2 contribs rev=0 (inp=2990, t=0.0020s) ~> len=3010
+c 28.545 1 #1:1 : INIT COMM e=57 nc=1
+c 28.557 1 #1:1 CS produced cls size=1520 lits=1496/1498
+c 28.563 1 #1:1 : merged 2 contribs rev=0 (inp=2986, t=0.0021s) ~> len=3006
+c 29.002 1 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 29.002 1 contexts=1 descriptions=1
+c 29.049 1 #1:1 : INIT COMM e=58 nc=1
+c 29.060 1 #1:1 CS produced cls size=1521 lits=1497/1498
+c 29.068 1 #1:1 : merged 2 contribs rev=0 (inp=2986, t=0.0021s) ~> len=3009
+c 29.553 1 #1:1 : INIT COMM e=59 nc=1
+c 29.564 1 #1:1 CS produced cls size=1526 lits=1502/1504
+c 29.572 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0021s) ~> len=3018
+c 30.002 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.667
+c 30.002 1 contexts=1 descriptions=1
+c 30.047 1 #1:1 : INIT COMM e=60 nc=1
+c 30.058 1 #1:1 CS produced cls size=1525 lits=1501/1502
+c 30.065 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0022s) ~> len=3015
+c 30.551 1 #1:1 : INIT COMM e=61 nc=1
+c 30.563 1 #1:1 CS produced cls size=1533 lits=1509/1510
+c 30.565 1 #1:1 : merged 2 contribs rev=0 (inp=3009, t=0.0021s) ~> len=3014
+c 31.002 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 31.002 1 contexts=1 descriptions=1
+c 31.045 1 #1:1 : INIT COMM e=62 nc=1
+c 31.057 1 #1:1 CS produced cls size=1535 lits=1511/1517
+c 31.059 1 #1:1 : merged 2 contribs rev=0 (inp=3022, t=0.0019s) ~> len=3046
+c 31.549 1 #1:1 : INIT COMM e=63 nc=1
+c 31.561 1 #1:1 CS produced cls size=1525 lits=1501/1501
+c 31.566 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0020s) ~> len=3012
+c 32.002 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 32.003 1 contexts=1 descriptions=1
+c 32.052 1 #1:1 : INIT COMM e=64 nc=1
+c 32.065 1 #1:1 CS produced cls size=1518 lits=1494/1495
+c 32.071 1 #1:1 : merged 2 contribs rev=0 (inp=2980, t=0.0021s) ~> len=3002
+c 32.546 1 #1:1 : INIT COMM e=65 nc=1
+c 32.549 1 #1:1 CS produced cls size=1522 lits=1498/1500
+c 32.564 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0020s) ~> len=3008
+c 33.003 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.333
+c 33.003 1 contexts=1 descriptions=1
+c 33.049 1 #1:1 : INIT COMM e=66 nc=1
+c 33.054 1 #1:1 CS produced cls size=1517 lits=1493/1499
+c 33.069 1 #1:1 : merged 2 contribs rev=0 (inp=2988, t=0.0020s) ~> len=3007
+c 33.554 1 #1:1 : INIT COMM e=67 nc=1
+c 33.558 1 #1:1 CS produced cls size=1524 lits=1500/1504
+c 33.572 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0018s) ~> len=3019
+c 34.003 1 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 34.003 1 contexts=1 descriptions=1
+c 34.047 1 #1:1 : INIT COMM e=68 nc=1
+c 34.051 1 #1:1 CS produced cls size=1529 lits=1505/1507
+c 34.066 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0020s) ~> len=3028
+c 34.551 1 #1:1 : INIT COMM e=69 nc=1
+c 34.555 1 #1:1 CS produced cls size=1522 lits=1498/1503
+c 34.571 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0021s) ~> len=3020
+c 35.003 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.333
+c 35.003 1 contexts=1 descriptions=1
+c 35.046 1 #1:1 : INIT COMM e=70 nc=1
+c 35.059 1 #1:1 CS produced cls size=1521 lits=1497/1503
+c 35.064 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0021s) ~> len=3016
+c 35.550 1 #1:1 : INIT COMM e=71 nc=1
+c 35.553 1 #1:1 CS produced cls size=1531 lits=1507/1507
+c 35.568 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0022s) ~> len=3022
+c 36.003 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 36.003 1 contexts=1 descriptions=1
+c 36.053 1 #1:1 : INIT COMM e=72 nc=1
+c 36.067 1 #1:1 CS produced cls size=1520 lits=1496/1502
+c 36.072 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0020s) ~> len=3017
+c 36.547 1 #1:1 : INIT COMM e=73 nc=1
+c 36.551 1 #1:1 CS produced cls size=1531 lits=1507/1507
+c 36.566 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0020s) ~> len=3025
+c 37.003 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 37.003 1 contexts=1 descriptions=1
+c 37.051 1 #1:1 : INIT COMM e=74 nc=1
+c 37.055 1 #1:1 CS produced cls size=1520 lits=1496/1502
+c 37.070 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0019s) ~> len=3016
+c 37.544 1 #1:1 : INIT COMM e=75 nc=1
+c 37.559 1 #1:1 CS produced cls size=1523 lits=1499/1503
+c 37.564 1 #1:1 : merged 2 contribs rev=0 (inp=2995, t=0.0020s) ~> len=3016
+c 38.003 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 38.003 1 contexts=1 descriptions=1
+c 38.048 1 #1:1 : INIT COMM e=76 nc=1
+c 38.053 1 #1:1 CS produced cls size=1526 lits=1502/1503
+c 38.068 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0020s) ~> len=3017
+c 38.553 1 #1:1 : INIT COMM e=77 nc=1
+c 38.557 1 #1:1 CS produced cls size=1524 lits=1500/1504
+c 38.573 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0022s) ~> len=3019
+c 39.003 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 39.007 1 contexts=1 descriptions=1
+c 39.046 1 #1:1 : INIT COMM e=78 nc=1
+c 39.061 1 #1:1 CS produced cls size=1524 lits=1500/1502
+c 39.067 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0022s) ~> len=3015
+c 39.550 1 #1:1 : INIT COMM e=79 nc=1
+c 39.554 1 #1:1 CS produced cls size=1522 lits=1498/1502
+c 39.571 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0020s) ~> len=3017
+c 40.003 1 mem=0.10GB mt_cpu=0.040 mt_sys=0.500
+c 40.003 1 contexts=1 descriptions=1
+c 40.044 1 #1:1 : INIT COMM e=80 nc=1
+c 40.049 1 #1:1 CS produced cls size=1524 lits=1500/1500
+c 40.065 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0021s) ~> len=3007
+c 40.547 1 #1:1 : INIT COMM e=81 nc=1
+c 40.553 1 #1:1 CS produced cls size=1526 lits=1502/1504
+c 40.569 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0021s) ~> len=3017
+c 41.003 1 mem=0.10GB mt_cpu=0.030 mt_sys=0.333
+c 41.004 1 contexts=1 descriptions=1
+c 41.051 1 #1:1 : INIT COMM e=82 nc=1
+c 41.057 1 #1:1 CS produced cls size=1521 lits=1497/1503
+c 41.073 1 #1:1 : merged 2 contribs rev=0 (inp=2995, t=0.0021s) ~> len=3015
+c 41.545 1 #1:1 : INIT COMM e=83 nc=1
+c 41.551 1 #1:1 CS produced cls size=1516 lits=1498/1499
+c 41.567 1 #1:1 : merged 2 contribs rev=0 (inp=2987, t=0.0020s) ~> len=3010
+c 42.004 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 42.004 1 contexts=1 descriptions=1
+c 42.049 1 #1:1 : INIT COMM e=84 nc=1
+c 42.055 1 #1:1 CS produced cls size=1517 lits=1499/1500
+c 42.062 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0020s) ~> len=3010
+c 42.552 1 #1:1 : INIT COMM e=85 nc=1
+c 42.558 1 #1:1 CS produced cls size=1518 lits=1500/1505
+c 42.575 1 #1:1 : merged 2 contribs rev=0 (inp=2999, t=0.0022s) ~> len=3023
+c 43.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 43.004 1 contexts=1 descriptions=1
+c 43.046 1 #1:1 : INIT COMM e=86 nc=1
+c 43.052 1 #1:1 CS produced cls size=1518 lits=1500/1503
+c 43.071 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0022s) ~> len=3015
+c 43.550 1 #1:1 : INIT COMM e=87 nc=1
+c 43.555 1 #1:1 CS produced cls size=1520 lits=1502/1506
+c 43.575 1 #1:1 : merged 2 contribs rev=0 (inp=3001, t=0.0023s) ~> len=3018
+c 44.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 44.004 1 contexts=1 descriptions=1
+c 44.044 1 #1:1 : INIT COMM e=88 nc=1
+c 44.049 1 #1:1 CS produced cls size=1523 lits=1505/1507
+c 44.069 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0022s) ~> len=3026
+c 44.548 1 #1:1 : INIT COMM e=89 nc=1
+c 44.553 1 #1:1 CS produced cls size=1526 lits=1502/1502
+c 44.573 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0021s) ~> len=3011
+c 45.004 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 45.004 1 contexts=1 descriptions=1
+c 45.052 1 #1:1 : INIT COMM e=90 nc=1
+c 45.057 1 #1:1 CS produced cls size=1521 lits=1497/1503
+c 45.077 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0022s) ~> len=3015
+c 45.545 1 #1:1 : INIT COMM e=91 nc=1
+c 45.552 1 #1:1 CS produced cls size=1518 lits=1494/1500
+c 45.570 1 #1:1 : merged 2 contribs rev=0 (inp=2988, t=0.0019s) ~> len=3012
+c 46.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 46.004 1 contexts=1 descriptions=1
+c 46.049 1 #1:1 : INIT COMM e=92 nc=1
+c 46.056 1 #1:1 CS produced cls size=1529 lits=1505/1506
+c 46.074 1 #1:1 : merged 2 contribs rev=0 (inp=3001, t=0.0021s) ~> len=3019
+c 46.553 1 #1:1 : INIT COMM e=93 nc=1
+c 46.559 1 #1:1 CS produced cls size=1521 lits=1497/1503
+c 46.578 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0021s) ~> len=3016
+c 47.004 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.333
+c 47.004 1 contexts=1 descriptions=1
+c 47.047 1 #1:1 : INIT COMM e=94 nc=1
+c 47.054 1 #1:1 CS produced cls size=1528 lits=1504/1505
+c 47.073 1 #1:1 : merged 2 contribs rev=0 (inp=2999, t=0.0021s) ~> len=3021
+c 47.551 1 #1:1 : INIT COMM e=95 nc=1
+c 47.557 1 #1:1 CS produced cls size=1521 lits=1497/1502
+c 47.578 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0021s) ~> len=3013
+c 48.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.750
+c 48.004 1 contexts=1 descriptions=1
+c 48.045 1 #1:1 : INIT COMM e=96 nc=1
+c 48.051 1 #1:1 CS produced cls size=1520 lits=1496/1500
+c 48.071 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0027s) ~> len=3011
+c 48.549 1 #1:1 : INIT COMM e=97 nc=1
+c 48.555 1 #1:1 CS produced cls size=1524 lits=1500/1506
+c 48.577 1 #1:1 : merged 2 contribs rev=0 (inp=3001, t=0.0042s) ~> len=3020
+c 49.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 49.004 1 contexts=1 descriptions=1
+c 49.053 1 #1:1 : INIT COMM e=98 nc=1
+c 49.059 1 #1:1 CS produced cls size=1524 lits=1500/1501
+c 49.069 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0021s) ~> len=3013
+c 49.547 1 #1:1 : INIT COMM e=99 nc=1
+c 49.553 1 #1:1 CS produced cls size=1518 lits=1500/1503
+c 49.563 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0022s) ~> len=3016
+c 50.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.750
+c 50.005 1 contexts=1 descriptions=1
+c 50.051 1 #1:1 : INIT COMM e=100 nc=1
+c 50.058 1 #1:1 CS produced cls size=1521 lits=1503/1505
+c 50.077 1 #1:1 : merged 2 contribs rev=0 (inp=3000, t=0.0021s) ~> len=3018
+c 50.545 1 #1:1 : INIT COMM e=101 nc=1
+c 50.551 1 #1:1 CS produced cls size=1527 lits=1503/1507
+c 50.572 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0041s) ~> len=3027
+c 51.004 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 51.005 1 contexts=1 descriptions=1
+c 51.049 1 #1:1 : INIT COMM e=102 nc=1
+c 51.055 1 #1:1 CS produced cls size=1531 lits=1507/1507
+c 51.076 1 #1:1 : merged 2 contribs rev=0 (inp=3004, t=0.0036s) ~> len=3025
+c 51.553 1 #1:1 : INIT COMM e=103 nc=1
+c 51.559 1 #1:1 CS produced cls size=1523 lits=1505/1506
+c 51.578 1 #1:1 : merged 2 contribs rev=0 (inp=3002, t=0.0022s) ~> len=3024
+c 52.005 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 52.005 1 contexts=1 descriptions=1
+c 52.046 1 #1:1 : INIT COMM e=104 nc=1
+c 52.053 1 #1:1 CS produced cls size=1519 lits=1501/1503
+c 52.064 1 #1:1 : merged 2 contribs rev=0 (inp=2995, t=0.0040s) ~> len=3019
+c 52.551 1 #1:1 : INIT COMM e=105 nc=1
+c 52.557 1 #1:1 CS produced cls size=1518 lits=1500/1500
+c 52.576 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0018s) ~> len=3012
+c 53.005 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 53.005 1 contexts=1 descriptions=1
+c 53.044 1 #1:1 : INIT COMM e=106 nc=1
+c 53.051 1 #1:1 CS produced cls size=1516 lits=1498/1500
+c 53.070 1 #1:1 : merged 2 contribs rev=0 (inp=2990, t=0.0019s) ~> len=3011
+c 53.548 1 #1:1 : INIT COMM e=107 nc=1
+c 53.555 1 #1:1 CS produced cls size=1519 lits=1501/1505
+c 53.575 1 #1:1 : merged 2 contribs rev=0 (inp=3000, t=0.0037s) ~> len=3020
+c 54.005 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 54.005 1 contexts=1 descriptions=1
+c 54.052 1 #1:1 : INIT COMM e=108 nc=1
+c 54.059 1 #1:1 CS produced cls size=1521 lits=1503/1504
+c 54.079 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0038s) ~> len=3010
+c 54.546 1 #1:1 : INIT COMM e=109 nc=1
+c 54.553 1 #1:1 CS produced cls size=1522 lits=1504/1504
+c 54.574 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0051s) ~> len=3012
+c 55.005 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 55.005 1 contexts=1 descriptions=1
+c 55.050 1 #1:1 : INIT COMM e=110 nc=1
+c 55.056 1 #1:1 CS produced cls size=1520 lits=1502/1504
+c 55.077 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0038s) ~> len=3012
+c 55.544 1 #1:1 : INIT COMM e=111 nc=1
+c 55.550 1 #1:1 CS produced cls size=1518 lits=1500/1503
+c 55.570 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0035s) ~> len=3010
+c 56.005 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 56.009 1 contexts=1 descriptions=1
+c 56.048 1 #1:1 : INIT COMM e=112 nc=1
+c 56.055 1 #1:1 CS produced cls size=1515 lits=1497/1502
+c 56.073 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0024s) ~> len=3010
+c 56.552 1 #1:1 : INIT COMM e=113 nc=1
+c 56.560 1 #1:1 CS produced cls size=1517 lits=1499/1503
+c 56.577 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0023s) ~> len=3010
+c 57.005 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 57.005 1 contexts=1 descriptions=1
+c 57.046 1 #1:1 : INIT COMM e=114 nc=1
+c 57.053 1 #1:1 CS produced cls size=1514 lits=1496/1499
+c 57.072 1 #1:1 : merged 2 contribs rev=0 (inp=2988, t=0.0041s) ~> len=3001
+c 57.550 1 #1:1 : INIT COMM e=115 nc=1
+c 57.557 1 #1:1 CS produced cls size=1518 lits=1500/1505
+c 57.576 1 #1:1 : merged 2 contribs rev=0 (inp=2999, t=0.0043s) ~> len=3015
+c 58.005 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 58.005 1 contexts=1 descriptions=1
+c 58.044 1 #1:1 : INIT COMM e=116 nc=1
+c 58.051 1 #1:1 CS produced cls size=1522 lits=1504/1508
+c 58.068 1 #1:1 : merged 2 contribs rev=0 (inp=3006, t=0.0023s) ~> len=3023
+c 58.548 1 #1:1 : INIT COMM e=117 nc=1
+c 58.556 1 #1:1 CS produced cls size=1519 lits=1501/1501
+c 58.573 1 #1:1 : merged 2 contribs rev=0 (inp=2991, t=0.0035s) ~> len=2942
+c 59.005 1 mem=0.11GB mt_cpu=0.050 mt_sys=0.600
+c 59.005 1 contexts=1 descriptions=1
+c 59.052 1 #1:1 : INIT COMM e=118 nc=1
+c 59.060 1 #1:1 CS produced cls size=1521 lits=1503/1504
+c 59.078 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0042s) ~> len=3015
+c 59.546 1 #1:1 : INIT COMM e=119 nc=1
+c 59.553 1 #1:1 CS produced cls size=1520 lits=1502/1505
+c 59.570 1 #1:1 : merged 2 contribs rev=0 (inp=3000, t=0.0024s) ~> len=3014
+c 60.005 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.250
+c 60.005 1 contexts=1 descriptions=1
+c 60.049 1 #1:1 : INIT COMM e=120 nc=1
+c 60.057 1 #1:1 CS produced cls size=1531 lits=1513/1517
+c 60.074 1 #1:1 : merged 2 contribs rev=0 (inp=3022, t=0.0028s) ~> len=3039
+c 60.553 1 #1:1 : INIT COMM e=121 nc=1
+c 60.561 1 #1:1 CS produced cls size=1517 lits=1499/1502
+c 60.577 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0020s) ~> len=3010
+c 61.005 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 61.005 1 contexts=1 descriptions=1
+c 61.047 1 #1:1 : INIT COMM e=122 nc=1
+c 61.055 1 #1:1 CS produced cls size=1515 lits=1497/1499
+c 61.073 1 #1:1 : merged 2 contribs rev=0 (inp=2987, t=0.0045s) ~> len=3002
+c 61.551 1 #1:1 : INIT COMM e=123 nc=1
+c 61.559 1 #1:1 CS produced cls size=1511 lits=1493/1498
+c 61.575 1 #1:1 : merged 2 contribs rev=0 (inp=2986, t=0.0023s) ~> len=3003
+c 62.005 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 62.005 1 contexts=1 descriptions=1
+c 62.045 1 #1:1 : INIT COMM e=124 nc=1
+c 62.053 1 #1:1 CS produced cls size=1525 lits=1507/1508
+c 62.068 1 #1:1 : merged 2 contribs rev=0 (inp=3006, t=0.0023s) ~> len=3023
+c 62.549 1 #1:1 : INIT COMM e=125 nc=1
+c 62.556 1 #1:1 CS produced cls size=1517 lits=1499/1504
+c 62.574 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0039s) ~> len=3015
+c 63.005 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 63.005 1 contexts=1 descriptions=1
+c 63.053 1 #1:1 : INIT COMM e=126 nc=1
+c 63.060 1 #1:1 CS produced cls size=1521 lits=1503/1502
+c 63.076 1 #1:1 : merged 2 contribs rev=0 (inp=2994, t=0.0021s) ~> len=3004
+c 63.547 1 #1:1 : INIT COMM e=127 nc=1
+c 63.555 1 #1:1 CS produced cls size=1525 lits=1501/1501
+c 63.571 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0036s) ~> len=3011
+c 64.005 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 64.005 1 contexts=1 descriptions=1
+c 64.051 1 #1:1 : INIT COMM e=128 nc=1
+c 64.059 1 #1:1 CS produced cls size=1532 lits=1508/1512
+c 64.076 1 #1:1 : merged 2 contribs rev=0 (inp=3013, t=0.0031s) ~> len=3034
+c 64.545 1 #1:1 : INIT COMM e=129 nc=1
+c 64.553 1 #1:1 CS produced cls size=1529 lits=1505/1510
+c 64.568 1 #1:1 : merged 2 contribs rev=0 (inp=3009, t=0.0021s) ~> len=3027
+c 65.005 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 65.005 1 contexts=1 descriptions=1
+c 65.048 1 #1:1 : INIT COMM e=130 nc=1
+c 65.057 1 #1:1 CS produced cls size=1524 lits=1500/1503
+c 65.073 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0034s) ~> len=3014
+c 65.552 1 #1:1 : INIT COMM e=131 nc=1
+c 65.561 1 #1:1 CS produced cls size=1518 lits=1494/1498
+c 65.575 1 #1:1 : merged 2 contribs rev=0 (inp=2986, t=0.0022s) ~> len=2993
+c 66.006 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 66.006 1 contexts=1 descriptions=1
+c 66.046 1 #1:1 : INIT COMM e=132 nc=1
+c 66.055 1 #1:1 CS produced cls size=1523 lits=1499/1503
+c 66.068 1 #1:1 : merged 2 contribs rev=0 (inp=2995, t=0.0019s) ~> len=3010
+c 66.549 1 #1:1 : INIT COMM e=133 nc=1
+c 66.559 1 #1:1 CS produced cls size=1521 lits=1503/1504
+c 66.574 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0039s) ~> len=3020
+c 67.006 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 67.006 1 contexts=1 descriptions=1
+c 67.053 1 #1:1 : INIT COMM e=134 nc=1
+c 67.063 1 #1:1 CS produced cls size=1515 lits=1497/1500
+c 67.078 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0037s) ~> len=3006
+c 67.547 1 #1:1 : INIT COMM e=135 nc=1
+c 67.557 1 #1:1 CS produced cls size=1515 lits=1497/1500
+c 67.571 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0034s) ~> len=3004
+c 68.006 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 68.010 1 contexts=1 descriptions=1
+c 68.050 1 #1:1 : INIT COMM e=136 nc=1
+c 68.061 1 #1:1 CS produced cls size=1517 lits=1499/1501
+c 68.075 1 #1:1 : merged 2 contribs rev=0 (inp=2991, t=0.0033s) ~> len=3008
+c 68.544 1 #1:1 : INIT COMM e=137 nc=1
+c 68.555 1 #1:1 CS produced cls size=1519 lits=1501/1506
+c 68.567 1 #1:1 : merged 2 contribs rev=0 (inp=3001, t=0.0023s) ~> len=3019
+c 69.006 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 69.006 1 contexts=1 descriptions=1
+c 69.047 1 #1:1 : INIT COMM e=138 nc=1
+c 69.059 1 #1:1 CS produced cls size=1523 lits=1499/1502
+c 69.071 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0021s) ~> len=3007
+c 69.551 1 #1:1 : INIT COMM e=139 nc=1
+c 69.555 1 #1:1 CS produced cls size=1525 lits=1501/1504
+c 69.575 1 #1:1 : merged 2 contribs rev=0 (inp=2997, t=0.0033s) ~> len=3009
+c 70.006 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 70.010 1 contexts=1 descriptions=1
+c 70.044 1 #1:1 : INIT COMM e=140 nc=1
+c 70.051 1 #1:1 CS produced cls size=1525 lits=1501/1503
+c 70.068 1 #1:1 : merged 2 contribs rev=0 (inp=2996, t=0.0019s) ~> len=3017
+c 70.548 1 #1:1 : INIT COMM e=141 nc=1
+c 70.554 1 #1:1 CS produced cls size=1531 lits=1507/1509
+c 70.572 1 #1:1 : merged 2 contribs rev=0 (inp=3008, t=0.0022s) ~> len=3030
+c 71.006 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 71.006 1 contexts=1 descriptions=1
+c 71.052 1 #1:1 : INIT COMM e=142 nc=1
+c 71.057 1 #1:1 CS produced cls size=1520 lits=1496/1501
+c 71.077 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0032s) ~> len=3012
+c 71.546 1 #1:1 : INIT COMM e=143 nc=1
+c 71.551 1 #1:1 CS produced cls size=1525 lits=1507/1509
+c 71.571 1 #1:1 : merged 2 contribs rev=0 (inp=3007, t=0.0038s) ~> len=3032
+c 72.006 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.333
+c 72.006 1 contexts=1 descriptions=1
+c 72.049 1 #1:1 : INIT COMM e=144 nc=1
+c 72.055 1 #1:1 CS produced cls size=1625 lits=1601/1603
+c 72.065 1 #1:1 : merged 2 contribs rev=0 (inp=3195, t=0.0023s) ~> len=3214
+c 72.553 1 #1:1 : INIT COMM e=145 nc=1
+c 72.559 1 #1:1 CS produced cls size=1534 lits=1510/1514
+c 72.578 1 #1:1 : merged 2 contribs rev=0 (inp=3018, t=0.0027s) ~> len=3041
+c 73.006 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.500
+c 73.006 1 contexts=1 descriptions=1
+c 73.047 1 #1:1 : INIT COMM e=146 nc=1
+c 73.053 1 #1:1 CS produced cls size=1501 lits=1477/1481
+c 73.071 1 #1:1 : merged 2 contribs rev=0 (inp=2952, t=0.0025s) ~> len=2973
+c 73.551 1 #1:1 : INIT COMM e=147 nc=1
+c 73.557 1 #1:1 CS produced cls size=1513 lits=1489/1490
+c 73.576 1 #1:1 : merged 2 contribs rev=0 (inp=2969, t=0.0027s) ~> len=2992
+c 74.006 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 74.006 1 contexts=1 descriptions=1
+c 74.045 1 #1:1 : INIT COMM e=148 nc=1
+c 74.050 1 #1:1 CS produced cls size=1517 lits=1493/1498
+c 74.069 1 #1:1 : merged 2 contribs rev=0 (inp=2985, t=0.0026s) ~> len=3005
+c 74.549 1 #1:1 : INIT COMM e=149 nc=1
+c 74.554 1 #1:1 CS produced cls size=1522 lits=1498/1501
+c 74.572 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0023s) ~> len=3014
+c 75.006 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 75.006 1 contexts=1 descriptions=1
+c 75.053 1 #1:1 : INIT COMM e=150 nc=1
+c 75.058 1 #1:1 CS produced cls size=1527 lits=1503/1505
+c 75.076 1 #1:1 : merged 2 contribs rev=0 (inp=3000, t=0.0019s) ~> len=3020
+c 75.546 1 #1:1 : INIT COMM e=151 nc=1
+c 75.552 1 #1:1 CS produced cls size=1526 lits=1502/1504
+c 75.571 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0031s) ~> len=3017
+c 76.006 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 76.011 1 contexts=1 descriptions=1
+c 76.050 1 #1:1 : INIT COMM e=152 nc=1
+c 76.056 1 #1:1 CS produced cls size=1521 lits=1497/1499
+c 76.075 1 #1:1 : merged 2 contribs rev=0 (inp=2988, t=0.0031s) ~> len=3009
+c 76.544 1 #1:1 : INIT COMM e=153 nc=1
+c 76.550 1 #1:1 CS produced cls size=1520 lits=1502/1503
+c 76.569 1 #1:1 : merged 2 contribs rev=0 (inp=2995, t=0.0034s) ~> len=3019
+c 77.006 1 mem=0.11GB mt_cpu=0.030 mt_sys=0.667
+c 77.011 1 contexts=1 descriptions=1
+c 77.049 1 #1:1 : INIT COMM e=154 nc=1
+c 77.054 1 #1:1 CS produced cls size=1526 lits=1502/1505
+c 77.073 1 #1:1 : merged 2 contribs rev=0 (inp=2999, t=0.0025s) ~> len=3022
+c 77.553 1 #1:1 : INIT COMM e=155 nc=1
+c 77.558 1 #1:1 CS produced cls size=1520 lits=1496/1501
+c 77.577 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0032s) ~> len=3013
+c 78.007 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.750
+c 78.007 1 contexts=1 descriptions=1
+c 78.046 1 #1:1 : INIT COMM e=156 nc=1
+c 78.053 1 #1:1 CS produced cls size=1548 lits=1524/1527
+c 78.070 1 #1:1 : merged 2 contribs rev=0 (inp=3044, t=0.0021s) ~> len=3065
+c 78.550 1 #1:1 : INIT COMM e=157 nc=1
+c 78.558 1 #1:1 CS produced cls size=1525 lits=1501/1504
+c 78.575 1 #1:1 : merged 2 contribs rev=0 (inp=2998, t=0.0036s) ~> len=3020
+c 79.007 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.600
+c 79.007 1 contexts=1 descriptions=1
+c 79.044 1 #1:1 : INIT COMM e=158 nc=1
+c 79.051 1 #1:1 CS produced cls size=1519 lits=1495/1495
+c 79.067 1 #1:1 : merged 2 contribs rev=0 (inp=2980, t=0.0020s) ~> len=2999
+c 79.548 1 #1:1 : INIT COMM e=159 nc=1
+c 79.555 1 #1:1 CS produced cls size=1520 lits=1496/1499
+c 79.571 1 #1:1 : merged 2 contribs rev=0 (inp=2987, t=0.0020s) ~> len=3005
+c 80.007 1 mem=0.11GB mt_cpu=0.040 mt_sys=0.250
+c 80.007 1 contexts=1 descriptions=1
+c 80.051 1 #1:1 : INIT COMM e=160 nc=1
+c 80.059 1 #1:1 CS produced cls size=1525 lits=1501/1502
+c 80.076 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0020s) ~> len=3011
+c 80.545 1 #1:1 : INIT COMM e=161 nc=1
+c 80.552 1 #1:1 CS produced cls size=1521 lits=1497/1500
+c 80.569 1 #1:1 : merged 2 contribs rev=0 (inp=2990, t=0.0020s) ~> len=3014
+c 81.007 1 mem=0.11GB mt_cpu=0.050 mt_sys=0.600
+c 81.007 1 contexts=1 descriptions=1
+c 81.049 1 #1:1 : INIT COMM e=162 nc=1
+c 81.056 1 #1:1 CS produced cls size=1521 lits=1497/1501
+c 81.075 1 #1:1 : merged 2 contribs rev=0 (inp=2992, t=0.0039s) ~> len=3011
+c 81.552 1 #1:1 : INIT COMM e=163 nc=1
+c 81.560 1 #1:1 CS produced cls size=1522 lits=1498/1502
+c 81.579 1 #1:1 : merged 2 contribs rev=0 (inp=2993, t=0.0039s) ~> len=3013
+c 82.007 1 mem=0.12GB mt_cpu=0.030 mt_sys=0.333
+c 82.007 1 contexts=1 descriptions=1
+c 82.047 1 #1:1 : INIT COMM e=164 nc=1
+c 82.054 1 #1:1 CS produced cls size=1521 lits=1497/1499
+c 82.071 1 #1:1 : merged 2 contribs rev=0 (inp=2987, t=0.0023s) ~> len=3007
+c 82.550 1 #1:1 : INIT COMM e=165 nc=1
+c 82.558 1 #1:1 CS produced cls size=1522 lits=1498/1499
+c 82.576 1 #1:1 : merged 2 contribs rev=0 (inp=2987, t=0.0036s) ~> len=3009
+c 83.007 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 83.007 1 contexts=1 descriptions=1
+c 83.044 1 #1:1 : INIT COMM e=166 nc=1
+c 83.052 1 #1:1 CS produced cls size=1523 lits=1499/1501
+c 83.069 1 #1:1 : merged 2 contribs rev=0 (inp=2991, t=0.0022s) ~> len=3015
+c 83.548 1 #1:1 : INIT COMM e=167 nc=1
+c 83.555 1 #1:1 CS produced cls size=1513 lits=1495/1500
+c 83.572 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0020s) ~> len=3009
+c 84.007 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 84.007 1 contexts=1 descriptions=1
+c 84.051 1 #1:1 : INIT COMM e=168 nc=1
+c 84.060 1 #1:1 CS produced cls size=1518 lits=1494/1500
+c 84.077 1 #1:1 : merged 2 contribs rev=0 (inp=2989, t=0.0034s) ~> len=3007
+c 84.546 1 #1:1 : INIT COMM e=169 nc=1
+c 84.553 1 #1:1 CS produced cls size=1604 lits=1580/1583
+c 84.572 1 #1:1 : merged 2 contribs rev=0 (inp=3155, t=0.0041s) ~> len=3177
+c 85.007 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.200
+c 85.007 1 contexts=1 descriptions=1
+c 85.049 1 #1:1 : INIT COMM e=170 nc=1
+c 85.057 1 #1:1 CS produced cls size=1539 lits=1515/1518
+c 85.073 1 #1:1 : merged 2 contribs rev=0 (inp=3025, t=0.0021s) ~> len=3046
+c 85.544 1 #1:1 : INIT COMM e=171 nc=1
+c 85.551 1 #1:1 CS produced cls size=1505 lits=1487/1489
+c 85.568 1 #1:1 : merged 2 contribs rev=0 (inp=2967, t=0.0022s) ~> len=2984
+c 86.007 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 86.007 1 contexts=1 descriptions=1
+c 86.047 1 #1:1 : INIT COMM e=172 nc=1
+c 86.055 1 #1:1 CS produced cls size=1613 lits=1589/1592
+c 86.064 1 #1:1 : merged 2 contribs rev=0 (inp=3173, t=0.0034s) ~> len=3197
+c 86.551 1 #1:1 : INIT COMM e=173 nc=1
+c 86.559 1 #1:1 CS produced cls size=1536 lits=1512/1518
+c 86.574 1 #1:1 : merged 2 contribs rev=0 (inp=3025, t=0.0020s) ~> len=3046
+c 87.007 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 87.007 1 contexts=1 descriptions=1
+c 87.045 1 #1:1 : INIT COMM e=174 nc=1
+c 87.053 1 #1:1 CS produced cls size=1501 lits=1483/1486
+c 87.070 1 #1:1 : merged 2 contribs rev=0 (inp=2961, t=0.0034s) ~> len=2983
+c 87.549 1 #1:1 : INIT COMM e=175 nc=1
+c 87.556 1 #1:1 CS produced cls size=1551 lits=1527/1533
+c 87.573 1 #1:1 : merged 2 contribs rev=0 (inp=3054, t=0.0021s) ~> len=3045
+c 88.007 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.400
+c 88.007 1 contexts=1 descriptions=1
+c 88.052 1 #1:1 : INIT COMM e=176 nc=1
+c 88.061 1 #1:1 CS produced cls size=1936 lits=1912/1916
+c 88.080 1 #1:1 : merged 2 contribs rev=0 (inp=3819, t=0.0047s) ~> len=3840
+c 88.546 1 #1:1 : INIT COMM e=177 nc=1
+c 88.555 1 #1:1 CS produced cls size=1613 lits=1589/1594
+c 88.572 1 #1:1 : merged 2 contribs rev=0 (inp=3177, t=0.0036s) ~> len=3197
+c 89.007 1 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 89.013 1 contexts=1 descriptions=1
+c 89.049 1 #1:1 : INIT COMM e=178 nc=1
+c 89.063 1 #1:1 CS produced cls size=1446 lits=1422/1422
+c 89.075 1 #1:1 : merged 2 contribs rev=0 (inp=2833, t=0.0019s) ~> len=2855
+c 89.553 1 #1:1 : INIT COMM e=179 nc=1
+c 89.558 1 #1:1 CS produced cls size=1762 lits=1738/1739
+c 89.579 1 #1:1 : merged 2 contribs rev=0 (inp=3465, t=0.0024s) ~> len=3483
+c 90.007 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.400
+c 90.008 1 contexts=1 descriptions=1
+c 90.046 1 #1:1 : INIT COMM e=180 nc=1
+c 90.053 1 #1:1 CS produced cls size=1549 lits=1525/1526
+c 90.072 1 #1:1 : merged 2 contribs rev=0 (inp=3042, t=0.0023s) ~> len=3063
+c 90.550 1 #1:1 : INIT COMM e=181 nc=1
+c 90.557 1 #1:1 CS produced cls size=1614 lits=1590/1591
+c 90.566 1 #1:1 : merged 2 contribs rev=0 (inp=3170, t=0.0023s) ~> len=3189
+c 91.007 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.600
+c 91.008 1 contexts=1 descriptions=1
+c 91.053 1 #1:1 : INIT COMM e=182 nc=1
+c 91.061 1 #1:1 CS produced cls size=1508 lits=1484/1489
+c 91.071 1 #1:1 : merged 2 contribs rev=0 (inp=2969, t=0.0034s) ~> len=2990
+c 91.546 1 #1:1 : INIT COMM e=183 nc=1
+c 91.555 1 #1:1 CS produced cls size=1793 lits=1769/1772
+c 91.566 1 #1:1 : merged 2 contribs rev=0 (inp=3532, t=0.0042s) ~> len=3550
+c 92.008 1 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 92.008 1 contexts=1 descriptions=1
+c 92.049 1 #1:1 : INIT COMM e=184 nc=1
+c 92.059 1 #1:1 CS produced cls size=1533 lits=1515/1518
+c 92.069 1 #1:1 : merged 2 contribs rev=0 (inp=3025, t=0.0037s) ~> len=3022
+c 92.553 1 #1:1 : INIT COMM e=185 nc=1
+c 92.563 1 #1:1 CS produced cls size=1484 lits=1466/1466
+c 92.571 1 #1:1 : merged 2 contribs rev=0 (inp=2922, t=0.0021s) ~> len=2946
+c 93.008 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 93.008 1 contexts=1 descriptions=1
+c 93.047 1 #1:1 : INIT COMM e=186 nc=1
+c 93.058 1 #1:1 CS produced cls size=1506 lits=1488/1489
+c 93.065 1 #1:1 : merged 2 contribs rev=0 (inp=2968, t=0.0020s) ~> len=2988
+c 93.551 1 #1:1 : INIT COMM e=187 nc=1
+c 93.562 1 #1:1 CS produced cls size=1516 lits=1492/1497
+c 93.571 1 #1:1 : merged 2 contribs rev=0 (inp=2983, t=0.0038s) ~> len=3006
+c 94.008 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 94.008 1 contexts=1 descriptions=1
+c 94.044 1 #1:1 : INIT COMM e=188 nc=1
+c 94.056 1 #1:1 CS produced cls size=1532 lits=1508/1514
+c 94.063 1 #1:1 : merged 2 contribs rev=0 (inp=3017, t=0.0021s) ~> len=3038
+c 94.547 1 #1:1 : INIT COMM e=189 nc=1
+c 94.560 1 #1:1 CS produced cls size=1571 lits=1547/1549
+c 94.568 1 #1:1 : merged 2 contribs rev=0 (inp=3087, t=0.0037s) ~> len=3107
+c 95.008 1 mem=0.12GB mt_cpu=0.050 mt_sys=0.400
+c 95.008 1 contexts=1 descriptions=1
+c 95.052 1 #1:1 : INIT COMM e=190 nc=1
+c 95.065 1 #1:1 CS produced cls size=1679 lits=1661/1663
+c 95.071 1 #1:1 : merged 2 contribs rev=0 (inp=3315, t=0.0022s) ~> len=3339
+c 95.546 1 #1:1 : INIT COMM e=191 nc=1
+c 95.549 1 #1:1 CS produced cls size=1589 lits=1571/1575
+c 95.558 1 #1:1 : merged 2 contribs rev=0 (inp=3140, t=0.0028s) ~> len=3138
+c 96.008 1 mem=0.12GB mt_cpu=0.040 mt_sys=0.500
+c 96.013 1 contexts=1 descriptions=1
+c 96.049 1 #1:1 : INIT COMM e=192 nc=1
+c 96.054 1 #1:1 CS produced cls size=1603 lits=1579/1585
+c 96.071 1 #1:1 : merged 2 contribs rev=0 (inp=3159, t=0.0032s) ~> len=3184
+c 96.553 1 #1:1 : INIT COMM e=193 nc=1
+c 96.558 1 #1:1 CS produced cls size=1510 lits=1486/1486
+c 96.576 1 #1:1 : merged 2 contribs rev=0 (inp=2961, t=0.0033s) ~> len=2985
+c 97.008 1 mem=0.13GB mt_cpu=0.040 mt_sys=0.250
+c 97.008 1 contexts=1 descriptions=1
+c 97.047 1 #1:1 : INIT COMM e=194 nc=1
+c 97.052 1 #1:1 CS produced cls size=1641 lits=1617/1617
+c 97.071 1 #1:1 : merged 2 contribs rev=0 (inp=3223, t=0.0039s) ~> len=3249
+c 97.551 1 #1:1 : INIT COMM e=195 nc=1
+c 97.556 1 #1:1 CS produced cls size=1552 lits=1534/1534
+c 97.573 1 #1:1 : merged 2 contribs rev=0 (inp=3057, t=0.0020s) ~> len=3086
+c 98.008 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.400
+c 98.008 1 contexts=1 descriptions=1
+c 98.044 1 #1:1 : INIT COMM e=196 nc=1
+c 98.050 1 #1:1 CS produced cls size=1565 lits=1541/1547
+c 98.069 1 #1:1 : merged 2 contribs rev=0 (inp=3083, t=0.0039s) ~> len=3109
+c 98.548 1 #1:1 : INIT COMM e=197 nc=1
+c 98.555 1 #1:1 CS produced cls size=1621 lits=1597/1602
+c 98.573 1 #1:1 : merged 2 contribs rev=0 (inp=3192, t=0.0043s) ~> len=3222
+c 99.008 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.600
+c 99.008 1 contexts=1 descriptions=1
+c 99.051 1 #1:1 : INIT COMM e=198 nc=1
+c 99.059 1 #1:1 CS produced cls size=1548 lits=1530/1529
+c 99.076 1 #1:1 : merged 2 contribs rev=0 (inp=3048, t=0.0034s) ~> len=3074
+c 99.544 1 #1:1 : INIT COMM e=199 nc=1
+c 99.552 1 #1:1 CS produced cls size=1762 lits=1744/1743
+c 99.570 1 #1:1 : merged 2 contribs rev=0 (inp=3473, t=0.0035s) ~> len=3504
+c 100.008 1 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 100.008 1 contexts=1 descriptions=1
+c 100.048 1 #1:1 : INIT COMM e=200 nc=1
+c 100.056 1 #1:1 CS produced cls size=1571 lits=1553/1555
+c 100.073 1 #1:1 : merged 2 contribs rev=0 (inp=3099, t=0.0020s) ~> len=3125
+c 100.552 1 #1:1 : INIT COMM e=201 nc=1
+c 100.560 1 #1:1 CS produced cls size=1467 lits=1454/1454
+c 100.577 1 #1:1 : merged 2 contribs rev=0 (inp=2898, t=0.0019s) ~> len=2928
+c 101.008 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.400
+c 101.008 1 contexts=1 descriptions=1
+c 101.045 1 #1:1 : INIT COMM e=202 nc=1
+c 101.053 1 #1:1 CS produced cls size=1686 lits=1668/1668
+c 101.071 1 #1:1 : merged 2 contribs rev=0 (inp=3325, t=0.0021s) ~> len=3351
+c 101.549 1 #1:1 : INIT COMM e=203 nc=1
+c 101.558 1 #1:1 CS produced cls size=2303 lits=2285/2286
+c 101.567 1 #1:1 : merged 2 contribs rev=0 (inp=4555, t=0.0045s) ~> len=4582
+c 102.008 1 mem=0.12GB mt_cpu=0.030 mt_sys=0.667
+c 102.008 1 contexts=1 descriptions=1
+c 102.052 1 #1:1 : INIT COMM e=204 nc=1
+c 102.062 1 #1:1 CS produced cls size=1818 lits=1800/1801
+c 102.080 1 #1:1 : merged 2 contribs rev=0 (inp=3590, t=0.0034s) ~> len=3616
+c 102.546 1 #1:1 : INIT COMM e=205 nc=1
+c 102.556 1 #1:1 CS produced cls size=1367 lits=1349/1349
+c 102.563 1 #1:1 : merged 2 contribs rev=0 (inp=2689, t=0.0021s) ~> len=2691
+c 103.008 1 mem=0.13GB mt_cpu=0.050 mt_sys=0.600
+c 103.008 1 contexts=1 descriptions=1
+c 103.050 1 #1:1 : INIT COMM e=206 nc=1
+c 103.060 1 #1:1 CS produced cls size=2019 lits=2001/2004
+c 103.070 1 #1:1 : merged 2 contribs rev=0 (inp=3993, t=0.0049s) ~> len=4007
+c 103.544 1 #1:1 : INIT COMM e=207 nc=1
+c 103.554 1 #1:1 CS produced cls size=1730 lits=1717/1717
+c 103.563 1 #1:1 : merged 2 contribs rev=0 (inp=3421, t=0.0043s) ~> len=3440
+c 104.008 1 mem=0.13GB mt_cpu=0.040 mt_sys=0.500
+c 104.013 1 contexts=1 descriptions=1
+c 104.048 1 #1:1 : INIT COMM e=208 nc=1
+c 104.058 1 #1:1 CS produced cls size=1896 lits=1883/1874
+c 104.075 1 #1:1 : merged 2 contribs rev=0 (inp=3735, t=0.0029s) ~> len=3672
+c 104.169 1 #1:1 rev. 0 : found result UNSAT => [0]
+c 104.169 1 #1:1 rev. 0: sending finished info => [0]
+c 104.169 1 Propagate interruption of #1:1 ... => [3]
+c 104.169 1 LOAD 0 (-#1:1)
+c 104.169 1 corealloc ret 3 -> 3 free
+c 104.169 1 #1:1 : terminated
+c 104.169 1 Forget #1:1
+c 104.169 1 FORGET #1:1
+c 104.169 1 #1:1 desires fulfilled=0.0000 latency={num:0 min:0.00000 med:0.00000 avg:0.00000 max:0.00000}
+c 104.169 1 Send result of #1 rev. 0 to client => [0]
+c 104.169 1 RBS #1:3 SHRINK #inactives=1 <= [3]
+c 104.170 1 Destruct worker
+c 104.170 1 #1:1 : FSJ freeing mem
+c 104.192 1 #1:1 : FSJ mem freed
+c 104.192 1 Watchdog sleep interrupted by signal
+c 104.192 1 #1:1 ready for destruction
+c 104.193 1 all jobs deleted
+c 104.194 1 Watchdog sleep interrupted by signal
+c 104.194 1 STATS balancing_latencies num:0 min:0.000000 max:0.000000 med:0.000000 mean:0.000000
+c 104.194 1 busytime=104.114
+c 104.199 1 Watchdog sleep interrupted by signal
+c 104.246 1 Exiting happily

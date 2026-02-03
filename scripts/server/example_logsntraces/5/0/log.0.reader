@@ -1,0 +1,5 @@
+c 0.008 0 <Reader> Starting
+c 0.009 0 <Reader> ENQUEUE #1
+c 0.009 0 <Reader> [T] Reading job #1 rev. 0 {/nfs/home/agoerth/mallob/scripts/server/example_in/04ded94454830d4ea960327e8b91f5a3-mdp-28-14-sat.cnf.xz} ...
+c 0.027 0 <Reader> [T] Initialized job #1 {/nfs/home/agoerth/mallob/scripts/server/example_in/04ded94454830d4ea960327e8b91f5a3-mdp-28-14-sat.cnf.xz} in 0.018s: size 19864
+c 50.029 0 <Reader> Stopping

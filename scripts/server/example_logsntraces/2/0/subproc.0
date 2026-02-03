@@ -1,0 +1,31 @@
+c 0.069 0 <#1> Mallob SAT engine rls pid=187194
+c 0.069 0 <#1> Access base shmem: /edu.kit.iti.mallob.187147.0.#1~1
+c 0.070 0 <#1> SAT engine for #1
+c 0.070 0 <#1> S0 : Cadical-0
+c 0.073 0 <#1> S1 : Cadical-1
+c 0.075 0 <#1> S2 : Cadical-2
+c 0.079 0 <#1> Pipes set up
+c 0.079 0 <#1> Import rev. 0: size 3600
+c 0.079 0 <#1> Read formula rev. 0 (size:3600, chk:0,0) from shared memory in 0.0001s
+c 0.079 0 <#1> starting threads
+c 0.104 0 <#1> DO terminate
+c 0.104 0 <#1> END S0 pps:41593 dcs:839 cfs:686 rst:14 prod:694 (flt:26 adm:651 drp:17) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.104 0 <#1> END S0 clenhist prod total:700 37 47 103 103 89 59 55 54 35 19 21 19 13 10 7 8 3 6 4 1 3 1 1 1 1
+c 0.104 0 <#1> END S0 clenhist digd total:0 0
+c 0.104 0 <#1> END S1 pps:31393 dcs:477 cfs:445 rst:0 prod:631 (flt:53 adm:561 drp:17) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.104 0 <#1> END S1 clenhist prod total:631 201 15 51 60 43 33 28 24 21 25 17 30 12 10 14 15 13 2 4 4 0 3 0 3 1 0 1 1
+c 0.104 0 <#1> END S1 clenhist digd total:0 0
+c 0.104 0 <#1> END S2 pps:26183 dcs:593 cfs:417 rst:23 prod:463 (flt:5 adm:448 drp:10) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.104 0 <#1> END S2 clenhist prod total:463 63 21 41 38 51 34 40 25 22 19 16 14 17 15 7 3 5 7 4 4 3 3 6 1 1 1 0 2
+c 0.104 0 <#1> END S2 clenhist digd total:0 0
+c 0.104 0 <#1> END pps:99169 dcs:1909 cfs:1548 rst:37 prod:1788 (flt:84 adm:1660 drp:44) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.104 0 <#1> END exp:0/0 drp:0(0.000000) pflt:0 sflt:0
+c 0.104 0 <#1> clenhist prod total:1812 317 83 196 202 183 126 123 103 78 63 54 63 42 35 28 26 21 15 12 9 6 7 7 5 3 1 1 3
+c 0.104 0 <#1> clenhist flfl total:99 87 0 5 7
+c 0.104 0 <#1> clenhist admt total:1670 227 80 188 182 178 124 124 100 77 61 52 62 42 35 28 26 21 14 11 9 5 7 6 3 3 1 1 3
+c 0.104 0 <#1> clenhist drpd total:44 3 3 3 13 5 2 0 3 1 2 2 1 0 0 0 0 0 1 1 0 1 0 1 2
+c 0.104 0 <#1> clenhist dltd total:0 0
+c 0.104 0 <#1> clenhist retd total:0 0
+c 0.104 0 <#1> [engine-cleanup] enter
+c 0.104 0 <#1> [engine-cleanup] done - hard exit pending
+c 0.104 0 <#1> Exiting

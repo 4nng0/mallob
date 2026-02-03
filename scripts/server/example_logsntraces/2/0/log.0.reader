@@ -1,0 +1,5 @@
+c 0.009 0 <Reader> Starting
+c 0.011 0 <Reader> ENQUEUE #1
+c 0.011 0 <Reader> [T] Reading job #1 rev. 0 {/nfs/home/agoerth/mallob/scripts/server/example_in/09d7add3bf3b75c5d1023a92e752989a-Break_unsat_04_03.xml.cnf.xz} ...
+c 0.030 0 <Reader> [T] Initialized job #1 {/nfs/home/agoerth/mallob/scripts/server/example_in/09d7add3bf3b75c5d1023a92e752989a-Break_unsat_04_03.xml.cnf.xz} in 0.019s: size 3600
+c 0.123 0 <Reader> Stopping

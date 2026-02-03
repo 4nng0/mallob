@@ -1,0 +1,31 @@
+c 0.081 0 <#1> Mallob SAT engine rls pid=187290
+c 0.081 0 <#1> Access base shmem: /edu.kit.iti.mallob.187243.0.#1~1
+c 0.082 0 <#1> SAT engine for #1
+c 0.082 0 <#1> S0 : Cadical-0
+c 0.085 0 <#1> S1 : Cadical-1
+c 0.088 0 <#1> S2 : Cadical-2
+c 0.092 0 <#1> Pipes set up
+c 0.092 0 <#1> Import rev. 0: size 33216
+c 0.092 0 <#1> Read formula rev. 0 (size:33216, chk:0,0) from shared memory in 0.0001s
+c 0.092 0 <#1> starting threads
+c 0.119 0 <#1> DO terminate
+c 0.119 0 <#1> END S0 pps:352 dcs:0 cfs:0 rst:0 prod:224 (flt:224 adm:0 drp:0) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.119 0 <#1> END S0 clenhist prod total:224 224
+c 0.119 0 <#1> END S0 clenhist digd total:0 0
+c 0.119 0 <#1> END S1 pps:352 dcs:0 cfs:0 rst:0 prod:224 (flt:224 adm:0 drp:0) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.119 0 <#1> END S1 clenhist prod total:224 224
+c 0.119 0 <#1> END S1 clenhist digd total:0 0
+c 0.119 0 <#1> END S2 pps:352 dcs:0 cfs:0 rst:0 prod:224 (flt:0 adm:224 drp:0) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.119 0 <#1> END S2 clenhist prod total:224 224
+c 0.119 0 <#1> END S2 clenhist digd total:0 0
+c 0.119 0 <#1> END pps:1056 dcs:0 cfs:0 rst:0 prod:672 (flt:448 adm:224 drp:0) recv:0 (flt:0 digd:0 drp:0) + intim:0/0
+c 0.119 0 <#1> END exp:0/0 drp:0(0.000000) pflt:0 sflt:0
+c 0.119 0 <#1> clenhist prod total:672 672
+c 0.119 0 <#1> clenhist flfl total:448 448
+c 0.119 0 <#1> clenhist admt total:224 224
+c 0.119 0 <#1> clenhist drpd total:0 0
+c 0.119 0 <#1> clenhist dltd total:0 0
+c 0.119 0 <#1> clenhist retd total:0 0
+c 0.119 0 <#1> [engine-cleanup] enter
+c 0.119 0 <#1> [engine-cleanup] done - hard exit pending
+c 0.119 0 <#1> Exiting

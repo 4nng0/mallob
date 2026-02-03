@@ -1,0 +1,29 @@
+c 0.072 0 <#1> S0.0 Diversification index 0
+c 0.079 0 <#1> S0.0 Received 3600 literals: 55 37 19 13 7 ... -215 221 0 -221 0 
+c 0.079 0 <#1> S0.0 Diversifying 0
+c 0.079 0 <#1> S0.0 Reading rev. 0, start 0
+c 0.082 0 <#1> S0.0 Reading done @ rev. 0 (3600 lits, 0 assumptions)
+c 0.082 0 <#1> S0.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 0.104 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:0
+c 0.104 0 <#1> S0.0 ENDSOL
+c 0.104 0 <#1> S0.0 exiting
+c 0.075 0 <#1> S1.0 Diversification index 1
+c 0.079 0 <#1> S1.0 Received 3600 literals: 55 37 19 13 7 ... -215 221 0 -221 0 
+c 0.079 0 <#1> S1.0 Diversifying 1
+c 0.079 0 <#1> S1.0 Reading rev. 0, start 0
+c 0.082 0 <#1> S1.0 Reading done @ rev. 0 (3600 lits, 0 assumptions)
+c 0.082 0 <#1> S1.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 0.099 0 <#1> S1.0 ENDSOL
+c 0.099 0 <#1> S1.0 found result UNSAT for rev. 0
+c 0.104 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:0
+c 0.104 0 <#1> S1.0 exiting
+c 0.078 0 <#1> S2.0 Diversification index 2
+c 0.079 0 <#1> S2.0 Received 3600 literals: 55 37 19 13 7 ... -215 221 0 -221 0 
+c 0.079 0 <#1> S2.0 Diversifying 2
+c 0.079 0 <#1> S2.0 Reading rev. 0, start 0
+c 0.081 0 <#1> S2.0 Reading done @ rev. 0 (3600 lits, 0 assumptions)
+c 0.081 0 <#1> S2.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 0.096 0 <#1> S2.0 ENDSOL
+c 0.096 0 <#1> S2.0 found result UNSAT for rev. 0
+c 0.104 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:0
+c 0.104 0 <#1> S2.0 exiting

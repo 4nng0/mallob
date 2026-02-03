@@ -1,7 +1,78 @@
 //
 // Created by Anna Goerth on 20.01.26.
 //
+
+#include <assert.h>
+#include <stdlib.h>
+#include <string>
+#include <initializer_list>
+
+#include "util/random.hpp"
+#include "app/sat/parse/sat_reader.hpp"
+#include "util/logger.hpp"
+#include "util/sys/timer.hpp"
+#include "util/params.hpp"
 #include "data/job_description.hpp"
+#include <filesystem>
+#include "util/sys/thread_pool.hpp"
+#include "scheduling/core_allocator.hpp"
+
+
+int main(int argc, char *argv[]) {
+
+    Timer::init();
+    Random::init(rand(), rand());
+    Logger::init(0, V5_DEBG);
+
+    Parameters params;
+    params.init(argc, argv);
+
+    ProcessWideThreadPool::init(4); 
+    ProcessWideCoreAllocator::init(4);
+
+    const std::string unprocessed_path = "../instances/clique/clique_270.cnf";
+    const std::string processed_path = "../instances/clique/clique_270.break.cnf";
+
+    assert(std::filesystem::exists(unprocessed_path));
+    assert(std::filesystem::exists(processed_path ));
+    
+
+     {
+        auto f = unprocessed_path;
+        LOG(V2_INFO, "Reading test CNF %s ...\n", f.c_str());
+        float time = Timer::elapsedSeconds();
+        SatReader r(params, f);
+        JobDescription d;
+        bool success = r.read(d);
+        assert(success);
+        time = Timer::elapsedSeconds() - time;
+        LOG(V2_INFO, " - done, took %.3fs\n", time);
+
+        auto f = processed_path;
+        LOG(V2_INFO, "Reading test CNF %s ...\n", f.c_str());
+        float time2 = Timer::elapsedSeconds();
+        SatReader r2(params, f);
+        JobDescription d2;
+        bool success2 = r2.read(d);
+        assert(success2);
+        time2 = Timer::elapsedSeconds() - time2;
+        LOG(V2_INFO, " - done, took %.3fs\n", time2);
+
+        /*LOG(V2_INFO, "Only decompressing CNF %s for comparison ...\n", f.c_str());
+        float time2 = Timer::elapsedSeconds();
+        auto cmd = "xz -c -d " + f + " > /tmp/tmpfile";
+        int retval = system(cmd.c_str());
+        time2 = Timer::elapsedSeconds() - time2;
+        LOG(V2_INFO, " - done, took %.3fs\n", time2);
+        assert(retval == 0);
+
+        LOG(V2_INFO, " -- difference: %.3fs\n", time - time2);*/
+    }
+}
+
+
+
+/* #include "data/job_description.hpp"
 #include <iostream>
 #include "app/sat/parse/sat_reader.hpp" // Mallobs CNF-Reader
 #include "util/params.hpp"
@@ -178,3 +249,4 @@ int main() {
 
     test(unprocessed_path, processed_path);
 }
+*/

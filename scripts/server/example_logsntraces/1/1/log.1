@@ -1,0 +1,44 @@
+c 0.004 1 Mallob rls pid=187052 on host login
+c 0.007 1 I am worker #1
+c 0.007 1 [WARN] Num bounce alternatives must be at most half the number of workers!
+c 0.007 1 [WARN] Falling back to safe value r=2.
+c 0.007 1 My bounce alternatives: 0 2 
+c 0.010 1 Machine color 0 with 4 total workers (my rank: 1)
+c 0.093 1 [CA] Root: 0 requests, 1 idle (epoch=2)
+c 0.093 1 ADOPT r.#1:1 rev. 0 <- [0] born=0.093 hops=0 epoch=2 matchId=-1 mode=1 <= [0]
+c 0.093 1 corealloc req 0 -> 0 granted, 3 free
+c 0.093 1 COMMIT #1 -> #1:1
+c 0.094 1 #1:1 growing: r.#1:3 rev. 0 <- [1] born=0.094 hops=0 epoch=2 matchId=-1 => [3]
+c 0.094 1 [CA] Root: 0 requests, 1 idle (epoch=2)
+c 0.095 1 Got desc. of size 149363 for job #1 <= [0]
+c 0.095 1 UNCOMMIT #1:1
+c 0.095 1 LOAD 1 (+#1:1)
+c 0.095 1 EXECUTE #1:1 <= [0]
+c 0.095 1 #1:1 : new job node starting
+c 0.095 1 corealloc req 3 -> 3 granted, 0 free
+c 0.097 1 #1:1 : update v=4 epoch=2 lastreqsepoch=2 evlat=0.00000
+c 0.097 1 Adoption offer for #1:3 <= [3]
+c 0.097 1 RBS #1:3 EXPAND e=2 #inactives=0 => [3]
+c 0.097 1 SPA: formula with 149248 bytes
+c 0.097 1 Sending job desc. of #1:1 rev. 0, size 149363, formula begins at idx 115 => [3]
+c 0.097 1 Sent id=8 => [3]
+c 0.099 1 [CA] Root: 0 requests, 0 idle (epoch=2)
+c 0.140 1 Watchdog sleep interrupted by signal
+c 0.166 1 Propagate interruption of #1:1 ... => [3]
+c 0.166 1 LOAD 0 (-#1:1)
+c 0.166 1 corealloc ret 3 -> 3 free
+c 0.166 1 #1:1 : terminated
+c 0.166 1 Forget #1:1
+c 0.166 1 FORGET #1:1
+c 0.166 1 #1:1 desires fulfilled=0.0000 latency={num:0 min:0.00000 med:0.00000 avg:0.00000 max:0.00000}
+c 0.166 1 #1:1 : FSJ freeing mem
+c 0.168 1 Destruct worker
+c 0.177 1 #1:1 : FSJ mem freed
+c 0.177 1 #1:1 ready for destruction
+c 0.178 1 Watchdog sleep interrupted by signal
+c 0.179 1 all jobs deleted
+c 0.179 1 Watchdog sleep interrupted by signal
+c 0.179 1 STATS balancing_latencies num:0 min:0.000000 max:0.000000 med:0.000000 mean:0.000000
+c 0.179 1 busytime=0.071
+c 0.185 1 Watchdog sleep interrupted by signal
+c 0.237 1 Exiting happily

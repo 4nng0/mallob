@@ -1,0 +1,76 @@
+c 0.067 0 <#1> S0.0 Diversification index 0
+c 0.073 0 <#1> S0.0 Received 19864 literals: 29 -3 -6 -85 0 ... -791 792 0 792 0 
+c 0.073 0 <#1> S0.0 Diversifying 0
+c 0.074 0 <#1> S0.0 Reading rev. 0, start 0
+c 0.081 0 <#1> S0.0 Reading done @ rev. 0 (19864 lits, 0 assumptions)
+c 0.081 0 <#1> S0.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 3.001 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:189
+c 6.003 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:761
+c 9.002 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:1361
+c 12.002 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:1583
+c 15.002 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:2305
+c 18.002 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:3135
+c 21.003 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:4218
+c 24.002 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:5008
+c 27.003 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:6105
+c 30.005 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:7095
+c 33.004 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:7737
+c 36.003 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:9041
+c 39.004 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:10091
+c 42.004 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:10748
+c 45.006 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:13276
+c 48.005 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:14339
+c 49.995 0 <#1> S0.0 ENDSOL
+c 49.995 0 <#1> S0.0 found result SAT for rev. 0
+c 49.999 0 <#1> S0.0 disc_reasons r_ed:0,r_fx:0,r_wit:15663
+c 50.000 0 <#1> S0.0 exiting
+c 0.070 0 <#1> S1.0 Diversification index 1
+c 0.073 0 <#1> S1.0 Received 19864 literals: 29 -3 -6 -85 0 ... -791 792 0 792 0 
+c 0.073 0 <#1> S1.0 Diversifying 1
+c 0.074 0 <#1> S1.0 Reading rev. 0, start 0
+c 0.081 0 <#1> S1.0 Reading done @ rev. 0 (19864 lits, 0 assumptions)
+c 0.081 0 <#1> S1.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 3.001 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:167
+c 6.003 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:343
+c 9.002 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:659
+c 12.002 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:1221
+c 15.002 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:1649
+c 18.002 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:1854
+c 21.003 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:2662
+c 24.002 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:2830
+c 27.003 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:3289
+c 30.005 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:3916
+c 33.004 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:4601
+c 36.003 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:4870
+c 39.004 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:5233
+c 42.004 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:5729
+c 45.006 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:6137
+c 48.005 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:6305
+c 49.999 0 <#1> S1.0 disc_reasons r_ed:0,r_fx:0,r_wit:6696
+c 50.000 0 <#1> S1.0 ENDSOL
+c 50.000 0 <#1> S1.0 exiting
+c 0.072 0 <#1> S2.0 Diversification index 2
+c 0.073 0 <#1> S2.0 Received 19864 literals: 29 -3 -6 -85 0 ... -791 792 0 792 0 
+c 0.074 0 <#1> S2.0 Diversifying 2
+c 0.074 0 <#1> S2.0 Reading rev. 0, start 0
+c 0.080 0 <#1> S2.0 Reading done @ rev. 0 (19864 lits, 0 assumptions)
+c 0.080 0 <#1> S2.0 BEGSOL rev. 0 (chk 0,0, 0 assumptions): 
+c 3.001 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:0
+c 6.003 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:3
+c 9.003 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:22
+c 12.002 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:25
+c 15.002 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:70
+c 18.002 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:232
+c 21.004 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:383
+c 24.002 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:428
+c 27.003 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:518
+c 30.005 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:667
+c 33.004 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:727
+c 36.003 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:827
+c 39.004 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:861
+c 42.004 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:888
+c 45.006 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:929
+c 48.005 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:990
+c 49.999 0 <#1> S2.0 disc_reasons r_ed:0,r_fx:0,r_wit:1000
+c 50.000 0 <#1> S2.0 ENDSOL
+c 50.000 0 <#1> S2.0 exiting
