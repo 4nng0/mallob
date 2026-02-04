@@ -14,12 +14,14 @@
 #include "util/sys/thread_pool.hpp"
 #include <atomic>
 #include <future>
+#include <fstream>
 #include "preprocessor.h"
 #include "cnf2wl.h"
 
 class SatPreprocessor {
 
 private:
+    int numberOfVariables;
     const Parameters& _params;
     JobDescription& _desc;
     bool _run_lingeling {false};
@@ -93,7 +95,9 @@ public:
                 loadFormulaToCnf2wl(formula);
             	LOG(V2_INFO, "PREPRO running Satsuma\n");
                 _satsuma_preprocessor->set_save_as_Formula(true);
-                //_satsuma_preprocessor->set_log_output(null)
+                // hier vielleicht echten logger mit bestimmter verbosity 
+                std::ofstream dev_null("/dev/null");
+                _satsuma_preprocessor->set_log_output(&dev_null);
     			_satsuma_preprocessor->preprocess(formula);
                 _nb_running--;
             });
@@ -111,15 +115,16 @@ public:
         if (nbRunning == 0) _nb_running.store(-1, std::memory_order_relaxed);
         return done;
     }
+
     int getResultCode() const {
         return _solver_result;
     }
+    
     std::vector<int>&& getSolution() {
         return std::move(_solution);
     }
 
 
-	//TODO hier müsste eventuel auch Satsumas verwendet werden
     bool hasPreprocessedFormula() {
         //return _kissat->hasPreprocessedFormula();
         return _satsuma_preprocessor->hasPreprocessedFormula();
@@ -145,7 +150,8 @@ public:
     }
 
     void reconstructSolution(std::vector<int>& solution) {
-        _kissat->reconstructSolutionFromPreprocessing(solution);
+        solution.resize(numberOfVariables + 1);
+        //_kissat->reconstructSolutionFromPreprocessing(solution);
     }
 
 private:
@@ -163,10 +169,10 @@ private:
 		SerializedFormulaParser parser(Logger::getMainInstance(), _desc.getFormulaPayload(0), _desc.getFormulaPayloadSize(0));
         if (_params.compressFormula()) parser.setCompressed();
         //_desc.writeMetadata();
-		int numVars = _desc.getAppConfiguration().fixedSizeEntryToInt("__NV");
+		numberOfVariables = _desc.getAppConfiguration().fixedSizeEntryToInt("__NV");
 
-        assert(numVars > 0 && numVars < 1000000000);
-		result.dynamicReserve(numVars);
+        assert(numberOfVariables > 0 && numberOfVariables < 1000000000);
+		result.dynamicReserve(numberOfVariables);
 		int lit;
 		std::vector<int> construct_clause;
 		while (parser.getNextLiteral(lit)) {
