@@ -5,6 +5,7 @@
 #include "data/job_description.hpp"
 #include "util/params.hpp"
 #include <vector>
+#include <filesystem>
 
 class SatPreprocessActor {
 
@@ -51,6 +52,18 @@ public:
         return _input_cnf;
     }
     const char* getName() const {return _name.c_str();}
+
+    bool rename_proof(int i){
+        try {
+            std::filesystem::rename(
+                _params.proofDirectory() + "/tmp." + _name + "." + _proof_format,
+                _params.proofDirectory() + "/step" + std::to_string(i) + "." + _proof_format
+            );
+            return true;
+        } catch (const std::filesystem::filesystem_error& e) {
+            return false;
+        }
+    }
 
 protected:
     const Parameters& _params;

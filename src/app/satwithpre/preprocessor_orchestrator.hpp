@@ -14,6 +14,7 @@
 #include "util/params.hpp"
 #include "util/sys/fileutils.hpp"
 #include <list>
+#include <filesystem>
 
 class PreprocessorOrchestrator {
 
@@ -243,7 +244,35 @@ private:
     }
 
     void finalizeProofs(){
-        
+        if (!_params.savePreprocessingProofs()) return;
+        ActorContext* last = _winning_actor ;
+        std::vector<ActorContext*> line; 
+        while (last != nullptr){
+            line.push_back(last);
+            last = last->prerequisite;
+        }
+        int total = line.size();
+        for (int i = 1; i <= total; i++){
+            ActorContext* step = line[total - i];
+            step->actor->rename_proof(i);
+        }
 
+        delete_entries_with_prefix(_params.proofDirectory(), "tmp.");
+
+    }
+
+    void delete_entries_with_prefix(const std::string& directory, const std::string& prefix) {
+        namespace fs = std::filesystem;
+        for (const auto& entry : fs::directory_iterator(directory)) {
+            std::string filename = entry.path().filename().string();
+            if (filename.rfind(prefix, 0) == 0) {
+                std::error_code ec;
+                fs::remove_all(entry.path(), ec);
+                if (ec) {
+                    LOG(V0_CRIT, "[ERROR] Fehler beim Löschen von %s: %s\n",
+                        filename.c_str(), ec.message().c_str());
+                }
+            }
+        }
     }
 };
