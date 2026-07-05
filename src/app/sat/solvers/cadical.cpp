@@ -131,6 +131,66 @@ void Cadical::addLiteral(int lit) {
 	solver->add(lit);
 }
 
+void Cadical::savePreproProof(const std::string& path) {
+    proofFileString = path;
+    bool okay = solver->set("lrat", 1); assert(okay);
+    okay = solver->set("lratsolverid", 0); assert(okay);
+    okay = solver->set("lratsolvercount", 1); assert(okay);
+    okay = solver->set("lratorigclscount", _setup.numOriginalClauses); assert(okay);
+    okay = solver->trace_proof(path.c_str()); assert(okay);
+}
+
+void Cadical::closePreproProof() {
+    if (!proofFileString.empty())
+        solver->close_proof_trace(false);
+}
+
+void Cadical::reconstructSolutionFromPreprocessing(std::vector<int>& model) {
+    struct Extender : CaDiCaL::WitnessIterator {
+        std::vector<int>& sol;
+        Extender(std::vector<int>& sol) : sol(sol) {}
+        bool witness(const std::vector<int>& clause,
+                     const std::vector<int>& witness, uint64_t) override {
+            for (int lit : clause) {
+                int v = std::abs(lit);
+                if (v < (int)sol.size() && sol[v] == lit) return true;
+            }
+            for (int lit : witness) {
+                int v = std::abs(lit);
+                if (v >= (int)sol.size()) sol.resize(v + 1, 0);
+                sol[v] = lit;
+            }
+            return true;
+        }
+    };
+    if ((int)model.size() < solver->vars() + 1)
+        model.resize(solver->vars() + 1, 0);
+    Extender ext(model);
+    solver->traverse_witnesses_backward(ext);
+}
+
+void Cadical::collectSimplifiedFormula() {
+    struct ClauseCollector : CaDiCaL::ClauseIterator {
+        std::vector<int> formula;
+        int nbClauses = 0;
+
+        bool clause(const std::vector<int>& c) override {
+            nbClauses++;
+			for (int lit : c) formula.push_back(lit);
+			formula.push_back(0);
+            return true;
+        }
+    };
+
+    ClauseCollector col;
+    solver->traverse_clauses(col);
+	std::vector<int> res =  std::move(col.formula); 
+	res.push_back(solver->vars());
+	res.push_back(col.nbClauses);
+
+	setPreprocessedFormula(std::move(res));
+}
+
 void Cadical::diversify(int seed) {
 
 	if (seedSet) return;
@@ -235,7 +295,13 @@ SatResult Cadical::solve(size_t numAssumptions, const int* assumptions) {
 	unsatConclusionId = 0;
 
 	// start solving
-	int res = solver->solve();
+	int res ;
+	if (_setup.solverType == 'p'){
+		res = solver->simplify();
+	} else {
+		res = solver->solve();
+	}
+	
 	if (_setup.onTheFlyChecking)
 		solver->conclude();
 

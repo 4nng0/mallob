@@ -21,6 +21,10 @@ set(MALLOB_COREPLUSCOMM_SOURCES ${MALLOB_COREPLUSCOMM_SOURCES} ${SAT_MALLOB_SOUR
 #message("commons+SAT sources: ${BASE_SOURCES}") # Use to debug
 
 
+# portfolio_solver_interface.cpp must be in mallob_core (same archive as the solver wrappers
+# added via add_lib_dep) so the linker can resolve PortfolioSolverInterface symbols correctly.
+set(MALLOB_CORE_SOURCES ${MALLOB_CORE_SOURCES} src/app/sat/solvers/portfolio_solver_interface.cpp CACHE INTERNAL "")
+
 # SAT solver backends. All included by default (i.e., unless explicitly disabled).
 if(NOT MALLOB_USE_MINISAT EQUAL 0)
     add_lib_dep("minisat" lib/minisat build/ minisat "src/app/sat/solvers/minisat.cpp")

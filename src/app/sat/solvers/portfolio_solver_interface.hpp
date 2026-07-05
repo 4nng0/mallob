@@ -187,13 +187,17 @@ public:
 	}
 
 	bool _has_preprocessed_formula {false};
+
 	std::vector<int> _preprocessed_formula;
+
 	void setPreprocessedFormula(std::vector<int>&& vec) {
 		_preprocessed_formula = std::move(vec);
 		LOGGER(_logger, V4_VVER, "Set preprocessed formula: %s\n", StringUtils::getSummary(_preprocessed_formula, 20).c_str());
 		_has_preprocessed_formula = true;
 	}
+	
 	bool hasPreprocessedFormula() const {return _has_preprocessed_formula;}
+
 	std::vector<int>&& extractPreprocessedFormula() {
 		_has_preprocessed_formula = false;
 		return std::move(_preprocessed_formula);

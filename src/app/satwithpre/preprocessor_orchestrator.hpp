@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include "app/satwithpre/cadical_preprocessor.hpp"
 #include "app/satwithpre/ext_satsuma_caller.hpp"
 #include "app/satwithpre/kissat_preprocessor.hpp"
 #include "app/satwithpre/lingeling_preprocessor.hpp"
@@ -11,6 +12,7 @@
 #include "interface/api/api_connector.hpp"
 #include "util/logger.hpp"
 #include "util/params.hpp"
+#include "util/sys/fileutils.hpp"
 #include <list>
 
 class PreprocessorOrchestrator {
@@ -21,7 +23,7 @@ private:
     APIConnector& _api;
 
     struct ActorContext {
-        enum ActorType {SATSUMA_INT, SATSUMA_EXT, KISSAT, LINGELING, MALLOBSAT} type;
+        enum ActorType {SATSUMA_INT, SATSUMA_EXT, KISSAT, LINGELING, MALLOBSAT, CADICAL} type;
         ActorContext* prerequisite {nullptr};
         std::vector<ActorContext*> actorsBeingDisplaced;
         bool onlyStartIfPrerequisiteSimplified {false};
@@ -45,34 +47,59 @@ public:
 
         _time_of_start = Timer::elapsedSeconds();
 
+        if (_params.savePreprocessingProofs()) {
+            auto existing = FileUtils::glob(_params.proofDirectory() + "/*");
+            if (!existing.empty()) {
+                LOG(V0_CRIT, "[ERROR] Proof directory \"%s\" is not empty - please clear it before running with -prepro-proofs=1\n",
+                    _params.proofDirectory().c_str());
+                abort();
+            }
+        }
+
         // Mallob on original instance
         _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, nullptr});
         ActorContext* ctxMalOrig = &_actors.back();
 
-        // Lingeling (SAT, UNSAT or nothing)
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::LINGELING, nullptr, {}});
-        ActorContext* ctxLgl = &_actors.back();
-        // Kissat (preprocesses the formula)
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, nullptr, {}});
-        ActorContext* ctxKis = &_actors.back();
-        // Satsuma (preprocesses the formula)
+        // Lingeling (SAT, UNSAT or nothing) -- disabled: no proof support yet
+        //_actors.push_back({PreprocessorOrchestrator::ActorContext::LINGELING, nullptr, {}});
+        //ActorContext* ctxLgl = &_actors.back();
+
+        // Kissat (preprocesses the formula) -- disabled: no proof support yet
+        //ActorContext* ctxKis = nullptr;
+        //_actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, nullptr, {}});
+        //ctxKis = &_actors.back();
+
+        // Satsuma (preprocesses the formula) - only if built with -DMALLOB_USE_SATSUMA=2
+#if defined(MALLOB_USE_SATSUMA) && MALLOB_USE_SATSUMA == 2
         _actors.push_back({PreprocessorOrchestrator::ActorContext::SATSUMA_EXT, nullptr, {}});
         ActorContext* ctxSats = &_actors.back();
+        // MallobSat on Satsuma-preprocessed formula - displaces original Mallob task
+        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxSats, {ctxMalOrig}});
+#endif
 
-        // Kissat on Satsuma-preprocessed formula (preprocesses the formula)
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, ctxSats, {}});
-        ActorContext* ctxKisAfterSats = &_actors.back();
-        ctxKisAfterSats->onlyStartIfPrerequisiteSimplified = true; // do not launch Kissat (again!) if Satsuma didn't simplify anything
+        // Kissat on Satsuma-preprocessed formula -- disabled: no proof support yet
+        //ActorContext* ctxKisAfterSats = nullptr;
+        //_actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, ctxSats, {}});
+        //ctxKisAfterSats = &_actors.back();
+        //ctxKisAfterSats->onlyStartIfPrerequisiteSimplified = true;
 
-        // Mallob on Kissat-preprocessed formula - displaces original Mallob task
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKis, {ctxMalOrig}});
-        ActorContext* ctxMalPre1 = &_actors.back();
-        ctxMalPre1->onlyStartIfPrerequisiteSimplified = true; // do not launch this MallobSat task if Kissat didn't simplify anything
+        // CaDiCaL (preprocesses the formula)
+        _actors.push_back({PreprocessorOrchestrator::ActorContext::CADICAL, nullptr, {}});
+        ActorContext* ctxCad = &_actors.back();
+        // Mallob on CaDiCaL-preprocessed formula - displaces original Mallob task
+        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxCad, {ctxMalOrig}});
+        ActorContext* ctxMalCad = &_actors.back();
+        //ctxMalCad->onlyStartIfPrerequisiteSimplified = true;
 
-        // Mallob on Satsuma+Kissat-preprocessed formula - displaces all prior Mallob tasks
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKisAfterSats, {ctxMalOrig, ctxMalPre1}});
-        ActorContext* ctxMalPreFull = &_actors.back();
-        // (we always spawn this one since Satsuma *did* simplify something if the prerequisite is ready)
+        // Mallob on Kissat-preprocessed formula -- disabled: no proof support yet
+        //ActorContext* ctxMalPre1 = nullptr;
+        //_actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKis, {ctxMalOrig}});
+        //ctxMalPre1 = &_actors.back();
+        //ctxMalPre1->onlyStartIfPrerequisiteSimplified = true;
+
+        // Mallob on Satsuma+Kissat-preprocessed formula -- disabled: no proof support yet
+        //_actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKisAfterSats, {ctxMalOrig, ctxMalPre1}});
+        //ActorContext* ctxMalPreFull = &_actors.back();
     }
 
     int loop() {
@@ -93,20 +120,23 @@ public:
                 auto formula = (actor.prerequisite && actor.prerequisite->result == SatPreprocessActor::SIMPLIFIED) ?
                     actor.prerequisite->formula : _base_cnf;
                 switch (actor.type) {
-                case ActorContext::SATSUMA_INT:
-                    actor.actor.reset(new SatsumaPreprocessor(_params, _desc, std::to_string(actorIdx) + ":SatsumaInt", std::move(formula)));
+                //case ActorContext::SATSUMA_INT:
+                //    actor.actor.reset(new SatsumaPreprocessor(_params, _desc, std::to_string(actorIdx) + ":SatsumaInt", std::move(formula)));
                     break;
                 case ActorContext::SATSUMA_EXT:
                     actor.actor.reset(new ExtSatsumaCaller(_params, _desc, std::to_string(actorIdx) + ":SatsumaExt", std::move(formula)));
                     break;
-                case ActorContext::KISSAT:
-                    actor.actor.reset(new KissatPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Kissat", std::move(formula)));
+                //case ActorContext::KISSAT:
+                //    actor.actor.reset(new KissatPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Kissat", std::move(formula)));
                     break;
-                case ActorContext::LINGELING:
-                    actor.actor.reset(new LingelingPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Lingeling", std::move(formula)));
+                //case ActorContext::LINGELING:
+                //    actor.actor.reset(new LingelingPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Lingeling", std::move(formula)));
                     break;
                 case ActorContext::MALLOBSAT:
                     actor.actor.reset(new MallobSatPreprocessActor(_params, _desc, std::to_string(actorIdx) + ":MallobSat", _api, std::move(formula), _time_of_start));
+                    break;
+                case ActorContext::CADICAL:
+                    actor.actor.reset(new CadicalPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Cadical", std::move(formula)));
                     break;
                 }
                 LOG(V2_INFO, "SATWP launch %s\n", actor.actor->getName());
@@ -151,6 +181,7 @@ public:
                 if (res == SatPreprocessActor::UNSAT) {
                     LOG(V2_INFO, "SATWP %s found UNSAT\n", actor.actor->getName());
                     _winning_actor = &actor;
+                    finalizeProofs();
                     return 20;
                 }
                 assert(actor.formula[0] != 0); // no empty clause without reporting UNSAT!
@@ -209,5 +240,10 @@ private:
         cnf.push_back(nbVars);
         cnf.push_back(nbCls);
         return cnf;
+    }
+
+    void finalizeProofs(){
+        
+
     }
 };

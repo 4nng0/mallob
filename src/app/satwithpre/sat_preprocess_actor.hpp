@@ -37,6 +37,8 @@ public:
     virtual void join() {if (_fut_prepro.valid()) _fut_prepro.get();}
     virtual void reconstructSolution(std::vector<int>& sol) = 0;
 
+    const std::string& getProofFormat() const {return _proof_format;}
+
     int nbInputVars() const {
         assert(_input_cnf.size() >= 2);
         return _input_cnf[_input_cnf.size() - 2];
@@ -53,6 +55,7 @@ public:
 protected:
     const Parameters& _params;
     std::string _name;
+    std::string _proof_format;
     const std::vector<int> _input_cnf;
     std::vector<int> _output_cnf;
     std::vector<int> _model;

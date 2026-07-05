@@ -71,8 +71,15 @@ private:
         if (_desc.getCpuLimit() > 0)
             json["cpu-limit"] = std::to_string(
             std::max(0.001f, _desc.getCpuLimit() - getAgeSinceActivation())) + "s";
-        if (_params.overrideSatOptions())
-            json["configuration"]["options"] = SATWITHPRE_OPT_OVERRIDES;
+        {
+            std::string opts;
+            if (_params.overrideSatOptions() && !_params.savePreprocessingProofs())
+                opts += std::string(SATWITHPRE_OPT_OVERRIDES);
+            if (_params.savePreprocessingProofs())
+                opts += " -palrup=1 -proof-dir=" + _params.proofDirectory() + "/tmp." + _name;
+            if (!opts.empty())
+                json["configuration"]["options"] = opts;
+        }
         applySuccessiveGrowth(json);
 
         auto copiedJson = json;

@@ -51,6 +51,11 @@ public:
 	// Add a (list of) permanent clause(s) to the formula
 	void addLiteral(int lit) override;
 
+	void savePreproProof(const std::string& path);
+	void closePreproProof();
+	void reconstructSolutionFromPreprocessing(std::vector<int>& model);
+	void collectSimplifiedFormula();
+	
 	void diversify(int seed) override;
 	void setPhase(const int var, const bool phase) override;
 

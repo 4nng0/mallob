@@ -42,7 +42,7 @@ private:
 
 public:
     ExtSatsumaCaller(const Parameters& params, const JobDescription& desc, const std::string& name, std::vector<int>&& formula) :
-        SatPreprocessActor(params, name, std::move(formula)) {
+        SatPreprocessActor(params, name, std::move(formula)) {_proof_format = "sr";
 
         std::string basePath = TmpDir::getMachineLocalTmpDir() + "/edu.kit.iti.mallobtermrelev."
             + std::to_string(Proc::getPid()) + "."
@@ -77,11 +77,13 @@ public:
 
         _fut_prepro = ProcessWideThreadPool::get().addTask([&]() {
             CoreAllocator::Allocation ca(1);
-            std::string cmd = //"cat " + _in_path + " | " + 
+            std::string cmd = //"cat " + _in_path + " | " +
                 std::string(MALLOB_SUBPROC_DISPATCH_PATH"/satsuma")
                 + " fix --add-reduced-as-unit --file " + _in_path
-                + " --out-file " + _out_path
-                + " > " + (_params.logDirectory.isSet() ? (_params.logDirectory() + "/satsuma.txt") : "/dev/null")
+                + " --out-file " + _out_path;
+            if (_params.savePreprocessingProofs())
+                cmd += " --sr --proof-file " + _params.proofDirectory() + "/tmp." + _name + ".sr";
+            cmd += " > " + (_params.logDirectory.isSet() ? (_params.logDirectory() + "/satsuma.txt") : "/dev/null")
                 + " 2>&1 & echo \"$! x\" > " + _pid_path;
 
             LOG(V4_VVER, "%s Calling Satsuma: %s\n", getName(), cmd.c_str());
@@ -137,7 +139,7 @@ private:
 
         LOG(V4_VVER, "%s Loading formula to Satsuma pipe ...\n", getName());
 
-        assert(nbVars() > 0 && nbVars() < 1'000'000'000);
+        //assert(nbVars() > 0 && nbVars() < 1'000'000'000);
 
         std::ofstream ofs(_in_path.c_str());
 
