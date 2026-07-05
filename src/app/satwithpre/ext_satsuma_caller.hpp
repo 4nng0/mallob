@@ -141,7 +141,16 @@ private:
 
         //assert(nbVars() > 0 && nbVars() < 1'000'000'000);
 
-        std::ofstream ofs(_in_path.c_str());
+        // Opened as O_RDWR (in|out), not write-only: on Linux, opening a FIFO
+        // O_WRONLY blocks until a reader attaches, so this call would race
+        // against Satsuma's own open() of the same path. If we won that race
+        // and closed the pipe before Satsuma got around to opening it (e.g.
+        // under system load, or if the satsuma subprocess is slow to start),
+        // Satsuma's read-open would then block forever with no writer left to
+        // pair with. O_RDWR never blocks, even with zero readers present, so
+        // this always succeeds immediately and keeps a writer reference alive
+        // until we explicitly close it further down.
+        std::fstream ofs(_in_path.c_str(), std::ios::in | std::ios::out);
 
         _orig_nb_vars = nbInputVars();
         _orig_nb_cls = nbInputClauses();
