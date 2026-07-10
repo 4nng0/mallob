@@ -3,7 +3,10 @@
 
 #include "app/sat/parse/serialized_formula_parser.hpp"
 #include "data/job_description.hpp"
+#include "util/logger.hpp"
 #include "util/params.hpp"
+#include "util/sys/proc.hpp"
+#include "util/sys/tmpdir.hpp"
 #include <vector>
 #include <filesystem>
 
@@ -53,14 +56,35 @@ public:
     }
     const char* getName() const {return _name.c_str();}
 
+    // All actors write their in-progress proof output here instead of directly
+    // into proofDirectory() -- a still-running (or not-yet-confirmed-stopped)
+    // actor's files then never need to be deleted/waited-on as part of any
+    // particular job's completion; only the winning chain's files ever get
+    // moved out, via rename_proof() below. Cleanup of this directory happens
+    // independently, elsewhere (it uses the "termrelev" tmp-file naming
+    // convention, same as e.g. ExtSatsumaCaller's named pipes). Scoped by PID
+    // (not e.g. a hash of proofDirectory()) so that a glob for
+    // "...proofwork.*" -- ignoring the PID part -- reliably finds every such
+    // directory ever created, e.g. for a one-off manual cleanup sweep.
+    static std::string proofWorkDir(const Parameters& params) {
+        return TmpDir::getGeneralTmpDir() + "/edu.kit.iti.mallobtermrelev.proofwork."
+            + std::to_string(Proc::getPid()) + "/";
+    }
+
     bool rename_proof(int i){
+        // Copy+remove, not rename(): the work directory (TmpDir, typically local
+        // disk/tmpfs) and proofDirectory() (user-chosen, e.g. on NFS) can be on
+        // different filesystems, and rename()/std::filesystem::rename() cannot
+        // cross a filesystem boundary (fails with EXDEV).
+        std::string src = proofWorkDir(_params) + "tmp." + _name + "." + _proof_format;
+        std::string dst = _params.proofDirectory() + "/step" + std::to_string(i) + "." + _proof_format;
         try {
-            std::filesystem::rename(
-                _params.proofDirectory() + "/tmp." + _name + "." + _proof_format,
-                _params.proofDirectory() + "/step" + std::to_string(i) + "." + _proof_format
-            );
+            std::filesystem::copy_file(src, dst);
+            std::filesystem::remove(src);
             return true;
         } catch (const std::filesystem::filesystem_error& e) {
+            LOG(V0_CRIT, "[ERROR] Could not move proof file \"%s\" to \"%s\": %s\n",
+                src.c_str(), dst.c_str(), e.what());
             return false;
         }
     }

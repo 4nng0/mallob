@@ -76,7 +76,7 @@ private:
             if (_params.overrideSatOptions() && !_params.savePreprocessingProofs())
                 opts += std::string(SATWITHPRE_OPT_OVERRIDES);
             if (_params.savePreprocessingProofs())
-                opts += " -palrup=1 -proof-dir=" + _params.proofDirectory() + "/tmp." + _name;
+                opts += " -palrup=1 -proof-dir=" + proofWorkDir(_params) + "tmp." + _name;
             if (!opts.empty())
                 json["configuration"]["options"] = opts;
         }

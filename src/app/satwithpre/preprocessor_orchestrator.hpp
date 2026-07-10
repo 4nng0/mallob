@@ -13,8 +13,10 @@
 #include "util/logger.hpp"
 #include "util/params.hpp"
 #include "util/sys/fileutils.hpp"
+#include "util/sys/tmpdir.hpp"
+#include <csignal>
+#include <cerrno>
 #include <list>
-#include <filesystem>
 
 class PreprocessorOrchestrator {
 
@@ -55,6 +57,20 @@ public:
                     _params.proofDirectory().c_str());
                 abort();
             }
+            // Sweep abandoned proof work dirs left behind by earlier mallob
+            // processes -- independent of -pre-cleanup. Each dir is named after
+            // the PID of the process that created it (see proofWorkDir()); we
+            // only ever remove one whose owning PID no longer exists, so this
+            // can never race against another currently-running proof-enabled
+            // job (which necessarily has a different, still-live PID).
+            for (const std::string& dir : FileUtils::glob(TmpDir::getGeneralTmpDir() + "/edu.kit.iti.mallobtermrelev.proofwork.*")) {
+                size_t pos = dir.find_last_of('.');
+                if (pos == std::string::npos) continue;
+                pid_t pid = atoi(dir.substr(pos + 1).c_str());
+                if (pid <= 0) continue;
+                if (kill(pid, 0) != 0 && errno == ESRCH) FileUtils::rmrf(dir);
+            }
+            FileUtils::mkdir(SatPreprocessActor::proofWorkDir(_params));
         }
 
         // Mallob on original instance
@@ -182,7 +198,6 @@ public:
                 if (res == SatPreprocessActor::UNSAT) {
                     LOG(V2_INFO, "SATWP %s found UNSAT\n", actor.actor->getName());
                     _winning_actor = &actor;
-                    finalizeProofs();
                     return 20;
                 }
                 assert(actor.formula[0] != 0); // no empty clause without reporting UNSAT!
@@ -226,6 +241,26 @@ public:
         }
     }
 
+    // Renames the winning actor's chain of "tmp.<name>.<format>" proof files to
+    // "step<i>.<format>". Safe to call as soon as a winner is known: every actor
+    // in that chain is by construction already FINISHED (a prerequisite must be
+    // FINISHED before the actor depending on it can even launch), so its proof
+    // file is stable and no longer being written to.
+    void finalizeProofs(){
+        if (!_params.savePreprocessingProofs()) return;
+        ActorContext* last = _winning_actor ;
+        std::vector<ActorContext*> line;
+        while (last != nullptr){
+            line.push_back(last);
+            last = last->prerequisite;
+        }
+        int total = line.size();
+        for (int i = 1; i <= total; i++){
+            ActorContext* step = line[total - i];
+            step->actor->rename_proof(i);
+        }
+    }
+
 private:
     std::vector<int> getCnfFromJobDescription() {
 
@@ -241,38 +276,5 @@ private:
         cnf.push_back(nbVars);
         cnf.push_back(nbCls);
         return cnf;
-    }
-
-    void finalizeProofs(){
-        if (!_params.savePreprocessingProofs()) return;
-        ActorContext* last = _winning_actor ;
-        std::vector<ActorContext*> line; 
-        while (last != nullptr){
-            line.push_back(last);
-            last = last->prerequisite;
-        }
-        int total = line.size();
-        for (int i = 1; i <= total; i++){
-            ActorContext* step = line[total - i];
-            step->actor->rename_proof(i);
-        }
-
-        delete_entries_with_prefix(_params.proofDirectory(), "tmp.");
-
-    }
-
-    void delete_entries_with_prefix(const std::string& directory, const std::string& prefix) {
-        namespace fs = std::filesystem;
-        for (const auto& entry : fs::directory_iterator(directory)) {
-            std::string filename = entry.path().filename().string();
-            if (filename.rfind(prefix, 0) == 0) {
-                std::error_code ec;
-                fs::remove_all(entry.path(), ec);
-                if (ec) {
-                    LOG(V0_CRIT, "[ERROR] Fehler beim Löschen von %s: %s\n",
-                        filename.c_str(), ec.message().c_str());
-                }
-            }
-        }
     }
 };

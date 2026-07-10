@@ -45,6 +45,7 @@ public:
         _po.stopAll();
 
         LOG(V2_INFO, "SATWP RES ~%i~\n", res.result);
+        _po.finalizeProofs();
         return res;
     }
 

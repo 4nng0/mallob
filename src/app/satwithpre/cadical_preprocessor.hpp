@@ -43,7 +43,7 @@ class CadicalPreprocessor : public SatPreprocessActor {
             _cadical.reset(new Cadical(setup));
             if (_interrupted) _cadical->setSolverInterrupt();
             if (_params.savePreprocessingProofs())
-                _cadical->savePreproProof(_params.proofDirectory() + "/tmp." + _name + "." + _proof_format);
+                _cadical->savePreproProof(proofWorkDir(_params) + "tmp." + _name + "." + _proof_format);
 
             _cadical->diversify(0);
             for (int i = 0; i+2 < _input_cnf.size(); i++) {
