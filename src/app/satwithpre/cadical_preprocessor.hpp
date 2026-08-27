@@ -2,10 +2,12 @@
 #pragma once
 
 #include <atomic>
+#include <filesystem>
 #include <vector>
 
 #include "app/sat/execution/solver_setup.hpp"
 #include "app/sat/solvers/cadical.hpp"
+#include "app/satwithpre/lrat_fixed_literal_patch.hpp"
 #include "app/satwithpre/sat_preprocess_actor.hpp"
 #include "data/job_description.hpp"
 #include "scheduling/core_allocator.hpp"
@@ -21,6 +23,10 @@ class CadicalPreprocessor : public SatPreprocessActor {
     private:
     std::unique_ptr<Cadical> _cadical;
     std::atomic<bool> _interrupted{false};
+
+    std::string proofPath() const {
+        return _params.proofDirectory() + "/tmp/" + _name + "." + _proof_format;
+    }
 
     public: 
 
@@ -43,7 +49,7 @@ class CadicalPreprocessor : public SatPreprocessActor {
             _cadical.reset(new Cadical(setup));
             if (_interrupted) _cadical->setSolverInterrupt();
             if (_params.savePreprocessingProofs())
-                _cadical->savePreproProof(proofWorkDir(_params) + "tmp." + _name + "." + _proof_format);
+                _cadical->savePreproProof(proofPath());
 
             _cadical->diversify(0);
             for (int i = 0; i+2 < _input_cnf.size(); i++) {
@@ -61,10 +67,33 @@ class CadicalPreprocessor : public SatPreprocessActor {
             } else if (res == 20) {
                 _result = UNSAT;
             } else {
+                // fixes the missing proof lines, as collectSimplifiedFormula deletes literals falsefied by unit propagation. 
+                if (_params.savePreprocessingProofs()) {
+                    auto fixedLits = _cadical->getFixedLiterals();
+                    if (fixedLits.empty()) {
+                        LOG(V3_VERB, "PREPRO %s no fixed literals, proof already complete\n", getName());
+                    } else {
+                        long n = LratFixedLiteralPatch::apply(proofPath(), _input_cnf, fixedLits);
+                        if (n < 0) LOG(V1_WARN, "[WARN] PREPRO %s could not patch proof \"%s\"\n",
+                            getName(), proofPath().c_str());
+                        else LOG(V2_INFO, "PREPRO %s %i fixed literals, %ld proof steps appended\n",
+                            getName(), (int) fixedLits.size(), n);
+                    }
+                }
                 _cadical->collectSimplifiedFormula();
                 if (_cadical->hasPreprocessedFormula()) {
-                    _output_cnf = std::move(_cadical->extractPreprocessedFormula()); 
-                    _result = SIMPLIFIED;
+                    _output_cnf = std::move(_cadical->extractPreprocessedFormula());
+                    int outVars = _output_cnf[_output_cnf.size() - 2];
+                    int outClauses = _output_cnf[_output_cnf.size() - 1];
+                    bool changed = outVars != nbInputVars() || outClauses != nbInputClauses()
+                        || _output_cnf.size() != _input_cnf.size();
+                    // theoretically possible, however unprobable, that the additons of variables and clauses lead 
+                    // to the same numbers of each even though Cadical has found simplifications
+                    if (!changed && _params.savePreprocessingProofs()) {
+                        std::error_code ec;
+                        changed = std::filesystem::file_size(proofPath(), ec) > 0 && !ec;
+                    }
+                    _result = changed ? SIMPLIFIED : NONE;
                 } else {
                     _result = NONE;
                 }

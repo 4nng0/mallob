@@ -43,9 +43,9 @@ public:
             else usleep(1000); // 1ms
         }
         _po.stopAll();
+        _po.finalizeProofs();
 
         LOG(V2_INFO, "SATWP RES ~%i~\n", res.result);
-        _po.finalizeProofs();
         return res;
     }
 

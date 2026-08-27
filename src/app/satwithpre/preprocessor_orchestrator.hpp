@@ -13,9 +13,6 @@
 #include "util/logger.hpp"
 #include "util/params.hpp"
 #include "util/sys/fileutils.hpp"
-#include "util/sys/tmpdir.hpp"
-#include <csignal>
-#include <cerrno>
 #include <list>
 
 class PreprocessorOrchestrator {
@@ -30,6 +27,8 @@ private:
         ActorContext* prerequisite {nullptr};
         std::vector<ActorContext*> actorsBeingDisplaced;
         bool onlyStartIfPrerequisiteSimplified {false};
+
+        bool onlyStartIfAnyAncestorSimplified {false};
 
         std::unique_ptr<SatPreprocessActor> actor;
         enum ActiveActorState {UNINITIALIZED, RUNNING, FINISHED} state {UNINITIALIZED};
@@ -57,66 +56,63 @@ public:
                     _params.proofDirectory().c_str());
                 abort();
             }
-            // Sweep abandoned proof work dirs left behind by earlier mallob
-            // processes -- independent of -pre-cleanup. Each dir is named after
-            // the PID of the process that created it (see proofWorkDir()); we
-            // only ever remove one whose owning PID no longer exists, so this
-            // can never race against another currently-running proof-enabled
-            // job (which necessarily has a different, still-live PID).
-            for (const std::string& dir : FileUtils::glob(TmpDir::getGeneralTmpDir() + "/edu.kit.iti.mallobtermrelev.proofwork.*")) {
-                size_t pos = dir.find_last_of('.');
-                if (pos == std::string::npos) continue;
-                pid_t pid = atoi(dir.substr(pos + 1).c_str());
-                if (pid <= 0) continue;
-                if (kill(pid, 0) != 0 && errno == ESRCH) FileUtils::rmrf(dir);
-            }
-            FileUtils::mkdir(SatPreprocessActor::proofWorkDir(_params));
+            FileUtils::mkdir(_params.proofDirectory() + "/tmp");
         }
 
-        // Mallob on original instance
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, nullptr});
+        // ---------------------------------------------------------------------
+        // PORTFOLIO MODE: baseline + one preprocessing chain that may displace it.
+        //
+        //   MallobSat on the untouched formula          (runs from t=0, displaceable)
+        //   [Satsuma ->] CaDiCaL -> MallobSat           (displaces the baseline)
+        //
+        // The Satsuma stage only exists if built with -DMALLOB_USE_SATSUMA=2;
+        // without it the chain simply starts at CaDiCaL, on the original formula.
+        //
+        // A stage finding nothing does NOT end the chain: CaDiCaL still runs on
+        // whatever Satsuma passed on, and a stage that simplified nothing forwards
+        // its input rather than falling back to the original formula. Only if *no*
+        // stage achieved anything is the displacing solver suppressed -- solving
+        // that output would just repeat the baseline while throwing away its
+        // progress. That is what onlyStartIfAnyAncestorSimplified expresses.
+        //
+        // The competition "quick" topology (Lingeling + Satsuma->Kissat->MallobSat)
+        // lives in scripts/experiments/orchestrator_QUICK.hpp and is swapped in only
+        // when no portfolio pass is running -- rebuilding while one is in flight
+        // changes the binary that its next instance picks up.
+        // ---------------------------------------------------------------------
+
+        // MallobSat on the original formula
+        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, nullptr, {}});
         ActorContext* ctxMalOrig = &_actors.back();
 
-        // Lingeling (SAT, UNSAT or nothing) -- disabled: no proof support yet
-        //_actors.push_back({PreprocessorOrchestrator::ActorContext::LINGELING, nullptr, {}});
-        //ActorContext* ctxLgl = &_actors.back();
-
-        // Kissat (preprocesses the formula) -- disabled: no proof support yet
-        //ActorContext* ctxKis = nullptr;
-        //_actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, nullptr, {}});
-        //ctxKis = &_actors.back();
-
         // Satsuma (preprocesses the formula) - only if built with -DMALLOB_USE_SATSUMA=2
+        ActorContext* ctxSats = nullptr;
 #if defined(MALLOB_USE_SATSUMA) && MALLOB_USE_SATSUMA == 2
         _actors.push_back({PreprocessorOrchestrator::ActorContext::SATSUMA_EXT, nullptr, {}});
-        ActorContext* ctxSats = &_actors.back();
-        // MallobSat on Satsuma-preprocessed formula - displaces original Mallob task
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxSats, {ctxMalOrig}});
+        ctxSats = &_actors.back();
+#else
+        LOG(V1_WARN, "[WARN] Not built with external Satsuma (-DMALLOB_USE_SATSUMA=2):"
+            " no Satsuma preprocessing, chain starts at CaDiCaL\n");
 #endif
 
-        // Kissat on Satsuma-preprocessed formula -- disabled: no proof support yet
-        //ActorContext* ctxKisAfterSats = nullptr;
-        //_actors.push_back({PreprocessorOrchestrator::ActorContext::KISSAT, ctxSats, {}});
-        //ctxKisAfterSats = &_actors.back();
-        //ctxKisAfterSats->onlyStartIfPrerequisiteSimplified = true;
-
-        // CaDiCaL (preprocesses the formula)
-        _actors.push_back({PreprocessorOrchestrator::ActorContext::CADICAL, nullptr, {}});
+        // CaDiCaL on Satsuma's output, or on the original formula if there is no
+        // Satsuma stage. Deliberately no condition: runs even if Satsuma found nothing.
+        _actors.push_back({PreprocessorOrchestrator::ActorContext::CADICAL, ctxSats, {}});
         ActorContext* ctxCad = &_actors.back();
-        // Mallob on CaDiCaL-preprocessed formula - displaces original Mallob task
+
+        // MallobSat on the preprocessed formula - displaces the baseline
         _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxCad, {ctxMalOrig}});
-        ActorContext* ctxMalCad = &_actors.back();
-        //ctxMalCad->onlyStartIfPrerequisiteSimplified = true;
+        ActorContext* ctxMalChain = &_actors.back();
+        ctxMalChain->onlyStartIfAnyAncestorSimplified = true;
+    }
 
-        // Mallob on Kissat-preprocessed formula -- disabled: no proof support yet
-        //ActorContext* ctxMalPre1 = nullptr;
-        //_actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKis, {ctxMalOrig}});
-        //ctxMalPre1 = &_actors.back();
-        //ctxMalPre1->onlyStartIfPrerequisiteSimplified = true;
 
-        // Mallob on Satsuma+Kissat-preprocessed formula -- disabled: no proof support yet
-        //_actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, ctxKisAfterSats, {ctxMalOrig, ctxMalPre1}});
-        //ActorContext* ctxMalPreFull = &_actors.back();
+    // True if this actor or any stage above it in the chain simplified the
+    // formula, i.e. whether there is anything to gain from solving its output.
+    static bool anyAncestorSimplified(const ActorContext& actor) {
+        for (const ActorContext* a = actor.prerequisite; a; a = a->prerequisite)
+            if (a->result == SatPreprocessActor::SIMPLIFIED) return true;
+        return false;
     }
 
     int loop() {
@@ -132,10 +128,15 @@ public:
                     continue; // prerequisite not done yet - skip for now
                 if (actor.prerequisite && actor.onlyStartIfPrerequisiteSimplified && actor.prerequisite->result != SatPreprocessActor::SIMPLIFIED)
                     continue; // never initialize this actor since its prerequisite didn't lead to a simplification
+                if (actor.onlyStartIfAnyAncestorSimplified && !anyAncestorSimplified(actor))
+                    continue; // the entire chain achieved nothing - solving its output would just redo the baseline
 
-                // prerequisite done: initialize actor
-                auto formula = (actor.prerequisite && actor.prerequisite->result == SatPreprocessActor::SIMPLIFIED) ?
-                    actor.prerequisite->formula : _base_cnf;
+                // prerequisite done: initialize actor. Its formula is whatever the
+                // prerequisite passes on, which is its simplified output if it
+                // simplified and otherwise its own unchanged input -- so a stage
+                // that finds nothing forwards its predecessor's work instead of
+                // discarding it and falling back to the original formula.
+                auto formula = actor.prerequisite ? actor.prerequisite->formula : _base_cnf;
                 switch (actor.type) {
                 //case ActorContext::SATSUMA_INT:
                 //    actor.actor.reset(new SatsumaPreprocessor(_params, _desc, std::to_string(actorIdx) + ":SatsumaInt", std::move(formula)));
@@ -143,11 +144,11 @@ public:
                 case ActorContext::SATSUMA_EXT:
                     actor.actor.reset(new ExtSatsumaCaller(_params, _desc, std::to_string(actorIdx) + ":SatsumaExt", std::move(formula)));
                     break;
-                //case ActorContext::KISSAT:
-                //    actor.actor.reset(new KissatPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Kissat", std::move(formula)));
+                case ActorContext::KISSAT:
+                    actor.actor.reset(new KissatPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Kissat", std::move(formula)));
                     break;
-                //case ActorContext::LINGELING:
-                //    actor.actor.reset(new LingelingPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Lingeling", std::move(formula)));
+                case ActorContext::LINGELING:
+                    actor.actor.reset(new LingelingPreprocessor(_params, _desc, std::to_string(actorIdx) + ":Lingeling", std::move(formula)));
                     break;
                 case ActorContext::MALLOBSAT:
                     actor.actor.reset(new MallobSatPreprocessActor(_params, _desc, std::to_string(actorIdx) + ":MallobSat", _api, std::move(formula), _time_of_start));
@@ -182,6 +183,7 @@ public:
                 }
                 if (res == SatPreprocessActor::SIMPLIFIED) {
                     actor.formula = std::move(actor.actor->getPreprocessedFormula());
+                    if (_params.savePreprocessingProofs()) actor.actor->writeCnf(actor.formula);
                 } else {
                     actor.formula = std::move(actor.actor->getInputCnf());
                 }
@@ -241,17 +243,17 @@ public:
         }
     }
 
-    // Renames the winning actor's chain of "tmp.<name>.<format>" proof files to
-    // "step<i>.<format>". Safe to call as soon as a winner is known: every actor
-    // in that chain is by construction already FINISHED (a prerequisite must be
-    // FINISHED before the actor depending on it can even launch), so its proof
-    // file is stable and no longer being written to.
     void finalizeProofs(){
-        if (!_params.savePreprocessingProofs()) return;
+        if (!_params.savePreprocessingProofs() ) return;
         ActorContext* last = _winning_actor ;
+        if (!last || last->result != SatPreprocessActor::UNSAT) return;
         std::vector<ActorContext*> line;
+        // only include actors that acually simplify the formula 
+
+        bool isWinner = true;
         while (last != nullptr){
-            line.push_back(last);
+            if (isWinner || last->result == SatPreprocessActor::SIMPLIFIED) line.push_back(last);
+            isWinner = false;
             last = last->prerequisite;
         }
         int total = line.size();

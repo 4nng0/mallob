@@ -82,7 +82,7 @@ public:
                 + " fix --add-reduced-as-unit --file " + _in_path
                 + " --out-file " + _out_path;
             if (_params.savePreprocessingProofs())
-                cmd += " --sr --proof-file " + proofWorkDir(_params) + "tmp." + _name + ".sr";
+                cmd += " --sr --proof-file " + _params.proofDirectory() + "/tmp/" + _name + ".sr";
             cmd += " > " + (_params.logDirectory.isSet() ? (_params.logDirectory() + "/satsuma.txt") : "/dev/null")
                 + " 2>&1 & echo \"$! x\" > " + _pid_path;
 

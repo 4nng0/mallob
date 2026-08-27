@@ -53,6 +53,8 @@ public:
 
 	void savePreproProof(const std::string& path);
 	void closePreproProof();
+	// All root-level fixed literals, in the polarity they are fixed to.
+	std::vector<int> getFixedLiterals() const;
 	void reconstructSolutionFromPreprocessing(std::vector<int>& model);
 	void collectSimplifiedFormula();
 	

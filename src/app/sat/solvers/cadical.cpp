@@ -137,12 +137,22 @@ void Cadical::savePreproProof(const std::string& path) {
     okay = solver->set("lratsolverid", 0); assert(okay);
     okay = solver->set("lratsolvercount", 1); assert(okay);
     okay = solver->set("lratorigclscount", _setup.numOriginalClauses); assert(okay);
+    okay = solver->set("binary", 0); assert(okay); // write proof in text (non-binary) format
     okay = solver->trace_proof(path.c_str()); assert(okay);
 }
 
 void Cadical::closePreproProof() {
     if (!proofFileString.empty())
         solver->close_proof_trace(false);
+}
+
+std::vector<int> Cadical::getFixedLiterals() const {
+    std::vector<int> lits;
+    for (int v = 1; v <= solver->vars(); v++) {
+        const int val = solver->fixed(v);
+        if (val != 0) lits.push_back(val > 0 ? v : -v);
+    }
+    return lits;
 }
 
 void Cadical::reconstructSolutionFromPreprocessing(std::vector<int>& model) {

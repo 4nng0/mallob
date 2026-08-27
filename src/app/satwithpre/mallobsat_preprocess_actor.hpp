@@ -13,6 +13,7 @@
 #include "util/params.hpp"
 #include "util/static_store.hpp"
 #include "util/sys/timer.hpp"
+#include <filesystem>
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -35,6 +36,7 @@ public:
         static int _actor_counter = 1;
 
         _jobstr = "#" + std::to_string(_job_id) + ":mal:" + std::to_string(_actor_counter++);
+        _proof_format = "palrup";
     }
     ~MallobSatPreprocessActor() {}
 
@@ -46,6 +48,21 @@ public:
 
     void interrupt() override {
         interrupt(_base_json);
+    }
+
+    // possibly some processes are still writting, so waiting to see if moving is possible yet is nessesary 
+    bool rename_proof(int i) override {
+        std::string src = _params.proofDirectory() + "/tmp/" + _name + "." + _proof_format;
+        for (int attempt = 0; attempt < 100 && std::filesystem::exists(src); attempt++) {
+            bool pending = false;
+            for (const auto& entry : std::filesystem::recursive_directory_iterator(src)) {
+                std::string filename = entry.path().filename().string();
+                if (!filename.empty() && filename.back() == '~') { pending = true; break; }
+            }
+            if (!pending) break;
+            usleep(1000 * 20); // 20ms
+        }
+        return SatPreprocessActor::rename_proof(i);
     }
 
 private:
@@ -76,7 +93,7 @@ private:
             if (_params.overrideSatOptions() && !_params.savePreprocessingProofs())
                 opts += std::string(SATWITHPRE_OPT_OVERRIDES);
             if (_params.savePreprocessingProofs())
-                opts += " -palrup=1 -proof-dir=" + proofWorkDir(_params) + "tmp." + _name;
+                opts += " -palrup=1 -proof-dir=" + _params.proofDirectory() + "/tmp/" + _name + "." + _proof_format;
             if (!opts.empty())
                 json["configuration"]["options"] = opts;
         }
