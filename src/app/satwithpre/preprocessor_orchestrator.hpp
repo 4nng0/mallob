@@ -59,28 +59,6 @@ public:
             FileUtils::mkdir(_params.proofDirectory() + "/tmp");
         }
 
-        // ---------------------------------------------------------------------
-        // PORTFOLIO MODE: baseline + one preprocessing chain that may displace it.
-        //
-        //   MallobSat on the untouched formula          (runs from t=0, displaceable)
-        //   [Satsuma ->] CaDiCaL -> MallobSat           (displaces the baseline)
-        //
-        // The Satsuma stage only exists if built with -DMALLOB_USE_SATSUMA=2;
-        // without it the chain simply starts at CaDiCaL, on the original formula.
-        //
-        // A stage finding nothing does NOT end the chain: CaDiCaL still runs on
-        // whatever Satsuma passed on, and a stage that simplified nothing forwards
-        // its input rather than falling back to the original formula. Only if *no*
-        // stage achieved anything is the displacing solver suppressed -- solving
-        // that output would just repeat the baseline while throwing away its
-        // progress. That is what onlyStartIfAnyAncestorSimplified expresses.
-        //
-        // The competition "quick" topology (Lingeling + Satsuma->Kissat->MallobSat)
-        // lives in scripts/experiments/orchestrator_QUICK.hpp and is swapped in only
-        // when no portfolio pass is running -- rebuilding while one is in flight
-        // changes the binary that its next instance picks up.
-        // ---------------------------------------------------------------------
-
         // MallobSat on the original formula
         _actors.push_back({PreprocessorOrchestrator::ActorContext::MALLOBSAT, nullptr, {}});
         ActorContext* ctxMalOrig = &_actors.back();
@@ -131,11 +109,7 @@ public:
                 if (actor.onlyStartIfAnyAncestorSimplified && !anyAncestorSimplified(actor))
                     continue; // the entire chain achieved nothing - solving its output would just redo the baseline
 
-                // prerequisite done: initialize actor. Its formula is whatever the
-                // prerequisite passes on, which is its simplified output if it
-                // simplified and otherwise its own unchanged input -- so a stage
-                // that finds nothing forwards its predecessor's work instead of
-                // discarding it and falling back to the original formula.
+                    
                 auto formula = actor.prerequisite ? actor.prerequisite->formula : _base_cnf;
                 switch (actor.type) {
                 //case ActorContext::SATSUMA_INT:
