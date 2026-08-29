@@ -14,6 +14,68 @@ Mallob and its tightly integrated distributed general-purpose SAT solving engine
 Mallob is the first distributed system that supports _incremental SAT solving_, i.e., interactive solving procedures over evolving formulas, and is also the first system that supports logging and/or checking propositional proofs at parallel and distributed scales - also for incremental solving queries.
 Last but not least, Mallob features engines for state-of-the-art distributed MaxSAT solving (**MallobMax**) and bit-precise SMT solving (**Bitwuzllob** - parallelizing [Bitwuzla](https://github.com/bitwuzla/bitwuzla)).
 
+## About This Fork
+
+This is a fork of [Mallob](https://github.com/domschrei/mallob), created for a Bachelor's thesis at KIT.
+It extends Mallob's `SATWITHPRE` application so that **every preprocessing stage emits a proof**, so that an
+UNSAT answer obtained on a preprocessed formula can be traced back to the original formula.
+
+Upstream `SATWITHPRE` runs preprocessors ahead of the solver and keeps only their output formula. This fork adds:
+
+- **A proof artifact per stage of the winning chain.** CaDiCaL emits LRAT (in text rather than binary format), external Satsuma emits SR, and MallobSat emits PalRUP.
+- **The intermediate CNFs** that each stage hands to the next, so that consecutive proofs can be chained.
+- **A repair for a gap in CaDiCaL's LRAT output.** `collectSimplifiedFormula()` drops literals falsified by root-level unit propagation without emitting the corresponding proof steps; [`lrat_fixed_literal_patch.hpp`](src/app/satwithpre/lrat_fixed_literal_patch.hpp) appends the missing strengthening steps. This problem only exists when writing proofs only for the preprocessing, not when a whole 
+- **A restructured preprocessing topology.** A baseline MallobSat on the untouched formula runs alongside a `Satsuma -> CaDiCaL -> MallobSat` chain, which displaces the baseline only once some stage has actually simplified the formula.
+
+Changes are confined to [`src/app/satwithpre/`](src/app/satwithpre/) plus a small addition to the CaDiCaL
+interface in [`src/app/sat/solvers/`](src/app/sat/solvers/). This fork is distributed under the same terms as
+upstream Mallob - see [Licensing](#licensing).
+
+### Building
+
+```bash
+bash scripts/setup/cmake-make.sh build -DMALLOB_USE_SATSUMA=2
+```
+
+`-DMALLOB_USE_SATSUMA=2` fetches and builds external Satsuma and enables the Satsuma stage. A build without it
+also works; the chain then starts at CaDiCaL, and a warning is logged when a job starts.
+
+### Producing preprocessing proofs
+
+```bash
+build/mallob -mono-app=SATWITHPRE -mono=path/to/problem.cnf -t=12 -T=300 \
+    -prepro-proofs=1 -proof-dir=path/to/proofs
+```
+
+| Option | Meaning |
+| --- | --- |
+| `-mono-app=SATWITHPRE` | Run the preprocessing application (the default is plain `SAT`) |
+| `-prepro-proofs=1` | Write a proof for every preprocessing stage |
+| `-proof-dir=<dir>` | Destination for the proofs. Created if missing, but **must be empty** - Mallob aborts otherwise |
+
+While a run is in progress, each actor writes into `<dir>/tmp/`. Once a chain reports **unsatisfiable**, the
+artifacts of the winning chain are moved into `<dir>` and numbered in solving order:
+
+```
+<dir>/step1.sr        Symmetry-breaking proof produced by Satsuma
+<dir>/post1.cnf       Formula that Satsuma passed on to CaDiCaL
+<dir>/step2.lrat      CaDiCaL's LRAT proof, in text format
+<dir>/post2.cnf       Formula that CaDiCaL passed on to MallobSat
+<dir>/step3.palrup/   MallobSat's PalRUP proof (a directory, not a single file)
+```
+
+Stages that did not simplify the formula are omitted, and the remaining ones are renumbered without gaps.
+The exact set of files therefore depends on what the preprocessors found.
+
+### Current limitations
+
+- Proofs are only finalized for an **UNSAT** answer. A satisfiable run leaves `<dir>` empty; the model is
+  reconstructed back through the chain instead.
+- The three stages emit three different proof formats. Checking a chain end to end requires an external
+  checker, which is not part of this repository.
+- `-proof-dir` has to be empty at startup, so every run needs a fresh directory.
+
+
 ## Setup
 
 Mallob uses MPI (Message Passing Interface) and is built using CMake.
